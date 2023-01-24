@@ -1,0 +1,147 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > AdminController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">drivewayparking.app.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: AdminController (drivewayparking.app.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AdminController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (2/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    50%
+  </span>
+  <span class="absValue">
+    (2/4)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package drivewayparking.app.controller;
+&nbsp;
+&nbsp;import drivewayparking.app.dto.AdminRequest;
+&nbsp;import drivewayparking.app.entity.Admin;
+&nbsp;import drivewayparking.app.service.AdminService;
+&nbsp;import io.swagger.annotations.Api;
+&nbsp;import io.swagger.annotations.ApiOperation;
+&nbsp;import io.swagger.annotations.ApiResponse;
+&nbsp;import io.swagger.annotations.ApiResponses;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;@Api(value = &quot;AdminController&quot;, description = &quot;REST APIs for the Admin Entity&quot;)
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/admins&quot;)
+<b class="fc">&nbsp;public class AdminController {</b>
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private AdminService service;
+&nbsp;
+&nbsp;    @ApiOperation(value = &quot;Get admin by email&quot;, notes = &quot;Get admin by the given email from the database&quot;, response = Admin.class)
+&nbsp;    @GetMapping(&quot;/getAdmin/Email/{email}&quot;)
+&nbsp;    public Admin getAdmin(@PathVariable String email) {
+<b class="fc">&nbsp;        return service.getAdminByEmail(email);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @ApiOperation(value = &quot;Get admin by id&quot;, notes = &quot;Get admin by the given id from the database&quot;, response = Admin.class)
+&nbsp;    @GetMapping(&quot;/getAdmin/Id/{id}&quot;)
+&nbsp;    public Admin getAdmin(@PathVariable Long id) {
+<b class="nc">&nbsp;        return service.getAdminById(id);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @ApiOperation(value = &quot;Update admin&quot;, notes = &quot;Update some or all attributes of the admin and save it to the database&quot;, response = Integer.class)
+&nbsp;    @ApiResponses(value = {
+&nbsp;            @ApiResponse(code = 0, message = &quot;OK&quot;),
+&nbsp;            @ApiResponse(code = 1, message = &quot;Not Found&quot;),
+&nbsp;            @ApiResponse(code = 2, message = &quot;Error&quot;) })
+&nbsp;    @PutMapping(&quot;/&quot;)
+&nbsp;    public Integer updateAdmin(@RequestBody AdminRequest request){
+<b class="nc">&nbsp;        return service.updateAdmin(request);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-07 11:03</div>
+</div>
+</body>
+</html>

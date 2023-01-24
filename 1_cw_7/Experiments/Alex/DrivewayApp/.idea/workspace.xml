@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="998ea8ae-97a4-44d9-a7d2-545815c21696" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Lindsay/demo/src/main/java/com/example/demo/student/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lindsay/demo/src/main/java/com/example/demo/student/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lindsay/demo/src/main/java/com/example/demo/student/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lindsay/demo/src/main/java/com/example/demo/student/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lindsay/demo/src/main/java/com/example/demo/student/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lindsay/demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lindsay/demo/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Lindsay/experiment2/demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Lindsay/experiment2/demo/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Frontend/app/src/main/java/com/example/drivewayparking/logininterface/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Frontend/app/src/main/java/com/example/drivewayparking/logininterface/LoginActivity.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2F0mS75allwy9QuXikxHiogMKH2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/ltimk/Documents/coms309/1_cw_7/Experiments/Alex/Experiment_2"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="998ea8ae-97a4-44d9-a7d2-545815c21696" name="Changes" comment="" />
+      <created>1663637373126</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663637373126</updated>
+    </task>
+    <servers />
+  </component>
+</project>

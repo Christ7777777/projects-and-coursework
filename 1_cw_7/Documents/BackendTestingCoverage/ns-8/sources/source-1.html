@@ -1,0 +1,92 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > PropertyRepository</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">drivewayparking.app.repository</a>
+</div>
+
+<h1>Coverage Summary for Class: PropertyRepository (drivewayparking.app.repository)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">PropertyRepository</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package drivewayparking.app.repository;
+&nbsp;
+&nbsp;import drivewayparking.app.entity.Property;
+&nbsp;import org.springframework.data.jpa.repository.JpaRepository;
+&nbsp;import org.springframework.data.jpa.repository.Query;
+&nbsp;import org.springframework.data.repository.query.Param;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public interface PropertyRepository extends JpaRepository&lt;Property, Long&gt; {
+&nbsp;    Property findByTitle(String title);
+&nbsp;
+&nbsp;    @Query(&quot;SELECT p FROM Property p WHERE p.user.id = :userId&quot;)
+&nbsp;    List&lt;Property&gt; findByUser(@Param(&quot;userId&quot;) Long userId);
+&nbsp;
+&nbsp;    @Query(value = &quot;SELECT p.* FROM properties p WHERE ABS(p.latitude - :latitude) &lt; 0.1 AND ABS(p.longitude - :longitude) &lt; 0.1 LIMIT 1&quot;, nativeQuery = true)
+&nbsp;    Property findByMinuteLatitudeAndLongitude(@Param(&quot;latitude&quot;) Double latitude, @Param(&quot;longitude&quot;) Double longitude);
+&nbsp;
+&nbsp;    @Query(value = &quot;SELECT p.* FROM properties p WHERE ABS(p.latitude - :latitude) &lt; 1 AND ABS(p.longitude - :longitude) &lt; 1 LIMIT 1&quot;, nativeQuery = true)
+&nbsp;    Property findByDegreeLatitudeAndLongitude(@Param(&quot;latitude&quot;) Double latitude, @Param(&quot;longitude&quot;) Double longitude);
+&nbsp;
+&nbsp;    @Query(&quot;SELECT p FROM Property p WHERE p.city = :city AND p.state = :state&quot;)
+&nbsp;    List&lt;Property&gt; findAllByCityState(@Param(&quot;city&quot;) String city, @Param(&quot;state&quot;) String state);
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-07 11:03</div>
+</div>
+</body>
+</html>

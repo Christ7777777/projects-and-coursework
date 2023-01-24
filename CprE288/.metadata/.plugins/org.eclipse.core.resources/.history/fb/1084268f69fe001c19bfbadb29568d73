@@ -1,0 +1,105 @@
+
+
+/**
+ * main.c
+ */
+
+#include "Timer.h"
+#include "open_interface.h"
+#include "lcd.h"
+#include <stdio.h>
+#include "movement.h"
+#include <time.h>
+
+void collision_detection(oi_t *sensor, double dist_mm){
+//    //sets the wheel
+//    double sum = 0;
+//    oi_setWheels(500, 500);
+//    //to create a random number
+//    srand(time(0));
+//    // a while loop to make it move
+//    while(sum < dist_mm){
+//        oi_update(sensor);
+//        //random number for when it bumps in the middle
+//        int r = rand()%2;
+//        // when it bumps into the middle sensor chooses between left or right turn
+//        if(sensor->bumpLeft == 1 && sensor->bumpRight == 1){
+//            oi_setWheels(0, 0);
+//            moveBackward(sensor, 150);
+//            sum -= 150;
+//            if(r == 0){
+//                turnRight(sensor, 90);
+//                moveForward(sensor, 250);
+//                turnLeft(sensor, 90);
+//                oi_setWheels(500, 500);
+//            }
+//            else{
+//                turnLeft(sensor, 90);
+//                moveForward(sensor, 250);
+//                turnRight(sensor, 90);
+//                oi_setWheels(500, 500);
+//            }
+//
+//        }
+//        //if the left sensor is bumped turns right
+//        if(sensor->bumpLeft == 1){
+//            oi_setWheels(0, 0);
+//            moveBackward(sensor, 150);
+//            sum -= 150.0;
+//            turnRight(sensor, 90);
+//            moveForward(sensor, 250);
+//            turnLeft(sensor, 90);
+//            oi_setWheels(500, 500);
+//
+//
+//        }
+//        //if the right sensor is bumped turns left
+//        if(sensor->bumpRight == 1){
+//            oi_setWheels(0, 0);
+//            moveBackward(sensor, 150);
+//            sum -= 150;
+//            turnLeft(sensor, 90);
+//            moveForward(sensor, 250);
+//            turnRight(sensor, 90);
+//            oi_setWheels(500, 500);
+//
+//
+//        }
+//        sum += sensor ->distance;
+//
+//    }
+//    //prints the final distance
+//    lcd_printf("%.2f",sum);
+}
+
+int main(void)
+{
+    //Initialize Timer
+    timer_init();
+    //Initialize LCD
+    lcd_init();
+    //Initial serial connection with iRobot Create
+    oi_t *sensor_data = oi_alloc();
+    oi_init(sensor_data);
+
+
+    //Move Forward Part 1
+    //moveForward(sensor_data, 1000);
+
+    //Square Part 2
+    	while(1){
+    	moveForward(sensor_data, 10);
+    	turnLeft(sensor_data,352);
+//    	moveForward(sensor_data, 2000);
+//    	turnLeft(sensor_data, 85);
+//        moveForward(sensor_data, 2000);
+//    	turnLeft(sensor_data, 85);
+//    	moveForward(sensor_data, 500);
+//    	turnLeft(sensor_data, 90);
+   }
+
+    // Collision Detection Part 3
+   // collision_detection(sensor_data, 2000);
+
+    oi_free(sensor_data);
+}

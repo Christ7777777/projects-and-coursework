@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DisputeFragment.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Fragment</a> &gt; <span class="el_source">DisputeFragment.java</span></div><h1>DisputeFragment.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Fragment;
+
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.API.MockApiClient;
+import com.example.drivewayparking.Adapter.DisputeAdapter;
+import com.example.drivewayparking.Model.Admin;
+import com.example.drivewayparking.Model.DisputeResponse;
+import com.example.drivewayparking.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class DisputeFragment extends Fragment {
+
+    private Long user_id;
+    private static String admin_email;
+    private RecyclerView recyclerView;
+    private List&lt;DisputeResponse&gt; disputes;
+    private DisputeAdapter disputeAdapter;
+
+<span class="fc" id="L36">    public DisputeFragment() {</span>
+        // Required empty public constructor
+<span class="fc" id="L38">    }</span>
+
+    public static DisputeFragment newInstance() {
+<span class="nc" id="L41">        DisputeFragment fragment = new DisputeFragment();</span>
+<span class="nc" id="L42">        Bundle args = new Bundle();</span>
+<span class="nc" id="L43">        args.putString(&quot;admin_email&quot;, admin_email);</span>
+<span class="nc" id="L44">        fragment.setArguments(args);</span>
+<span class="nc" id="L45">        return fragment;</span>
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+<span class="fc" id="L50">        super.onCreate(savedInstanceState);</span>
+<span class="pc bpc" id="L51" title="1 of 2 branches missed.">        if (getArguments() != null){</span>
+            //user_id = getArguments().getLong(&quot;user_id&quot;);
+<span class="fc" id="L53">            admin_email = getArguments().getString(&quot;admin_email&quot;);</span>
+<span class="fc" id="L54">            disputes = new ArrayList&lt;&gt;();</span>
+            //System.out.println(user_id);
+        }
+<span class="fc" id="L57">    }</span>
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+<span class="fc" id="L62">        View view = inflater.inflate(R.layout.fragment_dispute, container, false);</span>
+
+<span class="fc" id="L64">        recyclerView = view.findViewById(R.id.dispute_recyclerView);</span>
+<span class="fc" id="L65">        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));</span>
+
+<span class="fc" id="L67">        Call&lt;Admin&gt; call_id = ApiClient.getAdminApiService().getAdminByEmail(admin_email);</span>
+<span class="fc" id="L68">        call_id.enqueue(new Callback&lt;Admin&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;Admin&gt; call, Response&lt;Admin&gt; response) {
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">                if(response.isSuccessful()){</span>
+<span class="fc" id="L72">                    user_id = response.body().getId();</span>
+<span class="fc" id="L73">                    System.out.println(&quot;Admin id: &quot; + user_id);</span>
+<span class="fc" id="L74">                    Call&lt;List&lt;DisputeResponse&gt;&gt; call_dispute = ApiClient.getDisputeApiService().getDisputesByAdmin(response.body().getId());</span>
+                    //Call&lt;List&lt;DisputeResponse&gt;&gt; call = MockApiClient.getDisputeApiService().getAllDisputes();
+
+<span class="fc" id="L77">                    call_dispute.enqueue(new Callback&lt;List&lt;DisputeResponse&gt;&gt;() {</span>
+                        @Override
+                        public void onResponse(Call&lt;List&lt;DisputeResponse&gt;&gt; call, Response&lt;List&lt;DisputeResponse&gt;&gt; response) {
+<span class="pc bpc" id="L80" title="1 of 2 branches missed.">                            if (response.isSuccessful()){</span>
+<span class="fc" id="L81">                                disputes = response.body();</span>
+<span class="fc" id="L82">                                System.out.println(&quot;check: &quot; + disputes.size());</span>
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">                                if (disputes != null){</span>
+<span class="fc" id="L84">                                    disputeAdapter = new DisputeAdapter(getActivity(), disputes);</span>
+<span class="fc" id="L85">                                    recyclerView.setAdapter(disputeAdapter);</span>
+                                }
+                            }
+                            else{
+<span class="nc" id="L89">                                Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                            }
+<span class="fc" id="L91">                        }</span>
+
+                        @Override
+                        public void onFailure(Call&lt;List&lt;DisputeResponse&gt;&gt; call, Throwable t) {
+<span class="nc" id="L95">                            Toast.makeText(getActivity(), &quot;Get disputes by admin error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L96">                        }</span>
+                    });
+<span class="fc" id="L98">                }</span>
+                else{
+<span class="nc" id="L100">                    Toast.makeText(getActivity(), &quot;Code Admin ID 2: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                }
+<span class="fc" id="L102">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;Admin&gt; call, Throwable t) {
+<span class="nc" id="L106">                Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L107">            }</span>
+        });
+
+//        Call&lt;List&lt;DisputeResponse&gt;&gt; call = ApiClient.getDisputeApiService().getDisputesByAdmin(user_id);
+//        //Call&lt;List&lt;DisputeResponse&gt;&gt; call = MockApiClient.getDisputeApiService().getAllDisputes();
+//
+//        call.enqueue(new Callback&lt;List&lt;DisputeResponse&gt;&gt;() {
+//            @Override
+//            public void onResponse(Call&lt;List&lt;DisputeResponse&gt;&gt; call, Response&lt;List&lt;DisputeResponse&gt;&gt; response) {
+//                 if (response.isSuccessful()){
+//                     disputes = response.body();
+//                     System.out.println(&quot;check: &quot; + disputes.size());
+//                     if (disputes != null){
+//                         disputeAdapter = new DisputeAdapter(getActivity(), disputes);
+//                         recyclerView.setAdapter(disputeAdapter);
+//                     }
+//                 }
+//                 else{
+//                     Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();
+//                 }
+//            }
+//
+//            @Override
+//            public void onFailure(Call&lt;List&lt;DisputeResponse&gt;&gt; call, Throwable t) {
+//                Toast.makeText(getActivity(), &quot;Get disputes by admin error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+<span class="fc" id="L135">        return view;</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

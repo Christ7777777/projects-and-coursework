@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BookingUpcomingAdapter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Adapter</a> &gt; <span class="el_source">BookingUpcomingAdapter.java</span></div><h1>BookingUpcomingAdapter.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Adapter;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Activity.UserRatingActivity;
+import com.example.drivewayparking.Model.Booking;
+import com.example.drivewayparking.Model.BookingResponse;
+import com.example.drivewayparking.Model.Property;
+import com.example.drivewayparking.R;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+/**
+ * The type Booking upcoming adapter.
+ * @author: Varun Advani
+ */
+public class BookingUpcomingAdapter extends RecyclerView.Adapter&lt;BookingUpcomingAdapter.BookingViewHolder&gt; {
+
+    private Context context;
+    private List&lt;BookingResponse&gt; bookingList;
+
+
+    /**
+     * Instantiates a new Booking upcoming adapter.
+     *
+     * @param context     the context
+     * @param bookingList the booking list
+     */
+<span class="fc" id="L44">    public BookingUpcomingAdapter(Context context, List&lt;BookingResponse&gt; bookingList) {</span>
+<span class="fc" id="L45">        this.context = context;</span>
+<span class="fc" id="L46">        this.bookingList = bookingList;</span>
+<span class="fc" id="L47">    }</span>
+
+    @NonNull
+    @Override
+    public BookingViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+<span class="nc" id="L52">        View view = LayoutInflater.from(context).inflate(R.layout.booking_list_view_upcoming, parent, false);</span>
+<span class="nc" id="L53">        return new BookingUpcomingAdapter.BookingViewHolder(view);</span>
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull BookingViewHolder holder, int position) {
+<span class="nc" id="L58">        final BookingResponse bookingResponse = bookingList.get(position);</span>
+<span class="nc" id="L59">        Call&lt;Property&gt; call = ApiClient.getPropertyApiService().getPropertyById(bookingResponse.getPid());</span>
+<span class="nc" id="L60">        call.enqueue(new Callback&lt;Property&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;Property&gt; call, Response&lt;Property&gt; response) {
+<span class="nc bnc" id="L63" title="All 2 branches missed.">                if(response.isSuccessful()){</span>
+<span class="nc" id="L64">                    holder.propertyName.setText(response.body().getTitle());</span>
+                }
+                else{
+<span class="nc" id="L67">                    Toast.makeText(context.getApplicationContext(),&quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                }
+<span class="nc" id="L69">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;Property&gt; call, Throwable t) {
+<span class="nc" id="L73">                Toast.makeText(context.getApplicationContext(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L74">            }</span>
+        });
+<span class="nc" id="L76">        holder.startDate.setText(bookingResponse.getCheck_in().toString());</span>
+<span class="nc" id="L77">        holder.endDate.setText(bookingResponse.getCheck_out().toString());</span>
+
+<span class="nc" id="L79">    }</span>
+
+    @Override
+    public int getItemCount() {
+<span class="fc" id="L83">        return bookingList.size();</span>
+    }
+
+    /**
+     * The type Booking view holder.
+     */
+    static class BookingViewHolder extends RecyclerView.ViewHolder{
+        /**
+         * The Property name.
+         */
+        TextView propertyName,
+        /**
+         * The Start date.
+         */
+        startDate,
+        /**
+         * The End date.
+         */
+        endDate,
+        /**
+         * The Rate property.
+         */
+        rateProperty;
+
+
+        /**
+         * Instantiates a new Booking view holder.
+         *
+         * @param itemView the item view
+         */
+        public BookingViewHolder(@NonNull View itemView) {
+<span class="nc" id="L114">            super(itemView);</span>
+<span class="nc" id="L115">            propertyName = itemView.findViewById(R.id.textView_bookedPropertyName_upcoming);</span>
+<span class="nc" id="L116">            startDate = itemView.findViewById(R.id.textView_start_date_upcoming);</span>
+<span class="nc" id="L117">            endDate = itemView.findViewById(R.id.textView_end_date_upcoming);</span>
+<span class="nc" id="L118">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

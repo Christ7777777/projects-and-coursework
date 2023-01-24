@@ -1,0 +1,139 @@
+
+#
+# CprE 381 toolflow Timing dump
+#
+
+FMax: 26.55mhz Clk Constraint: 20.00ns Slack: -17.67ns
+
+The path is given below
+
+ ===================================================================
+ From Node    : MIPS_pc:pcReg|MIPS_pc_dffg:\G_NBit_DFFG:2:ONESCOMPI|s_Q
+ To Node      : MIPS_pc:pcReg|MIPS_pc_dffg:\G_NBit_DFFG:5:ONESCOMPI|s_Q
+ Launch Clock : iCLK
+ Latch Clock  : iCLK
+ Data Arrival Path:
+ Total (ns)  Incr (ns)     Type  Element
+ ==========  ========= ==  ====  ===================================
+      0.000      0.000           launch edge time
+      3.543      3.543  R        clock network delay
+      3.775      0.232     uTco  MIPS_pc:pcReg|MIPS_pc_dffg:\G_NBit_DFFG:2:ONESCOMPI|s_Q
+      3.775      0.000 FF  CELL  pcReg|\G_NBit_DFFG:2:ONESCOMPI|s_Q|q
+      4.097      0.322 FF    IC  s_IMemAddr[2]~0|datad
+      4.222      0.125 FF  CELL  s_IMemAddr[2]~0|combout
+      6.689      2.467 FF    IC  IMem|ram~46017|datab
+      7.114      0.425 FF  CELL  IMem|ram~46017|combout
+      7.390      0.276 FF    IC  IMem|ram~46018|dataa
+      7.814      0.424 FF  CELL  IMem|ram~46018|combout
+      8.766      0.952 FF    IC  IMem|ram~46019|datac
+      9.047      0.281 FF  CELL  IMem|ram~46019|combout
+     10.702      1.655 FF    IC  IMem|ram~46022|datad
+     10.827      0.125 FF  CELL  IMem|ram~46022|combout
+     11.105      0.278 FF    IC  IMem|ram~46023|dataa
+     11.458      0.353 FF  CELL  IMem|ram~46023|combout
+     11.691      0.233 FF    IC  IMem|ram~46066|datac
+     11.972      0.281 FF  CELL  IMem|ram~46066|combout
+     13.466      1.494 FF    IC  IMem|ram~46109|datac
+     13.747      0.281 FF  CELL  IMem|ram~46109|combout
+     13.975      0.228 FF    IC  IMem|ram~46280|datad
+     14.100      0.125 FF  CELL  IMem|ram~46280|combout
+     14.367      0.267 FF    IC  IMem|ram~46451|datab
+     14.771      0.404 FF  CELL  IMem|ram~46451|combout
+     15.458      0.687 FF    IC  registers|Read1|Mux30~15|datad
+     15.608      0.150 FR  CELL  registers|Read1|Mux30~15|combout
+     18.226      2.618 RR    IC  registers|Read1|Mux30~17|datab
+     18.614      0.388 RR  CELL  registers|Read1|Mux30~17|combout
+     18.993      0.379 RR    IC  registers|Read1|Mux30~18|datad
+     19.132      0.139 RF  CELL  registers|Read1|Mux30~18|combout
+     19.400      0.268 FF    IC  registers|Read1|Mux30~22|datab
+     19.768      0.368 FF  CELL  registers|Read1|Mux30~22|combout
+     19.996      0.228 FF    IC  registers|Read1|Mux30~25|datad
+     20.146      0.150 FR  CELL  registers|Read1|Mux30~25|combout
+     21.485      1.339 RR    IC  mainALU|addsub|\G_fullAdder:1:fullAdderlist|or1|o_F~1|datab
+     21.887      0.402 RR  CELL  mainALU|addsub|\G_fullAdder:1:fullAdderlist|or1|o_F~1|combout
+     22.114      0.227 RR    IC  mainALU|addsub|\G_fullAdder:2:fullAdderlist|or1|o_F~0|datad
+     22.269      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:2:fullAdderlist|or1|o_F~0|combout
+     22.496      0.227 RR    IC  mainALU|addsub|\G_fullAdder:3:fullAdderlist|or1|o_F~0|datad
+     22.651      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:3:fullAdderlist|or1|o_F~0|combout
+     22.875      0.224 RR    IC  mainALU|addsub|\G_fullAdder:4:fullAdderlist|or1|o_F~0|datac
+     23.162      0.287 RR  CELL  mainALU|addsub|\G_fullAdder:4:fullAdderlist|or1|o_F~0|combout
+     23.390      0.228 RR    IC  mainALU|addsub|\G_fullAdder:5:fullAdderlist|or1|o_F~0|datad
+     23.545      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:5:fullAdderlist|or1|o_F~0|combout
+     23.770      0.225 RR    IC  mainALU|addsub|\G_fullAdder:6:fullAdderlist|or1|o_F~0|datad
+     23.925      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:6:fullAdderlist|or1|o_F~0|combout
+     24.137      0.212 RR    IC  mainALU|addsub|\G_fullAdder:7:fullAdderlist|or1|o_F~0|datad
+     24.292      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:7:fullAdderlist|or1|o_F~0|combout
+     24.519      0.227 RR    IC  mainALU|addsub|\G_fullAdder:8:fullAdderlist|or1|o_F~0|datad
+     24.674      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:8:fullAdderlist|or1|o_F~0|combout
+     25.627      0.953 RR    IC  mainALU|addsub|\G_fullAdder:9:fullAdderlist|or1|o_F~0|datad
+     25.782      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:9:fullAdderlist|or1|o_F~0|combout
+     26.011      0.229 RR    IC  mainALU|addsub|\G_fullAdder:10:fullAdderlist|or1|o_F~0|datad
+     26.166      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:10:fullAdderlist|or1|o_F~0|combout
+     26.393      0.227 RR    IC  mainALU|addsub|\G_fullAdder:11:fullAdderlist|or1|o_F~0|datad
+     26.548      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:11:fullAdderlist|or1|o_F~0|combout
+     26.775      0.227 RR    IC  mainALU|addsub|\G_fullAdder:12:fullAdderlist|or1|o_F~0|datad
+     26.930      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:12:fullAdderlist|or1|o_F~0|combout
+     27.157      0.227 RR    IC  mainALU|addsub|\G_fullAdder:13:fullAdderlist|or1|o_F~0|datad
+     27.312      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:13:fullAdderlist|or1|o_F~0|combout
+     27.539      0.227 RR    IC  mainALU|addsub|\G_fullAdder:14:fullAdderlist|or1|o_F~0|datad
+     27.694      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:14:fullAdderlist|or1|o_F~0|combout
+     27.921      0.227 RR    IC  mainALU|addsub|\G_fullAdder:15:fullAdderlist|or1|o_F~0|datad
+     28.076      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:15:fullAdderlist|or1|o_F~0|combout
+     28.304      0.228 RR    IC  mainALU|addsub|\G_fullAdder:16:fullAdderlist|or1|o_F~0|datad
+     28.459      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:16:fullAdderlist|or1|o_F~0|combout
+     28.682      0.223 RR    IC  mainALU|addsub|\G_fullAdder:17:fullAdderlist|or1|o_F~0|datac
+     28.969      0.287 RR  CELL  mainALU|addsub|\G_fullAdder:17:fullAdderlist|or1|o_F~0|combout
+     29.182      0.213 RR    IC  mainALU|addsub|\G_fullAdder:18:fullAdderlist|or1|o_F~0|datad
+     29.337      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:18:fullAdderlist|or1|o_F~0|combout
+     29.548      0.211 RR    IC  mainALU|addsub|\G_fullAdder:19:fullAdderlist|or1|o_F~0|datad
+     29.703      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:19:fullAdderlist|or1|o_F~0|combout
+     30.338      0.635 RR    IC  mainALU|addsub|\G_fullAdder:20:fullAdderlist|or1|o_F~0|datad
+     30.493      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:20:fullAdderlist|or1|o_F~0|combout
+     30.705      0.212 RR    IC  mainALU|addsub|\G_fullAdder:21:fullAdderlist|or1|o_F~0|datad
+     30.860      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:21:fullAdderlist|or1|o_F~0|combout
+     31.072      0.212 RR    IC  mainALU|addsub|\G_fullAdder:22:fullAdderlist|or1|o_F~0|datad
+     31.227      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:22:fullAdderlist|or1|o_F~0|combout
+     31.638      0.411 RR    IC  mainALU|addsub|\G_fullAdder:23:fullAdderlist|or1|o_F~0|datad
+     31.793      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:23:fullAdderlist|or1|o_F~0|combout
+     32.003      0.210 RR    IC  mainALU|addsub|\G_fullAdder:24:fullAdderlist|or1|o_F~0|datad
+     32.158      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:24:fullAdderlist|or1|o_F~0|combout
+     32.370      0.212 RR    IC  mainALU|addsub|\G_fullAdder:25:fullAdderlist|or1|o_F~0|datad
+     32.525      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:25:fullAdderlist|or1|o_F~0|combout
+     32.738      0.213 RR    IC  mainALU|addsub|\G_fullAdder:26:fullAdderlist|or1|o_F~0|datad
+     32.893      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:26:fullAdderlist|or1|o_F~0|combout
+     33.105      0.212 RR    IC  mainALU|addsub|\G_fullAdder:27:fullAdderlist|or1|o_F~0|datad
+     33.260      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:27:fullAdderlist|or1|o_F~0|combout
+     33.487      0.227 RR    IC  mainALU|addsub|\G_fullAdder:28:fullAdderlist|or1|o_F~0|datad
+     33.642      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:28:fullAdderlist|or1|o_F~0|combout
+     34.423      0.781 RR    IC  mainALU|addsub|\G_fullAdder:29:fullAdderlist|or1|o_F~0|datad
+     34.578      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:29:fullAdderlist|or1|o_F~0|combout
+     34.790      0.212 RR    IC  mainALU|addsub|\G_fullAdder:30:fullAdderlist|or1|o_F~0|datad
+     34.945      0.155 RR  CELL  mainALU|addsub|\G_fullAdder:30:fullAdderlist|or1|o_F~0|combout
+     35.157      0.212 RR    IC  mainALU|s_out[0]~211|datad
+     35.312      0.155 RR  CELL  mainALU|s_out[0]~211|combout
+     35.517      0.205 RR    IC  mainALU|s_out[0]~16|datad
+     35.672      0.155 RR  CELL  mainALU|s_out[0]~16|combout
+     36.640      0.968 RR    IC  mainALU|beq_bne_block|ouput_or|o_F~14|datac
+     36.927      0.287 RR  CELL  mainALU|beq_bne_block|ouput_or|o_F~14|combout
+     37.133      0.206 RR    IC  comb~4|datad
+     37.272      0.139 RF  CELL  comb~4|combout
+     38.002      0.730 FF    IC  pcReg|\G_NBit_DFFG:8:ONESCOMPI|s_Q~0|datad
+     38.127      0.125 FF  CELL  pcReg|\G_NBit_DFFG:8:ONESCOMPI|s_Q~0|combout
+     40.511      2.384 FF    IC  Jump|\G_NBit_MUX:5:MUXI|x4|o_F~0|datad
+     40.661      0.150 FR  CELL  Jump|\G_NBit_MUX:5:MUXI|x4|o_F~0|combout
+     40.865      0.204 RR    IC  Jump|\G_NBit_MUX:5:MUXI|x4|o_F~1|datad
+     41.004      0.139 RF  CELL  Jump|\G_NBit_MUX:5:MUXI|x4|o_F~1|combout
+     41.004      0.000 FF    IC  pcReg|\G_NBit_DFFG:5:ONESCOMPI|s_Q|d
+     41.108      0.104 FF  CELL  MIPS_pc:pcReg|MIPS_pc_dffg:\G_NBit_DFFG:5:ONESCOMPI|s_Q
+ Data Required Path:
+ Total (ns)  Incr (ns)     Type  Element
+ ==========  ========= ==  ====  ===================================
+     20.000     20.000           latch edge time
+     23.412      3.412  R        clock network delay
+     23.444      0.032           clock pessimism removed
+     23.424     -0.020           clock uncertainty
+     23.442      0.018     uTsu  MIPS_pc:pcReg|MIPS_pc_dffg:\G_NBit_DFFG:5:ONESCOMPI|s_Q
+ Data Arrival Time  :    41.108
+ Data Required Time :    23.442
+ Slack              :   -17.666 (VIOLATED)
+ ===================================================================

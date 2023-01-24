@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserRatingActivity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Activity</a> &gt; <span class="el_source">UserRatingActivity.java</span></div><h1>UserRatingActivity.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Activity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RatingBar;
+import android.widget.Toast;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Model.RatingRequest;
+import com.example.drivewayparking.Model.UserRating;
+import com.example.drivewayparking.R;
+
+import java.util.Random;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+/**
+ * The type User rating activity.
+ * @author: Varun Advani
+ */
+<span class="nc" id="L30">public class UserRatingActivity extends AppCompatActivity {</span>
+
+    /**
+     * The Back arrow.
+     */
+    ImageView back_arrow;
+    /**
+     * The Comments.
+     */
+    EditText comments;
+    /**
+     * The Rating bar one.
+     */
+    RatingBar ratingBar_one,
+    /**
+     * The Rating bar two.
+     */
+    ratingBar_two,
+    /**
+     * The Rating bar three.
+     */
+    ratingBar_three;
+    /**
+     * The Submit rating.
+     */
+    Button submit_rating,
+    /**
+     * The View all ratings.
+     */
+    view_all_ratings;
+    /**
+     * The Progress bar.
+     */
+    ProgressBar progressBar;
+    private Random random;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+<span class="nc" id="L68">        super.onCreate(savedInstanceState);</span>
+<span class="nc" id="L69">        setContentView(R.layout.activity_user_rating);</span>
+
+        //back_arrow = findViewById(R.id.buttonBackToListing);
+<span class="nc" id="L72">        comments =  findViewById(R.id.editTextComment);</span>
+<span class="nc" id="L73">        ratingBar_one  = findViewById(R.id.ratingBar1);</span>
+<span class="nc" id="L74">        ratingBar_two = findViewById(R.id.ratingBar2);</span>
+<span class="nc" id="L75">        ratingBar_three = findViewById(R.id.ratingBar3);</span>
+<span class="nc" id="L76">        submit_rating = findViewById(R.id.buttonSubmitRating);</span>
+<span class="nc" id="L77">        progressBar = findViewById(R.id.progress_bar_rating);</span>
+<span class="nc" id="L78">        view_all_ratings = findViewById(R.id.buttonViewAllRatings);</span>
+<span class="nc" id="L79">        random = new Random();</span>
+//
+//        back_arrow.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(getApplicationContext(), MainActivityHost.class));
+//            }
+//        });
+
+
+<span class="nc" id="L89">        submit_rating.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View view) {
+<span class="nc" id="L92">                progressBar.setVisibility(View.VISIBLE);</span>
+<span class="nc" id="L93">                String review_comments = comments.getText().toString();</span>
+<span class="nc" id="L94">                float rating_one = ratingBar_one.getRating();</span>
+<span class="nc" id="L95">                float rating_two = ratingBar_two.getRating();</span>
+<span class="nc" id="L96">                float rating_three = ratingBar_three.getRating();</span>
+
+<span class="nc" id="L98">                RatingRequest userRating = new RatingRequest();</span>
+<span class="nc" id="L99">               userRating.setComments(review_comments);</span>
+<span class="nc" id="L100">               userRating.setAccommodation(rating_one);</span>
+<span class="nc" id="L101">               userRating.setSafety(rating_two);</span>
+<span class="nc" id="L102">               userRating.setResponsiveness(rating_three);</span>
+<span class="nc" id="L103">               userRating.setId(getIntent().getExtras().getLong(&quot;bid&quot;));</span>
+
+<span class="nc" id="L105">                Call&lt;Integer&gt; call = ApiClient.getUserRatingApiService().newRating(userRating);</span>
+
+<span class="nc" id="L107">                call.enqueue(new Callback&lt;Integer&gt;() {</span>
+                    @Override
+                    public void onResponse(Call&lt;Integer&gt; call, Response&lt;Integer&gt; response) {
+<span class="nc bnc" id="L110" title="All 2 branches missed.">                        if(response.isSuccessful()) {</span>
+<span class="nc bnc" id="L111" title="All 2 branches missed.">                            if (response.body() == 0) {</span>
+<span class="nc" id="L112">                                progressBar.setVisibility(View.GONE);</span>
+<span class="nc" id="L113">                                Toast.makeText(getApplicationContext(), &quot;User Rating saved&quot;, Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L114">                                startActivity(new Intent(getApplicationContext(), ViewAllPropertiesActivity.class));</span>
+                            }
+                            else{
+<span class="nc" id="L117">                                Toast.makeText(getApplicationContext(), &quot;User Rating Not Saved&quot;, Toast.LENGTH_LONG).show();</span>
+                            }
+                        }
+                        else {
+<span class="nc" id="L121">                            progressBar.setVisibility(View.GONE);</span>
+<span class="nc" id="L122">                            Toast.makeText(getApplicationContext(), &quot;Code: &quot; + response.code(), Toast.LENGTH_LONG).show();</span>
+                        }
+<span class="nc" id="L124">                    }</span>
+
+                    @Override
+                    public void onFailure(Call&lt;Integer&gt; call, Throwable t) {
+<span class="nc" id="L128">                        progressBar.setVisibility(View.GONE);</span>
+<span class="nc" id="L129">                           Toast.makeText(getApplicationContext(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L130">                    }</span>
+                });
+<span class="nc" id="L132">            }</span>
+        });
+<span class="nc" id="L134">        view_all_ratings.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View view) {
+<span class="nc" id="L137">                System.out.println(&quot;Testing&quot;);</span>
+<span class="nc" id="L138">                Intent intent = new Intent(getApplicationContext(), ViewAllUserRatingsActivity.class);</span>
+<span class="nc" id="L139">                Bundle bundle = new Bundle();</span>
+<span class="nc" id="L140">                System.out.println(getIntent().getExtras().getLong(&quot;pid&quot;) + &quot; pid&quot;);</span>
+<span class="nc" id="L141">                bundle.putLong(&quot;pid&quot;, getIntent().getExtras().getLong(&quot;pid&quot;));</span>
+<span class="nc" id="L142">                intent.putExtras(bundle);</span>
+<span class="nc" id="L143">                startActivity(intent);</span>
+<span class="nc" id="L144">            }</span>
+        });
+
+<span class="nc" id="L147">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

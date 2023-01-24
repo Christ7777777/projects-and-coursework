@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Login Interface</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="full_name">Full Name</string>
+    <string name="name">Full Name</string>
+    <string name="email_id">Email</string>
+    <string name="input_pass">Password</string>
+    <string name="PhoneNumber">Phone Number</string>
+    <string name="button_signUp">SIGNUP</string>
+    <string name="login_question">Already have an account?Login here!</string>
+    <string name="login_text">Login</string>
+    <string name="emailUsername">Enter an email or username</string>
+    <string name="pass_hint">Password</string>
+    <string name="button_login">LOGIN</string>
+    <string name="signup_question">New Account? Sign up here</string>
+
+</resources>

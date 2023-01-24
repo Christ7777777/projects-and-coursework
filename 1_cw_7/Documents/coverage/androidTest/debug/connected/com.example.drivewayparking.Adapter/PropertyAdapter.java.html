@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PropertyAdapter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Adapter</a> &gt; <span class="el_source">PropertyAdapter.java</span></div><h1>PropertyAdapter.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Adapter;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Activity.ViewSpecificPropertyActivity;
+import com.example.drivewayparking.Model.Booking;
+import com.example.drivewayparking.Model.BookingRequest;
+import com.example.drivewayparking.Model.BookingResponse;
+import com.example.drivewayparking.Model.Property;
+import com.example.drivewayparking.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+/**
+ * The type Property adapter.
+ * @author: Varun Advani
+ */
+public class PropertyAdapter extends RecyclerView.Adapter&lt;PropertyAdapter.PropertyViewHolder&gt; {
+private Context context;
+private List&lt;Property&gt; propertyList;
+private String start;
+private String end;
+private Long user_id;
+private double cost;
+private double hours;
+
+
+    /**
+     * Instantiates a new Property adapter.
+     *
+     * @param context      the context
+     * @param propertyList the property list
+     */
+<span class="nc" id="L53">    public PropertyAdapter(Context context, List&lt;Property&gt; propertyList) {</span>
+<span class="nc" id="L54">        this.context = context;</span>
+<span class="nc" id="L55">        this.propertyList = propertyList;</span>
+<span class="nc" id="L56">    }</span>
+
+    /**
+     * Instantiates a new Property adapter.
+     *
+     * @param context      the context
+     * @param propertyList the property list
+     * @param start        the start
+     * @param end          the end
+     * @param user_id      the user id
+     */
+<span class="fc" id="L67">    public PropertyAdapter(Context context, List&lt;Property&gt; propertyList, String start, String end, Long user_id) {</span>
+<span class="fc" id="L68">        this.context = context;</span>
+<span class="fc" id="L69">        this.propertyList = propertyList;</span>
+<span class="fc" id="L70">        this.start = start;</span>
+<span class="fc" id="L71">        this.end = end;</span>
+<span class="fc" id="L72">        this.user_id = user_id;</span>
+<span class="fc" id="L73">    }</span>
+
+    @NonNull
+    @Override
+    public PropertyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+<span class="fc" id="L78">        View view = LayoutInflater.from(context).inflate(R.layout.property_list_view, parent, false);</span>
+<span class="fc" id="L79">        return new PropertyViewHolder(view);</span>
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull PropertyViewHolder holder, final int position) {
+<span class="fc" id="L84">       final Property list = propertyList.get(position);</span>
+       //Long propertyId = list.getPid();
+<span class="fc" id="L86">       String street = list.getStreet();</span>
+<span class="fc" id="L87">       String city = list.getCity();</span>
+<span class="fc" id="L88">       String zipcode = list.getZipcode();</span>
+<span class="fc" id="L89">       Double rate = list.getRatePerHour();</span>
+<span class="pc bpc" id="L90" title="3 of 6 branches missed.">       if(street == null || city == null || zipcode == null) {</span>
+<span class="nc" id="L91">           street = &quot;&quot;;</span>
+<span class="nc" id="L92">           city = &quot;&quot;;</span>
+<span class="nc" id="L93">           zipcode = &quot;&quot;;</span>
+       }
+<span class="fc" id="L95">       holder.propertyName.setText(list.getTitle());</span>
+<span class="fc" id="L96">       holder.propertyAddress.setText(street + &quot; &quot; + city + &quot; &quot; + zipcode);</span>
+<span class="pc bpc" id="L97" title="1 of 2 branches missed.">       if(rate != null) {</span>
+<span class="fc" id="L98">           holder.propertyRate.setText(&quot;&quot; + rate);</span>
+       }
+       else{
+<span class="nc" id="L101">           holder.propertyRate.setText(&quot;N/A&quot;);</span>
+       }
+
+
+
+<span class="fc" id="L106">       holder.bookProperty.setOnClickListener(new View.OnClickListener() {</span>
+           @Override
+           public void onClick(View view) {
+//               BookingRequest booking_request = new BookingRequest();
+//               booking_request.setCheck_in(start);
+//               booking_request.setCheck_out(end);
+//               booking_request.setUid(user_id);
+//               booking_request.setPid(list.getPid());
+//               Call&lt;BookingResponse&gt; call = ApiClient.getBookingApiService().bookingRequest(booking_request);
+//               call.enqueue(new Callback&lt;BookingResponse&gt;() {
+//                   @Override
+//                   public void onResponse(Call&lt;BookingResponse&gt; call, Response&lt;BookingResponse&gt; response) {
+//                       if(response.isSuccessful()){
+//                           if(response.body()!= null) {
+//                               cost = response.body().getCost();
+//                               System.out.println(&quot;Cost: &quot; + cost);
+//                               hours = response.body().getHours();
+//                               System.out.println(&quot;Hours: &quot; + hours);
+//                           }
+//                       }
+//                       else{
+//                           Toast.makeText(context.getApplicationContext(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();
+//                       }
+//                   }
+//
+//                   @Override
+//                   public void onFailure(Call&lt;BookingResponse&gt; call, Throwable t) {
+//                        Toast.makeText(context.getApplicationContext(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();
+//                   }
+//               });
+<span class="nc" id="L136">               Dialog dialog = new Dialog(context);</span>
+<span class="nc" id="L137">               dialog.setCancelable(true);</span>
+<span class="nc" id="L138">               dialog.setContentView(R.layout.confirm_booking);</span>
+<span class="nc" id="L139">               Button confirm_booking = dialog.findViewById(R.id.confirmBooking);</span>
+<span class="nc" id="L140">               TextView costView = dialog.findViewById(R.id.textView_cost);</span>
+<span class="nc" id="L141">               TextView hourView = dialog.findViewById(R.id.textView_hours);</span>
+<span class="nc" id="L142">               System.out.println(Double.toString(cost));</span>
+<span class="nc" id="L143">               System.out.println(Double.toString(hours));</span>
+<span class="nc" id="L144">               BookingRequest booking_request = new BookingRequest();</span>
+<span class="nc" id="L145">               booking_request.setCheck_in(start);</span>
+<span class="nc" id="L146">               booking_request.setCheck_out(end);</span>
+<span class="nc" id="L147">               booking_request.setUid(user_id);</span>
+<span class="nc" id="L148">               booking_request.setPid(list.getPid());</span>
+<span class="nc" id="L149">               Call&lt;BookingResponse&gt; call = ApiClient.getBookingApiService().bookingRequest(booking_request);</span>
+<span class="nc" id="L150">               call.enqueue(new Callback&lt;BookingResponse&gt;() {</span>
+                   @Override
+                   public void onResponse(Call&lt;BookingResponse&gt; call, Response&lt;BookingResponse&gt; response) {
+<span class="nc bnc" id="L153" title="All 2 branches missed.">                       if(response.isSuccessful()){</span>
+<span class="nc bnc" id="L154" title="All 2 branches missed.">                           if(response.body()!= null) {</span>
+<span class="nc" id="L155">                              costView.setText(Double.toString(response.body().getCost()));</span>
+<span class="nc" id="L156">                              hourView.setText(Double.toString(response.body().getHours()));</span>
+<span class="nc" id="L157">                               System.out.println(&quot;Cost: &quot; + cost);</span>
+<span class="nc" id="L158">                               System.out.println(&quot;Hours: &quot; + hours);</span>
+                           }
+                       }
+                       else{
+<span class="nc" id="L162">                           Toast.makeText(context.getApplicationContext(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                       }
+<span class="nc" id="L164">                   }</span>
+
+                   @Override
+                   public void onFailure(Call&lt;BookingResponse&gt; call, Throwable t) {
+<span class="nc" id="L168">                       Toast.makeText(context.getApplicationContext(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L169">                   }</span>
+               });
+<span class="nc" id="L171">               confirm_booking.setOnClickListener(new View.OnClickListener() {</span>
+                   @Override
+                   public void onClick(View v) {
+<span class="nc" id="L174">               BookingRequest booking = new BookingRequest();</span>
+<span class="nc" id="L175">               booking.setCheck_in(start);</span>
+<span class="nc" id="L176">               booking.setCheck_out(end);</span>
+<span class="nc" id="L177">               booking.setUid(user_id);</span>
+<span class="nc" id="L178">               booking.setPid(list.getPid());</span>
+<span class="nc" id="L179">               System.out.println(booking.toString());</span>
+
+
+<span class="nc" id="L182">               Call&lt;Integer&gt; call = ApiClient.getBookingApiService().addBooking(booking);</span>
+<span class="nc" id="L183">               call.enqueue(new Callback&lt;Integer&gt;() {</span>
+                   @Override
+                   public void onResponse(Call&lt;Integer&gt; call, Response&lt;Integer&gt; response) {
+<span class="nc bnc" id="L186" title="All 2 branches missed.">                       if(response.isSuccessful()) {</span>
+<span class="nc bnc" id="L187" title="All 2 branches missed.">                           if (response.body() == 0) {</span>
+<span class="nc" id="L188">                               dialog.dismiss();</span>
+<span class="nc" id="L189">                               Toast.makeText(context.getApplicationContext(), &quot;Booking Created Successfully&quot;, Toast.LENGTH_SHORT).show();</span>
+                           }
+<span class="nc bnc" id="L191" title="All 2 branches missed.">                           else if(response.body() == 3) {</span>
+<span class="nc" id="L192">                               dialog.dismiss();</span>
+<span class="nc" id="L193">                               Toast.makeText(context.getApplicationContext(), &quot;Property Not Available at given date and time&quot;, Toast.LENGTH_SHORT).show();</span>
+                           }
+
+                       }
+                       else{
+<span class="nc" id="L198">                           dialog.dismiss();</span>
+<span class="nc" id="L199">                           Toast.makeText(context.getApplicationContext(), &quot;Code: &quot; + response.code(), Toast.LENGTH_LONG).show();</span>
+                       }
+<span class="nc" id="L201">                   }</span>
+
+                   @Override
+                   public void onFailure(Call&lt;Integer&gt; call, Throwable t) {
+<span class="nc" id="L205">                       dialog.dismiss();</span>
+<span class="nc" id="L206">                        Toast.makeText(context.getApplicationContext(), &quot;Error:&quot; + t.getMessage(), Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L207">                   }</span>
+               });
+
+<span class="nc" id="L210">           }</span>
+       });
+<span class="nc" id="L212">               dialog.show();</span>
+<span class="nc" id="L213">           }</span>
+       });
+<span class="fc" id="L215">       holder.itemView.setOnClickListener(new View.OnClickListener() {</span>
+           @Override
+           public void onClick(View view)  {
+<span class="nc" id="L218">               Intent intent = new Intent(context, ViewSpecificPropertyActivity.class);</span>
+<span class="nc" id="L219">               Bundle bundle = new Bundle();</span>
+<span class="nc" id="L220">               bundle.putLong(&quot;pid&quot;, list.getPid());</span>
+<span class="nc" id="L221">               intent.putExtras(bundle);</span>
+<span class="nc" id="L222">               context.startActivity(intent);</span>
+<span class="nc" id="L223">           }</span>
+       });
+<span class="fc" id="L225">    }</span>
+
+    @Override
+    public int getItemCount() {
+<span class="fc" id="L229">        return propertyList.size();</span>
+    }
+
+    /**
+     * The type Property view holder.
+     */
+    static class PropertyViewHolder extends RecyclerView.ViewHolder{
+        /**
+         * The Property name.
+         */
+        TextView propertyName,
+        /**
+         * The Property address.
+         */
+        propertyAddress,
+        /**
+         * The Property rating.
+         */
+        propertyRating,
+        /**
+         * The Delete property.
+         */
+        deleteProperty,
+        /**
+         * The Property rate.
+         */
+        propertyRate,
+        /**
+         * The Book property.
+         */
+        bookProperty;
+        /**
+         * The Layout.
+         */
+        LinearLayout layout;
+
+
+        /**
+         * Instantiates a new Property view holder.
+         *
+         * @param itemView the item view
+         */
+        public PropertyViewHolder(@NonNull View itemView) {
+<span class="fc" id="L272">            super(itemView);</span>
+<span class="fc" id="L273">            propertyName = itemView.findViewById(R.id.textView_propertyName);</span>
+<span class="fc" id="L274">            propertyAddress = itemView.findViewById(R.id.textView_address);</span>
+<span class="fc" id="L275">            propertyRate = itemView.findViewById(R.id.textView_rate);</span>
+<span class="fc" id="L276">            bookProperty = itemView.findViewById(R.id.textView_book_property);</span>
+<span class="fc" id="L277">            layout = itemView.findViewById(R.id.linearLayout_propertyList);</span>
+
+<span class="fc" id="L279">        }</span>
+    }
+
+    /**
+     * Set filter.
+     *
+     * @param dataModels the data models
+     */
+    public void setFilter(List&lt;Property&gt; dataModels){
+<span class="nc" id="L288">        propertyList = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L289">        propertyList.addAll(dataModels);</span>
+<span class="nc" id="L290">        notifyDataSetChanged();</span>
+<span class="nc" id="L291">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

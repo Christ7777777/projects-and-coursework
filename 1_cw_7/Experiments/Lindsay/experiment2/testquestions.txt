@@ -1,0 +1,29 @@
+{   
+    "question" : "What is the capital of Norway?",
+    "answer" : "Oslo"
+}
+
+{   
+    "question" : "What is the average gestation period of an elephant?",
+    "answer" : "22 months"
+}
+
+{ 
+    "question" : "How many Pokemon are there in Gen 1?",
+    "answer" : "151"
+}
+
+{
+    "question" : "In terms of chemistry, what does STP stand for?",
+    "answer" : "standard temperature and pressure"
+}
+
+{
+    "question" : "What country has a unicorn on their flag?",
+    "answer" : "Scotland"
+}
+
+{
+    "question" : "Who delevoped the first successful polio vaccine?",
+    "answer" : "Jonas Salk"
+}

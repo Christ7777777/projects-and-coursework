@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RomanNumeralConverter</string>
+    <string name="enter_a_roman_number">inputRoman</string>
+    <string name="output_decimal">textViewDecimal</string>
+    <string name="convert_to_decimal">convertToDecimal</string>
+    <string name="enter_a_decimal_number">inputDecimal</string>
+    <string name="convert_to_roman">convertToRoman</string>
+    <string name="output">textViewRoman</string>
+    <string name="enter_a_roman_numeral">Enter A Roman Numeral</string>
+</resources>

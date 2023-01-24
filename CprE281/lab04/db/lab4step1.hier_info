@@ -1,0 +1,8 @@
+|lab4step1
+cabbage => Decoder0.IN1
+goat => Decoder0.IN2
+wolf => Decoder0.IN3
+farmer => Decoder0.IN0
+alarm <= alarm$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

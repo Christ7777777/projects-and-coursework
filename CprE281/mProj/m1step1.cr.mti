@@ -1,0 +1,22 @@
+U:/CPRE281/mProj/m1step1.v {1 {vlog -work work -vopt -stats=none U:/CPRE281/mProj/m1step1.v
+QuestaSim-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module m1step1
+
+Top level modules:
+	m1step1
+
+} {} {}} U:/CPRE281/mProj/bobs_circuit.v {1 {vlog -work work -vopt -stats=none U:/CPRE281/mProj/bobs_circuit.v
+QuestaSim-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module bobs_circuit
+
+Top level modules:
+	bobs_circuit
+
+} {} {}} U:/CPRE281/mProj/m1step1/m1step1.v {1 {vlog -work work -vopt -stats=none U:/CPRE281/mProj/m1step1/m1step1.v
+QuestaSim-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module m1step1
+
+Top level modules:
+	m1step1
+
+} {} {}}

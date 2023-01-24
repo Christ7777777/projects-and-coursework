@@ -1,0 +1,3122 @@
+# //  Questa Sim-64
+# //  Version 2022.2 linux_x86_64 Apr 25 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Modified modelsim.ini
+# Modified modelsim.ini
+cd {/home/vsadvani/CprE381/Lab 2}
+# reading modelsim.ini
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd(6): (vcom-1615) Existing entity 'adder_N' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/adder_N.vhd(19) will be overwritten.
+# -- Compiling entity adder_N
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd(16): (vcom-1615) Existing architecture 'adder_N(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/adder_N.vhd(29) will be overwritten.
+# -- Compiling architecture structural of adder_N
+# End time: 16:40:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd(6): (vcom-1615) Existing entity 'AddSub_N' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/AddSub_N.vhd(19) will be overwritten.
+# -- Compiling entity AddSub_N
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd(7): near "value": (vcom-1576) expecting END.
+# ** Note: /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd(7): VHDL Compiler exiting
+# End time: 16:40:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd(23): (vcom-1615) Existing entity 'andg2' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/andg2.vhd(23) will be overwritten.
+# -- Compiling entity andg2
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd(31): (vcom-1615) Existing architecture 'andg2(dataflow)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/andg2.vhd(31) will be overwritten.
+# -- Compiling architecture dataflow of andg2
+# End time: 16:40:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd(9): (vcom-1615) Existing entity 'bit_extender_16t32' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/bit_extender_16t32.vhd(21) will be overwritten.
+# -- Compiling entity bit_extender_16t32
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd(16): (vcom-1615) Existing architecture 'bit_extender_16t32(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/bit_extender_16t32.vhd(28) will be overwritten.
+# -- Compiling architecture structural of bit_extender_16t32
+# End time: 16:40:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd(6): (vcom-1615) Existing entity 'decoder_5t32' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/decoder_5t32.vhd(19) will be overwritten.
+# -- Compiling entity decoder_5t32
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd(12): (vcom-1615) Existing architecture 'decoder_5t32(mixed)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/decoder_5t32.vhd(25) will be overwritten.
+# -- Compiling architecture mixed of decoder_5t32
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd(23): (vcom-1615) Existing entity 'dffg' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/dffg.vhd(23) will be overwritten.
+# -- Compiling entity dffg
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd(33): (vcom-1615) Existing architecture 'dffg(mixed)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/dffg.vhd(33) will be overwritten.
+# -- Compiling architecture mixed of dffg
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd(6): (vcom-1615) Existing entity 'dffg_N' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/dffg_N.vhd(19) will be overwritten.
+# -- Compiling entity dffg_N
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd(7): near "value": (vcom-1576) expecting END.
+# ** Note: /home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd(7): VHDL Compiler exiting
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 1
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd(8): (vcom-1615) Existing entity 'dmem' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/dmem.vhd(8) will be overwritten.
+# -- Compiling entity dmem
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd(27): (vcom-1615) Existing architecture 'dmem(rtl)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/dmem.vhd(27) will be overwritten.
+# -- Compiling architecture rtl of dmem
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd(5): (vcom-1615) Existing entity 'full_adder' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/full_adder.vhd(19) will be overwritten.
+# -- Compiling entity full_adder
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd(13): (vcom-1615) Existing architecture 'full_adder(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/full_adder.vhd(27) will be overwritten.
+# -- Compiling architecture structural of full_adder
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd(23): (vcom-1615) Existing entity 'invg' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/invg.vhd(23) will be overwritten.
+# -- Compiling entity invg
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd(30): (vcom-1615) Existing architecture 'invg(dataflow)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/invg.vhd(30) will be overwritten.
+# -- Compiling architecture dataflow of invg
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd(8): (vcom-1615) Existing entity 'mem' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/mem.vhd(8) will be overwritten.
+# -- Compiling entity mem
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd(27): (vcom-1615) Existing architecture 'mem(rtl)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/mem.vhd(27) will be overwritten.
+# -- Compiling architecture rtl of mem
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd(5): (vcom-1615) Existing entity 'mux2t1' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/mux2t1.vhd(19) will be overwritten.
+# -- Compiling entity mux2t1
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd(12): (vcom-1615) Existing architecture 'mux2t1(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/mux2t1.vhd(26) will be overwritten.
+# -- Compiling architecture structural of mux2t1
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package STD_LOGIC_MATRIX
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd(6): (vcom-1615) Existing entity 'MIPS_register_file' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/MIPS_register_file.vhd(16) will be overwritten.
+# -- Compiling entity MIPS_register_file
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd(18): (vcom-1615) Existing architecture 'MIPS_register_file(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/MIPS_register_file.vhd(28) will be overwritten.
+# -- Compiling architecture structural of MIPS_register_file
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd(21): (vcom-1615) Existing entity 'mux2t1_N' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/mux2t1_N.vhd(21) will be overwritten.
+# -- Compiling entity mux2t1_N
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd(30): (vcom-1615) Existing architecture 'mux2t1_N(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/mux2t1_N.vhd(30) will be overwritten.
+# -- Compiling architecture structural of mux2t1_N
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd(5): (vcom-1615) Existing entity 'mux32t1' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/mux32t1.vhd(19) will be overwritten.
+# -- Compiling entity mux32t1
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd(12): (vcom-1615) Existing architecture 'mux32t1(dataflow)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/mux32t1.vhd(26) will be overwritten.
+# -- Compiling architecture dataflow of mux32t1
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd(19): (vcom-1615) Existing package 'STD_LOGIC_MATRIX' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/mux32t1_N.vhd(19) will be overwritten.
+# -- Compiling package STD_LOGIC_MATRIX
+# -- Loading package STD_LOGIC_MATRIX
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd(27): (vcom-1615) Existing entity 'mux32t1_N' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/mux32t1_N.vhd(27) will be overwritten.
+# -- Compiling entity mux32t1_N
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd(35): (vcom-1615) Existing architecture 'mux32t1_N(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/mux32t1_N.vhd(35) will be overwritten.
+# -- Compiling architecture structural of mux32t1_N
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(6): (vcom-1615) Existing entity 'MyFirstMIPSDatapath' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/MyFirstMIPSDatapath.vhd(15) will be overwritten.
+# -- Compiling entity MyFirstMIPSDatapath
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(21): (vcom-1615) Existing architecture 'MyFirstMIPSDatapath(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/MyFirstMIPSDatapath.vhd(30) will be overwritten.
+# -- Compiling architecture structural of MyFirstMIPSDatapath
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(39): near "-": (vcom-1576) expecting END.
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(60): (vcom-1484) Unknown formal identifier "i_RST".
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(61): (vcom-1484) Unknown formal identifier "i_CLK".
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(62): (vcom-1484) Unknown formal identifier "i_rd".
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(63): (vcom-1484) Unknown formal identifier "i_rs".
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(64): (vcom-1484) Unknown formal identifier "i_rt".
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(65): (vcom-1484) Unknown formal identifier "i_rdData".
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(66): (vcom-1484) Unknown formal identifier "o_rsData".
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(67): (vcom-1484) Unknown formal identifier "o_rtData".
+# ** Note: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(83): VHDL Compiler exiting
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 9, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd(6): (vcom-1615) Existing entity 'MySecondMIPSDatapath' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/MySecondMIPSDatapath.vhd(15) will be overwritten.
+# -- Compiling entity MySecondMIPSDatapath
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd(24): (vcom-1615) Existing architecture 'MySecondMIPSDatapath(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/MySecondMIPSDatapath.vhd(33) will be overwritten.
+# -- Compiling architecture structural of MySecondMIPSDatapath
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd(6): (vcom-1615) Existing entity 'ones_comp_N' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/ones_comp_N.vhd(19) will be overwritten.
+# -- Compiling entity ones_comp_N
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd(13): (vcom-1615) Existing architecture 'ones_comp_N(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/ones_comp_N.vhd(26) will be overwritten.
+# -- Compiling architecture structural of ones_comp_N
+# End time: 16:40:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd(23): (vcom-1615) Existing entity 'org2' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/org2.vhd(23) will be overwritten.
+# -- Compiling entity org2
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd(31): (vcom-1615) Existing architecture 'org2(dataflow)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/org2.vhd(31) will be overwritten.
+# -- Compiling architecture dataflow of org2
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:22 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd(11): (vcom-1615) Existing entity 'tb_bit_extender_16t32' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_bit_extender_16t32.vhd(22) will be overwritten.
+# -- Compiling entity tb_bit_extender_16t32
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd(15): (vcom-1615) Existing architecture 'tb_bit_extender_16t32(behavior)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_bit_extender_16t32.vhd(26) will be overwritten.
+# -- Compiling architecture behavior of tb_bit_extender_16t32
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:22 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd(11): (vcom-1615) Existing entity 'tb_decoder_5t32' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_decoder_5t32.vhd(22) will be overwritten.
+# -- Compiling entity tb_decoder_5t32
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd(15): (vcom-1615) Existing architecture 'tb_decoder_5t32(behavior)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_decoder_5t32.vhd(26) will be overwritten.
+# -- Compiling architecture behavior of tb_decoder_5t32
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:22 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd(23): (vcom-1615) Existing entity 'tb_dffg' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_dffg.vhd(23) will be overwritten.
+# -- Compiling entity tb_dffg
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd(27): (vcom-1615) Existing architecture 'tb_dffg(behavior)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_dffg.vhd(27) will be overwritten.
+# -- Compiling architecture behavior of tb_dffg
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:22 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd(7): (vcom-1615) Existing entity 'tb_dffg_N' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_dffg_N.vhd(17) will be overwritten.
+# -- Compiling entity tb_dffg_N
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd(11): (vcom-1615) Existing architecture 'tb_dffg_N(behavior)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_dffg_N.vhd(21) will be overwritten.
+# -- Compiling architecture behavior of tb_dffg_N
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:22 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd(22): (vcom-1615) Existing entity 'tb_dmem' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_dmem.vhd(22) will be overwritten.
+# -- Compiling entity tb_dmem
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd(26): (vcom-1615) Existing architecture 'tb_dmem(behavior)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_dmem.vhd(26) will be overwritten.
+# -- Compiling architecture behavior of tb_dmem
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:22 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd(14): (vcom-1615) Existing entity 'tb_MIPS_register_file' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_MIPS_register_file.vhd(24) will be overwritten.
+# -- Compiling entity tb_MIPS_register_file
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd(18): (vcom-1615) Existing architecture 'tb_MIPS_register_file(behavior)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_MIPS_register_file.vhd(28) will be overwritten.
+# -- Compiling architecture behavior of tb_MIPS_register_file
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:22 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd(11): (vcom-1615) Existing entity 'tb_mux32t1' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_mux32t1.vhd(22) will be overwritten.
+# -- Compiling entity tb_mux32t1
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd(15): (vcom-1615) Existing architecture 'tb_mux32t1(behavior)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_mux32t1.vhd(26) will be overwritten.
+# -- Compiling architecture behavior of tb_mux32t1
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:22 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading package STD_LOGIC_MATRIX
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd(12): (vcom-1615) Existing entity 'tb_mux32t1_N' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_mux32t1_N.vhd(23) will be overwritten.
+# -- Compiling entity tb_mux32t1_N
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd(16): (vcom-1615) Existing architecture 'tb_mux32t1_N(behavior)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_mux32t1_N.vhd(27) will be overwritten.
+# -- Compiling architecture behavior of tb_mux32t1_N
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:22 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity tb_mux32t1_N
+# -- Compiling architecture behavior of tb_mux32t1_N
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:22 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd(14): (vcom-1615) Existing entity 'tb_MyFirstMIPSDatapath' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_MyFirstMIPSDatapath.vhd(24) will be overwritten.
+# -- Compiling entity tb_MyFirstMIPSDatapath
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd(18): (vcom-1615) Existing architecture 'tb_MyFirstMIPSDatapath(behavior)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_MyFirstMIPSDatapath.vhd(28) will be overwritten.
+# -- Compiling architecture behavior of tb_MyFirstMIPSDatapath
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd(189): near "wait": (vcom-1576) expecting ';'.
+# ** Note: /home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd(253): VHDL Compiler exiting
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:22 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading entity MySecondMIPSDatapath
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd(13): near "entity": (vcom-1576) expecting '[' or '.' or '(' or '\''.
+# ** Note: /home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd(13): VHDL Compiler exiting
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:40:22 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd(23): (vcom-1615) Existing entity 'xorg2' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/xorg2.vhd(23) will be overwritten.
+# -- Compiling entity xorg2
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd(31): (vcom-1615) Existing architecture 'xorg2(dataflow)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/xorg2.vhd(31) will be overwritten.
+# -- Compiling architecture dataflow of xorg2
+# End time: 16:40:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:41:44 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd(6): (vcom-1615) Existing entity 'AddSub_N' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/AddSub_N.vhd(19) will be overwritten.
+# -- Compiling entity AddSub_N
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd(16): (vcom-1615) Existing architecture 'AddSub_N(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/AddSub_N.vhd(29) will be overwritten.
+# -- Compiling architecture structural of AddSub_N
+# End time: 16:41:44 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:41:51 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AddSub_N
+# -- Compiling architecture structural of AddSub_N
+# End time: 16:41:51 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xorg2
+# -- Compiling architecture dataflow of xorg2
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_N
+# -- Compiling architecture structural of adder_N
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AddSub_N
+# -- Compiling architecture structural of AddSub_N
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoder_5t32
+# -- Compiling architecture mixed of decoder_5t32
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity bit_extender_16t32
+# -- Compiling architecture structural of bit_extender_16t32
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg
+# -- Compiling architecture mixed of dffg
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd(6): (vcom-1615) Existing entity 'dffg_N' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/dffg_N.vhd(19) will be overwritten.
+# -- Compiling entity dffg_N
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd(16): (vcom-1615) Existing architecture 'dffg_N(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/dffg_N.vhd(29) will be overwritten.
+# -- Compiling architecture structural of dffg_N
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dmem
+# -- Compiling architecture rtl of dmem
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity full_adder
+# -- Compiling architecture structural of full_adder
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity invg
+# -- Compiling architecture dataflow of invg
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mem
+# -- Compiling architecture rtl of mem
+# End time: 16:45:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity MIPS_register_file
+# -- Compiling architecture structural of MIPS_register_file
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1
+# -- Compiling architecture structural of mux2t1
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1_N
+# -- Compiling architecture structural of mux2t1_N
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux32t1
+# -- Compiling architecture dataflow of mux32t1
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package STD_LOGIC_MATRIX
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity mux32t1_N
+# -- Compiling architecture structural of mux32t1_N
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MyFirstMIPSDatapath
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd(21): (vcom-1615) Existing architecture 'MyFirstMIPSDatapath(structural)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/MyFirstMIPSDatapath.vhd(30) will be overwritten.
+# -- Compiling architecture structural of MyFirstMIPSDatapath
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MySecondMIPSDatapath
+# -- Compiling architecture structural of MySecondMIPSDatapath
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ones_comp_N
+# -- Compiling architecture structural of ones_comp_N
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity org2
+# -- Compiling architecture dataflow of org2
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_bit_extender_16t32
+# -- Compiling architecture behavior of tb_bit_extender_16t32
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_decoder_5t32
+# -- Compiling architecture behavior of tb_decoder_5t32
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dffg
+# -- Compiling architecture behavior of tb_dffg
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dffg_N
+# -- Compiling architecture behavior of tb_dffg_N
+# End time: 16:45:16 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:16 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_dmem
+# -- Compiling architecture behavior of tb_dmem
+# End time: 16:45:17 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:17 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MIPS_register_file
+# -- Compiling architecture behavior of tb_MIPS_register_file
+# End time: 16:45:17 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:17 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_mux32t1
+# -- Compiling architecture behavior of tb_mux32t1
+# End time: 16:45:17 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:17 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity tb_mux32t1_N
+# -- Compiling architecture behavior of tb_mux32t1_N
+# End time: 16:45:17 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:17 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MyFirstMIPSDatapath
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd(18): (vcom-1615) Existing architecture 'tb_MyFirstMIPSDatapath(behavior)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_MyFirstMIPSDatapath.vhd(28) will be overwritten.
+# -- Compiling architecture behavior of tb_MyFirstMIPSDatapath
+# End time: 16:45:17 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:45:17 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading entity MySecondMIPSDatapath
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd(13): (vcom-1615) Existing entity 'tb_MySecondMIPSDatapath' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_MySecondMIPSDatapath.vhd(24) will be overwritten.
+# -- Compiling entity tb_MySecondMIPSDatapath
+# ** Warning: /home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd(17): (vcom-1615) Existing architecture 'tb_MySecondMIPSDatapath(behavior)' at /home/vsadvani/CprE381/Lab 2/Lab2/Lab2/tb_MySecondMIPSDatapath.vhd(28) will be overwritten.
+# -- Compiling architecture behavior of tb_MySecondMIPSDatapath
+# End time: 16:45:17 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+vsim work.tb_mysecondmipsdatapath -voptargs=+acc
+# vsim work.tb_mysecondmipsdatapath -voptargs="+acc" 
+# Start time: 16:45:35 on Sep 30,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading ieee.numeric_std(body)
+# Loading std.env(body)
+# Loading work.tb_mysecondmipsdatapath(behavior)#1
+# Loading work.mysecondmipsdatapath(structural)#1
+# Loading work.std_logic_matrix
+# Loading work.mips_register_file(structural)#1
+# Loading work.decoder_5t32(mixed)#1
+# Loading work.dffg_n(structural)#1
+# Loading work.dffg(mixed)#1
+# Loading work.mux32t1_n(structural)#1
+# Loading work.mux32t1(dataflow)#1
+# Loading work.bit_extender_16t32(structural)#1
+# Loading work.mux2t1_n(structural)#1
+# Loading work.mux2t1(structural)#1
+# Loading work.invg(dataflow)#1
+# Loading work.andg2(dataflow)#1
+# Loading work.org2(dataflow)#1
+# Loading work.addsub_n(structural)#1
+# Loading work.ones_comp_n(structural)#1
+# Loading work.adder_n(structural)#1
+# Loading work.full_adder(structural)#1
+# Loading work.xorg2(dataflow)#1
+# Loading work.dmem(rtl)#1
+add wave -position insertpoint  \
+sim:/tb_mysecondmipsdatapath/ALUSrc \
+sim:/tb_mysecondmipsdatapath/cCLK_PER \
+sim:/tb_mysecondmipsdatapath/gCLK_HPER \
+sim:/tb_mysecondmipsdatapath/nAdd_Sub \
+sim:/tb_mysecondmipsdatapath/s_CLK \
+sim:/tb_mysecondmipsdatapath/s_immediate \
+sim:/tb_mysecondmipsdatapath/s_mem \
+sim:/tb_mysecondmipsdatapath/s_rd \
+sim:/tb_mysecondmipsdatapath/s_rdDataSel \
+sim:/tb_mysecondmipsdatapath/s_rs \
+sim:/tb_mysecondmipsdatapath/s_rsData \
+sim:/tb_mysecondmipsdatapath/s_RST \
+sim:/tb_mysecondmipsdatapath/s_rt \
+sim:/tb_mysecondmipsdatapath/s_rtData \
+sim:/tb_mysecondmipsdatapath/s_SignSel \
+sim:/tb_mysecondmipsdatapath/s_we
+run 1000
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /tb_mysecondmipsdatapath/DUT/x5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 10  Instance: /tb_mysecondmipsdatapath/DUT/x5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 11  Instance: /tb_mysecondmipsdatapath/DUT/x5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 500 ns  Iteration: 4  Instance: /tb_mysecondmipsdatapath/DUT/x5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ns  Iteration: 7  Instance: /tb_mysecondmipsdatapath/DUT/x5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ns  Iteration: 8  Instance: /tb_mysecondmipsdatapath/DUT/x5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ns  Iteration: 9  Instance: /tb_mysecondmipsdatapath/DUT/x5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 600 ns  Iteration: 10  Instance: /tb_mysecondmipsdatapath/DUT/x5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 800 ns  Iteration: 4  Instance: /tb_mysecondmipsdatapath/DUT/x5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ns  Iteration: 7  Instance: /tb_mysecondmipsdatapath/DUT/x5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ns  Iteration: 8  Instance: /tb_mysecondmipsdatapath/DUT/x5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ns  Iteration: 9  Instance: /tb_mysecondmipsdatapath/DUT/x5
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 900 ns  Iteration: 10  Instance: /tb_mysecondmipsdatapath/DUT/x5
+quit -sim
+# End time: 16:46:04 on Sep 30,2022, Elapsed time: 0:00:29
+# Errors: 0, Warnings: 14
+vsim -voptargs=+acc work.tb_dmem
+# vsim -voptargs="+acc" work.tb_dmem 
+# Start time: 16:46:11 on Sep 30,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading ieee.numeric_std(body)
+# Loading std.env(body)
+# Loading work.tb_dmem(behavior)#1
+# Loading work.dmem(rtl)#1
+add wave -position insertpoint  \
+sim:/tb_dmem/cCLK_PER \
+sim:/tb_dmem/gCLK_HPER \
+sim:/tb_dmem/s_addr \
+sim:/tb_dmem/s_CLK \
+sim:/tb_dmem/s_data \
+sim:/tb_dmem/s_q \
+sim:/tb_dmem/s_we
+run 1000
+quit -sim
+# End time: 16:46:27 on Sep 30,2022, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 1
+./Lab2
+# invalid command name "./Lab2"
+mem load -infile dmem.hex -format hex /tb_dmem/dmem/ram
+# Error while executing: mem load
+# Usage: mem load {-infile <infile> | -filldata <data_word> [-infile <infile>]} [-endaddress <end>] [-fillradix <radix_type>] [-filltype {dec | inc | rand | value}] [-format [bin | hex | mti]] [<path>] [-skip <Nwords>] [-startaddress <st>] [-truncate]
+mem load -infile dmem.hex
+# Error while executing: mem load
+# Usage: mem load {-infile <infile> | -filldata <data_word> [-infile <infile>]} [-endaddress <end>] [-fillradix <radix_type>] [-filltype {dec | inc | rand | value}] [-format [bin | hex | mti]] [<path>] [-skip <Nwords>] [-startaddress <st>] [-truncate]
+mem load -infile dmem.hex -format hex Lab2
+# Error while executing: mem load
+# Usage: mem load {-infile <infile> | -filldata <data_word> [-infile <infile>]} [-endaddress <end>] [-fillradix <radix_type>] [-filltype {dec | inc | rand | value}] [-format [bin | hex | mti]] [<path>] [-skip <Nwords>] [-startaddress <st>] [-truncate]
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:18 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xorg2
+# -- Compiling architecture dataflow of xorg2
+# End time: 16:51:18 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:18 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_N
+# -- Compiling architecture structural of adder_N
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AddSub_N
+# -- Compiling architecture structural of AddSub_N
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoder_5t32
+# -- Compiling architecture mixed of decoder_5t32
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity bit_extender_16t32
+# -- Compiling architecture structural of bit_extender_16t32
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg
+# -- Compiling architecture mixed of dffg
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg_N
+# -- Compiling architecture structural of dffg_N
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dmem
+# -- Compiling architecture rtl of dmem
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity full_adder
+# -- Compiling architecture structural of full_adder
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity invg
+# -- Compiling architecture dataflow of invg
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mem
+# -- Compiling architecture rtl of mem
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity MIPS_register_file
+# -- Compiling architecture structural of MIPS_register_file
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1
+# -- Compiling architecture structural of mux2t1
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1_N
+# -- Compiling architecture structural of mux2t1_N
+# End time: 16:51:19 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:19 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux32t1
+# -- Compiling architecture dataflow of mux32t1
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package STD_LOGIC_MATRIX
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity mux32t1_N
+# -- Compiling architecture structural of mux32t1_N
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MyFirstMIPSDatapath
+# -- Compiling architecture structural of MyFirstMIPSDatapath
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MySecondMIPSDatapath
+# -- Compiling architecture structural of MySecondMIPSDatapath
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ones_comp_N
+# -- Compiling architecture structural of ones_comp_N
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity org2
+# -- Compiling architecture dataflow of org2
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_bit_extender_16t32
+# -- Compiling architecture behavior of tb_bit_extender_16t32
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_decoder_5t32
+# -- Compiling architecture behavior of tb_decoder_5t32
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dffg
+# -- Compiling architecture behavior of tb_dffg
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dffg_N
+# -- Compiling architecture behavior of tb_dffg_N
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_dmem
+# -- Compiling architecture behavior of tb_dmem
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MIPS_register_file
+# -- Compiling architecture behavior of tb_MIPS_register_file
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_mux32t1
+# -- Compiling architecture behavior of tb_mux32t1
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity tb_mux32t1_N
+# -- Compiling architecture behavior of tb_mux32t1_N
+# End time: 16:51:20 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:20 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MyFirstMIPSDatapath
+# -- Compiling architecture behavior of tb_MyFirstMIPSDatapath
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading entity MySecondMIPSDatapath
+# -- Compiling entity tb_MySecondMIPSDatapath
+# -- Compiling architecture behavior of tb_MySecondMIPSDatapath
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_N
+# -- Compiling architecture structural of adder_N
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AddSub_N
+# -- Compiling architecture structural of AddSub_N
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity bit_extender_16t32
+# -- Compiling architecture structural of bit_extender_16t32
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoder_5t32
+# -- Compiling architecture mixed of decoder_5t32
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg
+# -- Compiling architecture mixed of dffg
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg_N
+# -- Compiling architecture structural of dffg_N
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity full_adder
+# -- Compiling architecture structural of full_adder
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dmem
+# -- Compiling architecture rtl of dmem
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity invg
+# -- Compiling architecture dataflow of invg
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mem
+# -- Compiling architecture rtl of mem
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity MIPS_register_file
+# -- Compiling architecture structural of MIPS_register_file
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:21 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1
+# -- Compiling architecture structural of mux2t1
+# End time: 16:51:21 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:22 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1_N
+# -- Compiling architecture structural of mux2t1_N
+# End time: 16:51:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:22 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux32t1
+# -- Compiling architecture dataflow of mux32t1
+# End time: 16:51:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:22 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package STD_LOGIC_MATRIX
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity mux32t1_N
+# -- Compiling architecture structural of mux32t1_N
+# End time: 16:51:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:22 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MyFirstMIPSDatapath
+# -- Compiling architecture structural of MyFirstMIPSDatapath
+# End time: 16:51:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:22 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MySecondMIPSDatapath
+# -- Compiling architecture structural of MySecondMIPSDatapath
+# End time: 16:51:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:22 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ones_comp_N
+# -- Compiling architecture structural of ones_comp_N
+# End time: 16:51:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:22 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity org2
+# -- Compiling architecture dataflow of org2
+# End time: 16:51:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:22 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_bit_extender_16t32
+# -- Compiling architecture behavior of tb_bit_extender_16t32
+# End time: 16:51:22 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:27 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xorg2
+# -- Compiling architecture dataflow of xorg2
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_N
+# -- Compiling architecture structural of adder_N
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AddSub_N
+# -- Compiling architecture structural of AddSub_N
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoder_5t32
+# -- Compiling architecture mixed of decoder_5t32
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity bit_extender_16t32
+# -- Compiling architecture structural of bit_extender_16t32
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg
+# -- Compiling architecture mixed of dffg
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg_N
+# -- Compiling architecture structural of dffg_N
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dmem
+# -- Compiling architecture rtl of dmem
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity full_adder
+# -- Compiling architecture structural of full_adder
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity invg
+# -- Compiling architecture dataflow of invg
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mem
+# -- Compiling architecture rtl of mem
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity MIPS_register_file
+# -- Compiling architecture structural of MIPS_register_file
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1
+# -- Compiling architecture structural of mux2t1
+# End time: 16:51:28 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:28 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1_N
+# -- Compiling architecture structural of mux2t1_N
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux32t1
+# -- Compiling architecture dataflow of mux32t1
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package STD_LOGIC_MATRIX
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity mux32t1_N
+# -- Compiling architecture structural of mux32t1_N
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MyFirstMIPSDatapath
+# -- Compiling architecture structural of MyFirstMIPSDatapath
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MySecondMIPSDatapath
+# -- Compiling architecture structural of MySecondMIPSDatapath
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ones_comp_N
+# -- Compiling architecture structural of ones_comp_N
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity org2
+# -- Compiling architecture dataflow of org2
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_bit_extender_16t32
+# -- Compiling architecture behavior of tb_bit_extender_16t32
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_decoder_5t32
+# -- Compiling architecture behavior of tb_decoder_5t32
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dffg
+# -- Compiling architecture behavior of tb_dffg
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dffg_N
+# -- Compiling architecture behavior of tb_dffg_N
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_dmem
+# -- Compiling architecture behavior of tb_dmem
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MIPS_register_file
+# -- Compiling architecture behavior of tb_MIPS_register_file
+# End time: 16:51:29 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:29 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_mux32t1
+# -- Compiling architecture behavior of tb_mux32t1
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity tb_mux32t1_N
+# -- Compiling architecture behavior of tb_mux32t1_N
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MyFirstMIPSDatapath
+# -- Compiling architecture behavior of tb_MyFirstMIPSDatapath
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading entity MySecondMIPSDatapath
+# -- Compiling entity tb_MySecondMIPSDatapath
+# -- Compiling architecture behavior of tb_MySecondMIPSDatapath
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_N
+# -- Compiling architecture structural of adder_N
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AddSub_N
+# -- Compiling architecture structural of AddSub_N
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity bit_extender_16t32
+# -- Compiling architecture structural of bit_extender_16t32
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoder_5t32
+# -- Compiling architecture mixed of decoder_5t32
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg
+# -- Compiling architecture mixed of dffg
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg_N
+# -- Compiling architecture structural of dffg_N
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity full_adder
+# -- Compiling architecture structural of full_adder
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dmem
+# -- Compiling architecture rtl of dmem
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:30 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity invg
+# -- Compiling architecture dataflow of invg
+# End time: 16:51:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:31 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mem
+# -- Compiling architecture rtl of mem
+# End time: 16:51:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:31 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity MIPS_register_file
+# -- Compiling architecture structural of MIPS_register_file
+# End time: 16:51:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:31 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1
+# -- Compiling architecture structural of mux2t1
+# End time: 16:51:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:31 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1_N
+# -- Compiling architecture structural of mux2t1_N
+# End time: 16:51:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:31 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux32t1
+# -- Compiling architecture dataflow of mux32t1
+# End time: 16:51:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:31 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package STD_LOGIC_MATRIX
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity mux32t1_N
+# -- Compiling architecture structural of mux32t1_N
+# End time: 16:51:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:31 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MyFirstMIPSDatapath
+# -- Compiling architecture structural of MyFirstMIPSDatapath
+# End time: 16:51:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:31 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MySecondMIPSDatapath
+# -- Compiling architecture structural of MySecondMIPSDatapath
+# End time: 16:51:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:31 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ones_comp_N
+# -- Compiling architecture structural of ones_comp_N
+# End time: 16:51:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:31 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity org2
+# -- Compiling architecture dataflow of org2
+# End time: 16:51:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:31 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_bit_extender_16t32
+# -- Compiling architecture behavior of tb_bit_extender_16t32
+# End time: 16:51:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:31 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_decoder_5t32
+# -- Compiling architecture behavior of tb_decoder_5t32
+# End time: 16:51:32 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:32 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dffg
+# -- Compiling architecture behavior of tb_dffg
+# End time: 16:51:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:32 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dffg_N
+# -- Compiling architecture behavior of tb_dffg_N
+# End time: 16:51:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:32 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_dmem
+# -- Compiling architecture behavior of tb_dmem
+# End time: 16:51:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:32 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MIPS_register_file
+# -- Compiling architecture behavior of tb_MIPS_register_file
+# End time: 16:51:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:32 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_mux32t1
+# -- Compiling architecture behavior of tb_mux32t1
+# End time: 16:51:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:32 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity tb_mux32t1_N
+# -- Compiling architecture behavior of tb_mux32t1_N
+# End time: 16:51:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:32 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MyFirstMIPSDatapath
+# -- Compiling architecture behavior of tb_MyFirstMIPSDatapath
+# End time: 16:51:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:32 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading entity MySecondMIPSDatapath
+# -- Compiling entity tb_MySecondMIPSDatapath
+# -- Compiling architecture behavior of tb_MySecondMIPSDatapath
+# End time: 16:51:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 16:51:32 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xorg2
+# -- Compiling architecture dataflow of xorg2
+# End time: 16:51:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+mem load -infile dmem.hex -format hex /tb_dmem/dmem/ram
+# Error while executing: mem load
+# Usage: mem load {-infile <infile> | -filldata <data_word> [-infile <infile>]} [-endaddress <end>] [-fillradix <radix_type>] [-filltype {dec | inc | rand | value}] [-format [bin | hex | mti]] [<path>] [-skip <Nwords>] [-startaddress <st>] [-truncate]
+vsim -voptargs=+acc work.tb_dmem
+# vsim -voptargs="+acc" work.tb_dmem 
+# Start time: 16:58:12 on Sep 30,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading ieee.numeric_std(body)
+# Loading std.env(body)
+# Loading work.tb_dmem(behavior)#1
+# Loading work.dmem(rtl)#1
+mem load -infile dmem.hex -format hex /tb_dem/dmem/ram
+# ** UI-Msg (Error) (suppressible): (vsim-4008) Object '/tb_dem/dmem/ram' not found.
+# 
+mem load -infile dmem.hex -format hex /home/vsadvani/CprE381/Lab 2/Lab2/tb_mem/dmem/ram
+# ** UI-Msg (Error): (vsim-3641) More than one memory specified.
+# 
+quit -sim
+# End time: 17:01:35 on Sep 30,2022, Elapsed time: 0:03:23
+# Errors: 0, Warnings: 0
+# Load canceled
+vdel -all -lib work
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:14 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_N
+# -- Compiling architecture structural of adder_N
+# End time: 17:02:14 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vdel -all -lib work
+vlib work
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:48 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_N
+# -- Compiling architecture structural of adder_N
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_N
+# -- Compiling architecture structural of adder_N
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AddSub_N
+# -- Compiling architecture structural of AddSub_N
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity bit_extender_16t32
+# -- Compiling architecture structural of bit_extender_16t32
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoder_5t32
+# -- Compiling architecture mixed of decoder_5t32
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg
+# -- Compiling architecture mixed of dffg
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dffg_N
+# -- Compiling architecture structural of dffg_N
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dmem
+# -- Compiling architecture rtl of dmem
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/full_adder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity full_adder
+# -- Compiling architecture structural of full_adder
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/invg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity invg
+# -- Compiling architecture dataflow of invg
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mem
+# -- Compiling architecture rtl of mem
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Error: (vcom-11) Could not find work.std_logic_matrix.
+# ** Error (suppressible): /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd(4): (vcom-1195) Cannot find expanded name "work.STD_LOGIC_MATRIX".
+# ** Error: /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd(4): Unknown expanded name.
+# ** Note: /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd(6): VHDL Compiler exiting
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1
+# -- Compiling architecture structural of mux2t1
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux2t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux2t1_N
+# -- Compiling architecture structural of mux2t1_N
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:49 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux32t1
+# -- Compiling architecture dataflow of mux32t1
+# End time: 17:02:49 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package STD_LOGIC_MATRIX
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity mux32t1_N
+# -- Compiling architecture structural of mux32t1_N
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MySecondMIPSDatapath
+# -- Compiling architecture structural of MySecondMIPSDatapath
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity MyFirstMIPSDatapath
+# -- Compiling architecture structural of MyFirstMIPSDatapath
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/ones_comp_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ones_comp_N
+# -- Compiling architecture structural of ones_comp_N
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/org2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity org2
+# -- Compiling architecture dataflow of org2
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_bit_extender_16t32
+# -- Compiling architecture behavior of tb_bit_extender_16t32
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_decoder_5t32
+# -- Compiling architecture behavior of tb_decoder_5t32
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dffg
+# -- Compiling architecture behavior of tb_dffg
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dffg_N
+# -- Compiling architecture behavior of tb_dffg_N
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_dmem
+# -- Compiling architecture behavior of tb_dmem
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MIPS_register_file
+# -- Compiling architecture behavior of tb_MIPS_register_file
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_mux32t1
+# -- Compiling architecture behavior of tb_mux32t1
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity tb_mux32t1_N
+# -- Compiling architecture behavior of tb_mux32t1_N
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MyFirstMIPSDatapath
+# -- Compiling architecture behavior of tb_MyFirstMIPSDatapath
+# End time: 17:02:50 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:50 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading entity MySecondMIPSDatapath
+# -- Compiling entity tb_MySecondMIPSDatapath
+# -- Compiling architecture behavior of tb_MySecondMIPSDatapath
+# End time: 17:02:51 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:02:51 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xorg2
+# -- Compiling architecture dataflow of xorg2
+# End time: 17:02:51 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:06 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity MIPS_register_file
+# -- Compiling architecture structural of MIPS_register_file
+# End time: 17:03:06 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity MIPS_register_file
+# -- Compiling architecture structural of MIPS_register_file
+# End time: 17:03:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/adder_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity adder_N
+# -- Compiling architecture structural of adder_N
+# End time: 17:03:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/AddSub_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity AddSub_N
+# -- Compiling architecture structural of AddSub_N
+# End time: 17:03:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/andg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity andg2
+# -- Compiling architecture dataflow of andg2
+# End time: 17:03:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/bit_extender_16t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity bit_extender_16t32
+# -- Compiling architecture structural of bit_extender_16t32
+# End time: 17:03:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:15 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/decoder_5t32.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity decoder_5t32
+# -- Compiling architecture mixed of decoder_5t32
+# End time: 17:03:15 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:31 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dffg
+# -- Compiling architecture behavior of tb_dffg
+# End time: 17:03:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:31 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MyFirstMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MyFirstMIPSDatapath
+# -- Compiling architecture behavior of tb_MyFirstMIPSDatapath
+# End time: 17:03:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:31 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading package STD_LOGIC_MATRIX
+# -- Compiling entity tb_mux32t1_N
+# -- Compiling architecture behavior of tb_mux32t1_N
+# End time: 17:03:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:31 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_dmem
+# -- Compiling architecture behavior of tb_dmem
+# End time: 17:03:31 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:31 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MIPS_register_file
+# -- Compiling architecture behavior of tb_MIPS_register_file
+# End time: 17:03:32 on Sep 30,2022, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:32 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MIPS_register_file.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_MIPS_register_file
+# -- Compiling architecture behavior of tb_MIPS_register_file
+# End time: 17:03:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:32 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_mux32t1.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Compiling entity tb_mux32t1
+# -- Compiling architecture behavior of tb_mux32t1
+# End time: 17:03:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:32 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_dffg_N.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity tb_dffg_N
+# -- Compiling architecture behavior of tb_dffg_N
+# End time: 17:03:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:32 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/tb_MySecondMIPSDatapath.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Loading package NUMERIC_STD
+# -- Loading package ENV
+# -- Loading entity MySecondMIPSDatapath
+# -- Compiling entity tb_MySecondMIPSDatapath
+# -- Compiling architecture behavior of tb_MySecondMIPSDatapath
+# End time: 17:03:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 30 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd}
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:03:32 on Sep 30,2022
+# vcom -reportprogress 30 -work work /home/vsadvani/CprE381/Lab 2/Lab2/xorg2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity xorg2
+# -- Compiling architecture dataflow of xorg2
+# End time: 17:03:32 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vsim -voptargs=+acc work.tb_dmem
+# vsim -voptargs="+acc" work.tb_dmem 
+# Start time: 17:03:45 on Sep 30,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_textio(body)
+# Loading ieee.numeric_std(body)
+# Loading std.env(body)
+# Loading work.tb_dmem(behavior)#1
+# Loading work.dmem(rtl)#1
+mem load -infile dmem.hex -format hex /home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem/dmem/ram
+# ** UI-Msg (Error): (vsim-3641) More than one memory specified.
+# 
+mem load -infile dmem.hex -format hex /home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem/dmem/ram
+# ** UI-Msg (Error): (vsim-3641) More than one memory specified.
+# 
+mem load -infile dmem.hex -format hex /home/vsadvani/CprE381/Lab 2/Lab2/tb_mem/
+# ** UI-Msg (Error): (vsim-3641) More than one memory specified.
+# 
+mem load infile
+# ** UI-Msg (Error): (vsim-3627) -infile or -filltype required.
+# Usage: mem load [-infile <filename>] [-format <format>] [-filltype <filltype>] [-fillradix <radix>] [-filldata <patterndata>] [-skip <Nwords>] [-truncate] [-startaddress <st>] [-endaddress <end>] [-update_properties] [<hierpath>]
+mem load -infile dmem.hex -format hex /tb_dmem/dmem/ram
+# ** UI-Msg (Error) (suppressible): (vsim-4008) Object '/tb_dmem/dmem/ram' not found.
+# 
+mem load -infile dmem.hex -format hex /Lab2/tb_dmem/dmem/ram
+# ** UI-Msg (Error) (suppressible): (vsim-4008) Object '/Lab2/tb_dmem/dmem/ram' not found.
+# 
+mem load -infile dmem.hex -format hex /Lab 2/Lab2/tb_mem/dmem/ram
+# ** UI-Msg (Error): (vsim-3641) More than one memory specified.
+# 
+mem load -infile dmem.hex -format hex /Lab 2/Lab2/tb_dmem/dmem/ram
+# ** UI-Msg (Error): (vsim-3641) More than one memory specified.
+# 
+mem load infile dmem.hex -format hex/tb_dmem/dmem/ram
+# ** UI-Msg (Error): (vsim-3641) More than one memory specified.
+# 
+mem load -infile dmem.hex -format hex/tb_dmem/
+# ** UI-Msg (Error): (vsim-3640) Invalid file format specifier: 'hex/tb_dmem/'.
+# 
+mem load -infile dmem.hex -format hex/tb_dmem/dmem
+# ** UI-Msg (Error): (vsim-3640) Invalid file format specifier: 'hex/tb_dmem/dmem'.
+# 
+mem load -infile dmem.hex -format hex/tb_dmem/dmem/ram
+# ** UI-Msg (Error): (vsim-3640) Invalid file format specifier: 'hex/tb_dmem/dmem/ram'.
+# 
+mem load infile dmem.hex -format hex/tb_dmem/dmem/ram
+# ** UI-Msg (Error): (vsim-3641) More than one memory specified.
+# 
+mem load -infile dmem.hex -format hex/tb_dmem/dmem/ram 
+# ** UI-Msg (Error): (vsim-3640) Invalid file format specifier: 'hex/tb_dmem/dmem/ram'.
+# 
+mem load -infile dmem.hex -format hex /tb_dmem/dmem/ram
+# ** UI-Msg (Error) (suppressible): (vsim-4008) Object '/tb_dmem/dmem/ram' not found.
+# 
+mem load -infile dmem.hex -format hex /home/vsadvani/CprE381/Lab 2/Lab2/tb_dmem/dmem/ram
+# ** UI-Msg (Error): (vsim-3641) More than one memory specified.
+# 
+vlib work
+# ** Warning: (vlib-14) Failed to open "modelsim.ini" specified by the MODELSIM environment variable.
+# No such file or directory. (errno = ENOENT)
+# Errors: 0, Warnings: 1
+vcom -reportprogress 300 -work work {/home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd}
+# ** Warning: (vcom-14) Failed to open "modelsim.ini" specified by the MODELSIM environment variable.
+# No such file or directory. (errno = ENOENT)
+# QuestaSim-64 vcom 2022.2 Compiler 2022.04 Apr 25 2022
+# Start time: 17:23:30 on Sep 30,2022
+# vcom -reportprogress 300 -work work /home/vsadvani/CprE381/Lab 2/Lab2/mem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity mem
+# -- Compiling architecture rtl of mem
+# End time: 17:23:30 on Sep 30,2022, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1

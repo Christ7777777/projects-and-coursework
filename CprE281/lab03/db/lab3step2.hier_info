@@ -1,0 +1,10 @@
+|lab3step2
+cabbage => alarm.IN0
+cabbage => alarm.IN0
+goat => alarm.IN1
+goat => alarm.IN1
+wolf => alarm.IN1
+wolf => alarm.IN1
+alarm <= alarm.DB_MAX_OUTPUT_PORT_TYPE
+
+

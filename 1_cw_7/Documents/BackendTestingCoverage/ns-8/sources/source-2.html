@@ -1,0 +1,95 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > MessageRepository</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">drivewayparking.app.repository</a>
+</div>
+
+<h1>Coverage Summary for Class: MessageRepository (drivewayparking.app.repository)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">MessageRepository</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package drivewayparking.app.repository;
+&nbsp;
+&nbsp;import drivewayparking.app.entity.Message;
+&nbsp;import org.springframework.data.jpa.repository.JpaRepository;
+&nbsp;import org.springframework.data.jpa.repository.Query;
+&nbsp;import org.springframework.data.repository.query.Param;
+&nbsp;
+&nbsp;import javax.persistence.EntityManager;
+&nbsp;import javax.persistence.EntityManagerFactory;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public interface MessageRepository extends JpaRepository&lt;Message, Long&gt; {
+&nbsp;
+&nbsp;    @Query(value = &quot;select receiver_id as id from messages where sender_id = :uid \n&quot; +
+&nbsp;            &quot;union \n&quot; +
+&nbsp;            &quot;select sender_id as id from messages where receiver_id = :uid \n&quot; +
+&nbsp;            &quot;order by id&quot;, nativeQuery = true)
+&nbsp;    List&lt;Long&gt; findUserHistory(@Param(&quot;uid&quot;) Long id);
+&nbsp;
+&nbsp;    @Query(value = &quot;select * from messages where sender_id = :id and receiver_id = :otherId \n&quot; +
+&nbsp;            &quot;union \n&quot; +
+&nbsp;            &quot;select * from messages where sender_id = :otherId and receiver_id = :id \n&quot; +
+&nbsp;            &quot;order by sent&quot;, nativeQuery = true)
+&nbsp;    List&lt;Message&gt; getChatHistory(@Param(&quot;id&quot;) Long id, @Param(&quot;otherId&quot;) Long otherId);
+&nbsp;
+&nbsp;//    @Query(&quot;SELECT m FROM Message m WHERE m.sender.id = :senderId AND m.receiver.id = :receiverId ORDER BY m.created DESC&quot;)
+&nbsp;//    List&lt;Message&gt; findBySenderReceiver(@Param(&quot;senderId&quot;) Long senderId, @Param(&quot;receiverId&quot;) Long receiverId);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-07 11:03</div>
+</div>
+</body>
+</html>

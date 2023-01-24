@@ -1,0 +1,89 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/questasim64_2021.2/examples
+T_opt
+!s110 1647973963
+VZ80i9[e=E]?N^ToVW:dc92
+04 16 4 work adder_subtracter fast 0
+=1-d08e7902fe06-623a164a-387-3d2c
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z0 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vadder_4bit
+!s110 1647973758
+!i10b 1
+!s100 1ZGjQ`9CQP]6DGW8NaCM53
+I]gl<AP[CIfM0lbABL2KU<1
+Z1 dU:/CPRE281/lab07
+w1647972660
+8U:/CPRE281/lab07/adder_4bit.v
+FU:/CPRE281/lab07/adder_4bit.v
+!i122 0
+L0 20 79
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z4 !s108 1647973758.000000
+!s107 U:/CPRE281/lab07/adder_4bit.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|U:/CPRE281/lab07/adder_4bit.v|
+!i113 0
+Z5 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+vadder_subtracter
+Z6 !s110 1647973759
+!i10b 1
+!s100 aPbcXh@;9R[UV;CLgLnNG3
+IUS7^23d`aF?<O^=Y1AAfe3
+R1
+w1647973516
+8U:/CPRE281/lab07/adder_subtracter.v
+FU:/CPRE281/lab07/adder_subtracter.v
+!i122 1
+L0 20 71
+R2
+R3
+r1
+!s85 0
+31
+R4
+!s107 U:/CPRE281/lab07/adder_subtracter.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|U:/CPRE281/lab07/adder_subtracter.v|
+!i113 0
+R5
+R0
+vFA
+R6
+!i10b 1
+!s100 1=2zR^ZBkPNh[Lg`<O9o`0
+IRN=7GHfkH8SMT2[^>0I3@0
+R1
+w1647971476
+8U:/CPRE281/lab07/FA.v
+FU:/CPRE281/lab07/FA.v
+!i122 2
+L0 1 7
+R2
+R3
+r1
+!s85 0
+31
+!s108 1647973759.000000
+!s107 U:/CPRE281/lab07/FA.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|U:/CPRE281/lab07/FA.v|
+!i113 0
+R5
+R0
+n@f@a

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.example.drivewayparking"},{"l":"com.example.drivewayparking.Activity"},{"l":"com.example.drivewayparking.Adapter"},{"l":"com.example.drivewayparking.API"},{"l":"com.example.drivewayparking.Fragment"},{"l":"com.example.drivewayparking.Model"}]

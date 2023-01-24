@@ -1,0 +1,14 @@
+module MUX4to1(f0, f1, f2, f3, s0, s1, a);
+input f0, f1, f2, f3, s0, s1;
+output reg a;
+always @ (f0 or f1 or f2 or f3)
+begin
+  case({s0, s1})
+     2'b00: a = f0;
+	  2'b01: a = f1;
+	  2'b10: a = f2;
+	  2'b11: a = f3;
+	  endcase
+  end
+endmodule
+	  

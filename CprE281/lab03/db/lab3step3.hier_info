@@ -1,0 +1,16 @@
+|lab3step3
+farmer => WideAnd0.IN0
+farmer => WideAnd1.IN0
+farmer => WideAnd2.IN0
+farmer => WideAnd3.IN0
+cabbage => WideAnd3.IN1
+cabbage => WideAnd1.IN1
+goat => WideAnd2.IN1
+goat => WideAnd3.IN2
+goat => WideAnd0.IN1
+goat => WideAnd1.IN2
+wolf => WideAnd2.IN2
+wolf => WideAnd0.IN2
+alarm <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

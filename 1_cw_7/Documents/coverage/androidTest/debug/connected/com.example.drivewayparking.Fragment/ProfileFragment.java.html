@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ProfileFragment.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Fragment</a> &gt; <span class="el_source">ProfileFragment.java</span></div><h1>ProfileFragment.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Fragment;
+
+import static android.app.Activity.RESULT_OK;
+
+import android.app.Activity;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Bundle;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Activity.LoginActivity;
+import com.example.drivewayparking.Activity.Signup;
+import com.example.drivewayparking.Model.Admin;
+import com.example.drivewayparking.Model.ImageRequest;
+import com.example.drivewayparking.Model.ImageResponse;
+import com.example.drivewayparking.Model.User;
+import com.example.drivewayparking.Model.UserRequest;
+import com.example.drivewayparking.R;
+
+import org.java_websocket.util.Base64;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+import java.util.Objects;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+/**
+ * The type Profile fragment.
+ * @author: Varun Advani
+ */
+public class ProfileFragment extends Fragment {
+
+    private CircleImageView user_image;
+
+    private Bitmap bmp;
+    /**
+     * The Image.
+     */
+    ImageView image,
+    /**
+     * The Password show.
+     */
+    password_show;
+    /**
+     * The User name.
+     */
+    TextView user_name,
+    /**
+     * The User email.
+     */
+    user_upload,
+    /**
+     * The User email print.
+     */
+    user_email_print,
+    /**
+     * The Change user password.
+     */
+    change_userPassword,
+    /**
+     * The User phone.
+     */
+    user_phone,
+    /**
+     * The Show password.
+     */
+    showPassword;
+    /**
+     * The Logout button.
+     */
+    Button logout_button,
+    /**
+     * The Delete account button.
+     */
+    delete_account_button;
+    /**
+     * The Email.
+     */
+    String email,
+    /**
+     * Admin Email
+     */
+     admin_email,
+    /**
+     * The Password.
+     */
+    password,
+    /**
+     * The Name.
+     */
+    name,
+    /**
+     * The Phone.
+     */
+    phone;
+    /**
+     * The Change password.
+     */
+    EditText changePassword,
+    /**
+     * The Change email.
+     */
+    changeEmail;
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = &quot;param1&quot;;
+    private static final String ARG_PARAM2 = &quot;param2&quot;;
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+    private Long userId;
+    private Long temp_id, admin_temp_id;
+<span class="fc" id="L145">    private Bundle savedState = null;</span>
+<span class="fc" id="L146">    private int IMAGE_REQUEST_ID = 1;</span>
+    private static final String PREFERENCES_CONTADORLIGA =  &quot;ChangeThisTextWithSomethingYouPrefer&quot;;
+    private static final String PREFERENCES_CONTADORLIGA_KEY = &quot;ChangeThisTextWithSomethingYouPrefer&quot;;
+<span class="fc" id="L149">    int contadorliga = 0;</span>
+
+    /**
+     * Instantiates a new Profile fragment.
+     */
+<span class="fc" id="L154">    public ProfileFragment() {</span>
+        // Required empty public constructor
+<span class="fc" id="L156">    }</span>
+
+    /**
+     * New instance profile fragment.
+     *
+     * @param param1 the param 1
+     * @param param2 the param 2
+     * @return the profile fragment
+     */
+// TODO: Rename and change types and number of parameters
+    public static ProfileFragment newInstance(String param1, String param2) {
+<span class="nc" id="L167">        ProfileFragment fragment = new ProfileFragment();</span>
+<span class="nc" id="L168">        Bundle args = new Bundle();</span>
+<span class="nc" id="L169">        args.putString(ARG_PARAM1, param1);</span>
+<span class="nc" id="L170">        args.putString(ARG_PARAM2, param2);</span>
+<span class="nc" id="L171">        fragment.setArguments(args);</span>
+<span class="nc" id="L172">        return fragment;</span>
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+<span class="fc" id="L177">        super.onCreate(savedInstanceState);</span>
+<span class="fc" id="L178">        SharedPreferences settings = getActivity().getSharedPreferences(PREFERENCES_CONTADORLIGA, Context.MODE_PRIVATE);</span>
+<span class="fc" id="L179">        contadorliga = settings.getInt(PREFERENCES_CONTADORLIGA_KEY, 0);</span>
+<span class="pc bpc" id="L180" title="1 of 2 branches missed.">        if (getArguments() != null) {</span>
+<span class="fc" id="L181">            mParam1 = getArguments().getString(ARG_PARAM1);</span>
+<span class="fc" id="L182">            mParam2 = getArguments().getString(ARG_PARAM2);</span>
+<span class="fc" id="L183">            email = getArguments().getString(&quot;f_email&quot;);</span>
+<span class="fc" id="L184">            admin_email = getArguments().getString(&quot;admin_email&quot;);</span>
+<span class="fc" id="L185">            temp_id = getArguments().getLong(&quot;f_user_id&quot;);</span>
+<span class="fc" id="L186">            admin_temp_id = getArguments().getLong(&quot;admin_id&quot;);</span>
+<span class="fc" id="L187">            System.out.println(&quot;Temp id is &quot; + temp_id);</span>
+<span class="fc" id="L188">            System.out.println(email);</span>
+        }
+
+<span class="fc" id="L191">    }</span>
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+<span class="fc" id="L195">        super.onActivityResult(requestCode, resultCode, data);</span>
+
+<span class="pc bpc" id="L197" title="2 of 4 branches missed.">        if (requestCode == IMAGE_REQUEST_ID &amp;&amp; resultCode == RESULT_OK) {</span>
+
+            try {
+<span class="fc" id="L200">                InputStream inputStream = getActivity().getContentResolver().openInputStream(data.getData());</span>
+                byte[] bytes;
+<span class="fc" id="L202">                File file = new File(getActivity().getCacheDir(), &quot;image_user&quot; + temp_id + &quot;.jpeg&quot;);</span>
+<span class="fc" id="L203">                bmp = BitmapFactory.decodeStream(inputStream);</span>
+<span class="fc" id="L204">                user_image.setImageBitmap(bmp);</span>
+<span class="fc" id="L205">                user_image.setRotation(90);</span>
+<span class="fc" id="L206">                ByteArrayOutputStream output = new ByteArrayOutputStream();</span>
+<span class="fc" id="L207">                bmp.compress(Bitmap.CompressFormat.JPEG, 100, output);</span>
+<span class="fc" id="L208">                bytes = output.toByteArray();</span>
+<span class="fc" id="L209">                FileOutputStream fos = null;</span>
+                try {
+<span class="fc" id="L211">                    fos = new FileOutputStream(file);</span>
+<span class="nc" id="L212">                } catch (FileNotFoundException e) {</span>
+<span class="nc" id="L213">                    e.printStackTrace();</span>
+<span class="fc" id="L214">                }</span>
+                try {
+<span class="fc" id="L216">                    fos.write(bytes);</span>
+<span class="fc" id="L217">                    fos.flush();</span>
+<span class="fc" id="L218">                    fos.close();</span>
+<span class="nc" id="L219">                } catch (IOException e) {</span>
+<span class="nc" id="L220">                    e.printStackTrace();</span>
+<span class="fc" id="L221">                }</span>
+<span class="fc" id="L222">                RequestBody requestFile = RequestBody.create(MediaType.parse(&quot;image/*&quot;),file);</span>
+<span class="fc" id="L223">                MultipartBody.Part image_upload = MultipartBody.Part.createFormData(&quot;file&quot;, file.getName(), requestFile);</span>
+<span class="fc" id="L224">                RequestBody requestBody = RequestBody.create(MediaType.parse(&quot;multipart/form-data&quot;), userId.toString());</span>
+<span class="fc" id="L225">                Call&lt;Integer&gt; call = ApiClient.getImageApiService().uploadImageUser(image_upload, requestBody);</span>
+<span class="fc" id="L226">                call.enqueue(new Callback&lt;Integer&gt;() {</span>
+                    @Override
+                    public void onResponse(Call&lt;Integer&gt; call, Response&lt;Integer&gt; response) {
+<span class="pc bpc" id="L229" title="1 of 2 branches missed.">                        if(response.isSuccessful()){</span>
+<span class="pc bpc" id="L230" title="1 of 2 branches missed.">                            if(response.body() == 0){</span>
+<span class="fc" id="L231">                                Toast.makeText(getActivity(), &quot;Image Uploaded&quot;, Toast.LENGTH_SHORT).show();</span>
+                            }
+                            else{
+<span class="nc" id="L234">                                Toast.makeText(getActivity(), &quot;Image Not Uploaded&quot;, Toast.LENGTH_SHORT).show();</span>
+                            }
+                        }
+                        else{
+<span class="nc" id="L238">                            Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                        }
+<span class="fc" id="L240">                    }</span>
+
+                    @Override
+                    public void onFailure(Call&lt;Integer&gt; call, Throwable t) {
+<span class="nc" id="L244">                        Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L245">                    }</span>
+                });
+
+
+<span class="nc" id="L249">            } catch (FileNotFoundException e) {</span>
+<span class="nc" id="L250">                e.printStackTrace();</span>
+<span class="fc" id="L251">            }</span>
+
+        }
+
+<span class="fc" id="L255">    }</span>
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+
+<span class="fc" id="L261">        View view = inflater.inflate(R.layout.fragment_profile, container, false);</span>
+        // Inflate the layout for this fragment
+
+<span class="fc" id="L264">        user_name = view.findViewById(R.id.nameUser_2);</span>
+<span class="fc" id="L265">        user_upload = view.findViewById(R.id.upload_image);</span>
+<span class="fc" id="L266">        user_email_print = view.findViewById(R.id.print_email_2);</span>
+<span class="fc" id="L267">        change_userPassword = view.findViewById(R.id.user_password_2);</span>
+<span class="fc" id="L268">        user_phone = view.findViewById(R.id.user_phone_2);</span>
+<span class="fc" id="L269">        logout_button  = view.findViewById(R.id.logout_2);</span>
+<span class="fc" id="L270">        delete_account_button = view.findViewById(R.id.deleteAccount_2);</span>
+<span class="fc" id="L271">        showPassword = view.findViewById(R.id.show_password_2);</span>
+<span class="fc" id="L272">        password_show = view.findViewById(R.id.password_toggle_2);</span>
+<span class="fc" id="L273">        user_image = view.findViewById(R.id.imageView_user);</span>
+
+
+
+
+<span class="fc" id="L278">        Bundle bundle = new Bundle();</span>
+<span class="pc bpc" id="L279" title="3 of 4 branches missed.">        if(savedInstanceState != null &amp;&amp; savedState == null){</span>
+<span class="nc" id="L280">            savedState = savedInstanceState.getBundle(&quot;data&quot;);</span>
+        }
+<span class="pc bpc" id="L282" title="1 of 2 branches missed.">        if(savedState != null){</span>
+<span class="nc" id="L283">            user_name.setText(savedState.getString(&quot;s_name&quot;));</span>
+<span class="nc" id="L284">            user_email_print.setText(savedState.getString(&quot;s_email&quot;));</span>
+<span class="nc" id="L285">            user_phone.setText(savedState.getString(&quot;s_phone&quot;));</span>
+<span class="nc" id="L286">            showPassword.setText(savedState.getString(&quot;s_password&quot;));</span>
+        }
+
+<span class="fc" id="L289">        UserRequest userRequest = new UserRequest();</span>
+<span class="fc" id="L290">        userRequest.setEmail(email);</span>
+//        String email_data = this.getArguments().getString(&quot;f_email&quot;);
+<span class="pc bpc" id="L292" title="1 of 2 branches missed.">        if(email != null) {</span>
+<span class="fc" id="L293">            Call&lt;User&gt; call = ApiClient.getUserApiService().getUserByEmail(email);</span>
+<span class="fc" id="L294">            System.out.println(email);</span>
+<span class="fc" id="L295">            call.enqueue(new Callback&lt;User&gt;() {</span>
+                @Override
+                public void onResponse(Call&lt;User&gt; call, Response&lt;User&gt; response) {
+<span class="pc bpc" id="L298" title="1 of 2 branches missed.">                    if (response.isSuccessful()) {</span>
+<span class="fc" id="L299">                        user_name.setText(response.body().getFirstName() + &quot; &quot; + response.body().getLastName());</span>
+<span class="fc" id="L300">                        name = response.body().getFirstName() + &quot; &quot; + response.body().getLastName();</span>
+<span class="fc" id="L301">                        System.out.println(response.body().getFirstName() + &quot; &quot; + response.body().getLastName());</span>
+<span class="fc" id="L302">                        user_email_print.setText(response.body().getEmail());</span>
+<span class="fc" id="L303">                        user_phone.setText(response.body().getPhoneNumber());</span>
+<span class="fc" id="L304">                        showPassword.setText(response.body().getPassword());</span>
+<span class="fc" id="L305">                        userId = response.body().getId();</span>
+<span class="fc" id="L306">                        System.out.println(&quot;User ID: &quot; + userId);</span>
+<span class="fc" id="L307">                        ImageRequest imageRequest = new ImageRequest();</span>
+<span class="fc" id="L308">                        imageRequest.setUserId(temp_id);</span>
+<span class="fc" id="L309">                        Call&lt;List&lt;ImageResponse&gt;&gt; call_image = ApiClient.getImageApiService().downloadImage(imageRequest);</span>
+<span class="fc" id="L310">                        System.out.println(&quot;User ID check 2: &quot; + userId);</span>
+<span class="fc" id="L311">                        call_image.enqueue(new Callback&lt;List&lt;ImageResponse&gt;&gt;() {</span>
+                            @Override
+                            public void onResponse(Call&lt;List&lt;ImageResponse&gt;&gt; call, Response&lt;List&lt;ImageResponse&gt;&gt; response) {
+<span class="pc bpc" id="L314" title="1 of 2 branches missed.">                                if(response.isSuccessful()){</span>
+<span class="pc bpc" id="L315" title="1 of 2 branches missed.">                                    if(response.body().size() &gt; 0) {</span>
+<span class="fc" id="L316">                                        System.out.println(response.body().get(0).toString());</span>
+<span class="fc" id="L317">                                        byte[] decodedString = new byte[0];</span>
+                                        try {
+<span class="fc" id="L319">                                            decodedString = Base64.decode(response.body().get(0).getContent(), android.util.Base64.DEFAULT);</span>
+<span class="nc" id="L320">                                        } catch (IOException e) {</span>
+<span class="nc" id="L321">                                            e.printStackTrace();</span>
+<span class="fc" id="L322">                                        }</span>
+<span class="fc" id="L323">                                        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);</span>
+<span class="fc" id="L324">                                        user_image.setImageBitmap(decodedByte);</span>
+                                        // user_image.setRotation(90);
+<span class="fc" id="L326">                                    }</span>
+                                }
+                                else{
+<span class="nc" id="L329">                                    Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                                }
+<span class="fc" id="L331">                            }</span>
+
+                            @Override
+                            public void onFailure(Call&lt;List&lt;ImageResponse&gt;&gt; call, Throwable t) {
+<span class="nc" id="L335">                                Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L336">                                System.out.println(&quot;Error: &quot; + t.getMessage());</span>
+<span class="nc" id="L337">                                System.out.println(imageRequest.toString());</span>
+<span class="nc" id="L338">                            }</span>
+                        });
+                        //needs to be figured out
+                        //bundle.putInt(&quot;user_id&quot;, userId);
+<span class="fc" id="L342">                        showPassword.setTransformationMethod(new PasswordTransformationMethod());</span>
+                    }
+<span class="fc" id="L344">                }</span>
+
+                @Override
+                public void onFailure(Call&lt;User&gt; call, Throwable t) {
+
+<span class="nc" id="L349">                }</span>
+            });
+<span class="fc" id="L351">        }</span>
+        else{
+<span class="nc" id="L353">            Call&lt;Admin&gt; call_admin = ApiClient.getAdminApiService().getAdminByEmail(admin_email);</span>
+<span class="nc" id="L354">            call_admin.enqueue(new Callback&lt;Admin&gt;() {</span>
+                @Override
+                public void onResponse(Call&lt;Admin&gt; call, Response&lt;Admin&gt; response) {
+<span class="nc bnc" id="L357" title="All 2 branches missed.">                    if(response.isSuccessful()){</span>
+<span class="nc" id="L358">                        user_name.setText(response.body().getFirstName() + &quot; &quot; + response.body().getLastName());</span>
+<span class="nc" id="L359">                        name = response.body().getFirstName() + &quot; &quot; + response.body().getLastName();</span>
+<span class="nc" id="L360">                        user_email_print.setText(response.body().getEmail());</span>
+<span class="nc" id="L361">                        user_phone.setText(response.body().getPhoneNumber());</span>
+<span class="nc" id="L362">                        showPassword.setText(response.body().getPassword());</span>
+<span class="nc" id="L363">                        userId = response.body().getId();</span>
+<span class="nc" id="L364">                        System.out.println(&quot;User ID: &quot; + userId);</span>
+                        //needs to be figured out
+                        //bundle.putInt(&quot;user_id&quot;, userId);
+<span class="nc" id="L367">                        ImageRequest imageRequest = new ImageRequest();</span>
+<span class="nc" id="L368">                        imageRequest.setAdminId(admin_temp_id);</span>
+<span class="nc" id="L369">                        Call&lt;List&lt;ImageResponse&gt;&gt; call_image = ApiClient.getImageApiService().downloadImage(imageRequest);</span>
+<span class="nc" id="L370">                        System.out.println(&quot;User ID check 2: &quot; + userId);</span>
+<span class="nc" id="L371">                        call_image.enqueue(new Callback&lt;List&lt;ImageResponse&gt;&gt;() {</span>
+                            @Override
+                            public void onResponse(Call&lt;List&lt;ImageResponse&gt;&gt; call, Response&lt;List&lt;ImageResponse&gt;&gt; response) {
+<span class="nc bnc" id="L374" title="All 2 branches missed.">                                if(response.isSuccessful()){</span>
+<span class="nc bnc" id="L375" title="All 2 branches missed.">                                    if(response.body().size() &gt; 0) {</span>
+<span class="nc" id="L376">                                        System.out.println(response.body().get(0).toString());</span>
+<span class="nc" id="L377">                                        byte[] decodedString = new byte[0];</span>
+                                        try {
+<span class="nc" id="L379">                                            decodedString = Base64.decode(response.body().get(0).getContent(), android.util.Base64.DEFAULT);</span>
+<span class="nc" id="L380">                                        } catch (IOException e) {</span>
+<span class="nc" id="L381">                                            e.printStackTrace();</span>
+<span class="nc" id="L382">                                        }</span>
+<span class="nc" id="L383">                                        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);</span>
+<span class="nc" id="L384">                                        user_image.setImageBitmap(decodedByte);</span>
+                                        // user_image.setRotation(90);
+<span class="nc" id="L386">                                    }</span>
+                                }
+                                else{
+<span class="nc" id="L389">                                    Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                                }
+<span class="nc" id="L391">                            }</span>
+
+                            @Override
+                            public void onFailure(Call&lt;List&lt;ImageResponse&gt;&gt; call, Throwable t) {
+<span class="nc" id="L395">                                Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L396">                                System.out.println(&quot;Error: &quot; + t.getMessage());</span>
+<span class="nc" id="L397">                                System.out.println(imageRequest.toString());</span>
+<span class="nc" id="L398">                            }</span>
+                        });
+<span class="nc" id="L400">                        showPassword.setTransformationMethod(new PasswordTransformationMethod());</span>
+<span class="nc" id="L401">                    }</span>
+                    else{
+<span class="nc" id="L403">                        Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                    }
+<span class="nc" id="L405">                }</span>
+
+                @Override
+                public void onFailure(Call&lt;Admin&gt; call, Throwable t) {
+<span class="nc" id="L409">                     Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L410">                }</span>
+            });
+        }
+<span class="fc" id="L413">        System.out.println(email);</span>
+//        ImageRequest imageRequest = new ImageRequest();
+//        imageRequest.setUserId(temp_id);
+//        Call&lt;List&lt;ImageResponse&gt;&gt; call_image = ApiClient.getImageApiService().downloadImage(imageRequest);
+//        System.out.println(&quot;User ID check 2: &quot; + userId);
+//        call_image.enqueue(new Callback&lt;List&lt;ImageResponse&gt;&gt;() {
+//            @Override
+//            public void onResponse(Call&lt;List&lt;ImageResponse&gt;&gt; call, Response&lt;List&lt;ImageResponse&gt;&gt; response) {
+//                if(response.isSuccessful()){
+//                    if(response.body().size() &gt; 0) {
+//                        System.out.println(response.body().get(0).toString());
+//                        byte[] decodedString = new byte[0];
+//                        try {
+//                            decodedString = Base64.decode(response.body().get(0).getContent(), android.util.Base64.DEFAULT);
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                        Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+//                        user_image.setImageBitmap(decodedByte);
+//                       // user_image.setRotation(90);
+//                    }
+//                }
+//                else{
+//                    Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call&lt;List&lt;ImageResponse&gt;&gt; call, Throwable t) {
+//                 Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();
+//                 System.out.println(&quot;Error: &quot; + t.getMessage());
+//                 System.out.println(imageRequest.toString());
+//            }
+//        });
+
+<span class="fc" id="L448">        user_upload.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="fc" id="L451">                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);</span>
+<span class="fc" id="L452">                intent.setType(&quot;image/*&quot;);</span>
+<span class="fc" id="L453">                startActivityForResult(Intent.createChooser(intent, &quot;Pick image&quot;),</span>
+<span class="fc" id="L454">                    IMAGE_REQUEST_ID);</span>
+<span class="fc" id="L455">            }</span>
+        });
+        //Override the onActivityResult method
+
+
+<span class="fc" id="L460">        logout_button.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View view) {
+<span class="fc" id="L463">                startActivity(new Intent(getActivity(), LoginActivity.class));</span>
+               // finish();
+<span class="fc" id="L465">            }</span>
+
+        });
+
+<span class="fc" id="L469">        delete_account_button.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View view) {
+<span class="nc" id="L472">                Dialog dialog = new Dialog(getActivity());</span>
+<span class="nc" id="L473">                dialog.setCancelable(true);</span>
+<span class="nc" id="L474">                dialog.setContentView(R.layout.confirm_delete);</span>
+<span class="nc" id="L475">                Button delete = dialog.findViewById(R.id.confirmDelete);</span>
+<span class="nc" id="L476">                delete.setOnClickListener(new View.OnClickListener() {</span>
+                    @Override
+                    public void onClick(View view) {
+<span class="nc" id="L479">                        Call&lt;Integer&gt; call = ApiClient.getUserApiService().deleteUser(email);</span>
+<span class="nc" id="L480">                        call.enqueue(new Callback&lt;Integer&gt;() {</span>
+                            @Override
+                            public void onResponse(Call&lt;Integer&gt; call, Response&lt;Integer&gt; response) {
+<span class="nc" id="L483">                                Toast.makeText(getActivity(), &quot;Account deleted &quot;, Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L484">                                startActivity(new Intent(getActivity(), Signup.class));</span>
+                               // finish();
+<span class="nc" id="L486">                            }</span>
+
+                            @Override
+                            public void onFailure(Call&lt;Integer&gt; call, Throwable t) {
+<span class="nc" id="L490">                                Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L491">                            }</span>
+                        });
+<span class="nc" id="L493">                    }</span>
+                });
+<span class="nc" id="L495">                dialog.show();</span>
+<span class="nc" id="L496">            }</span>
+        });
+<span class="fc" id="L498">        change_userPassword.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View view) {
+//                DialogPlus dialogPlus = DialogPlus.newDialog(getActivity()).setContentHolder(
+//                        new ViewHolder(R.layout.update_password)).setExpanded(true, 500).create();
+//                dialogPlus.show();
+////                UpdatePassword password = new UpdatePassword();
+//                changePassword = view.findViewById(R.id.passEditBox);
+//                Button confirm_update = findViewById(R.id.passEditUpdate);
+//                // changePassword.setText(change_userPassword.getText().toString());
+<span class="nc" id="L508">                 Dialog dialog = new Dialog(getActivity());</span>
+                //gitDialogFragment dialogFragment = new DialogFragment();
+<span class="nc" id="L510">                 dialog.setCancelable(true);</span>
+<span class="nc" id="L511">                 dialog.setContentView(R.layout.update_password);</span>
+<span class="nc" id="L512">                 changePassword = dialog.findViewById(R.id.passEditBox);</span>
+<span class="nc" id="L513">                 Button confirm_update = dialog.findViewById(R.id.passEditUpdate);</span>
+
+<span class="nc" id="L515">                confirm_update.setOnClickListener(new View.OnClickListener() {</span>
+                    @Override
+                    public void onClick(View view) {
+                        // changePassword.setText(change_userPassword.getText().toString());
+<span class="nc" id="L519">                        String update = changePassword.getText().toString();</span>
+<span class="nc bnc" id="L520" title="All 2 branches missed.">                        if(update.length() &lt; 6){</span>
+<span class="nc" id="L521">                            changePassword.setError(&quot;Password must be at least 6 characters&quot;);</span>
+<span class="nc" id="L522">                            return;</span>
+
+                        }
+//                        password.setPassword(changePassword.getText().toString());
+
+<span class="nc" id="L527">                        UserRequest userRequest = new UserRequest();</span>
+<span class="nc" id="L528">                        userRequest.setPhoneNumber(user_phone.getText().toString());</span>
+<span class="nc" id="L529">                        userRequest.setEmail(email);</span>
+<span class="nc" id="L530">                        userRequest.setPassword(update);</span>
+<span class="nc" id="L531">                        userRequest.setId(userId);</span>
+<span class="nc" id="L532">                        userRequest.setFirstName(name.substring(0, name.indexOf(' ')));</span>
+<span class="nc" id="L533">                        userRequest.setLastName(name.substring(name.indexOf(' ') + 1));</span>
+<span class="nc" id="L534">                        Call&lt;Integer&gt; call = ApiClient.getUserApiService().updateUser(userRequest);</span>
+<span class="nc" id="L535">                        System.out.println(update);</span>
+<span class="nc" id="L536">                        call.enqueue(new Callback&lt;Integer&gt;() {</span>
+                            @Override
+                            public void onResponse(Call&lt;Integer&gt; call, Response&lt;Integer&gt; response) {
+<span class="nc bnc" id="L539" title="All 2 branches missed.">                                if(response.isSuccessful()){</span>
+                                    // change_userPassword.setText(changePassword.getText().toString());
+                                    //dialog.dismiss();
+<span class="nc" id="L542">                                    Toast.makeText(getActivity(), &quot;Password change successful&quot;, Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L543">                                    startActivity(new Intent(getActivity(), LoginActivity.class));</span>
+                                    //finish();
+                                }
+                                else{
+<span class="nc" id="L547">                                    Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                                }
+<span class="nc" id="L549">                            }</span>
+
+                            @Override
+                            public void onFailure(Call&lt;Integer&gt; call, Throwable t) {
+                               // dialog.dismiss();
+<span class="nc" id="L554">                                Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L555">                                System.out.println(&quot;Error: &quot; + t.getMessage());</span>
+<span class="nc" id="L556">                            }</span>
+                        });
+<span class="nc" id="L558">                    }</span>
+                });
+<span class="nc" id="L560">                dialog.show();</span>
+<span class="nc" id="L561">            }</span>
+        });
+<span class="fc" id="L563">        savedState = null;</span>
+<span class="fc" id="L564">        return view;</span>
+    }
+
+    @Override
+    public void onDestroyView() {
+
+<span class="fc" id="L570">        super.onDestroyView();</span>
+<span class="fc" id="L571">        savedState = saveState();</span>
+<span class="fc" id="L572">        user_name = null;</span>
+<span class="fc" id="L573">        user_email_print = null;</span>
+<span class="fc" id="L574">        user_phone = null;</span>
+<span class="fc" id="L575">        showPassword = null;</span>
+<span class="fc" id="L576">    }</span>
+    @Override
+    public void onDestroy()
+    {
+<span class="fc" id="L580">        super.onDestroy();</span>
+
+        // We need an Editor object to make preference changes.
+        // All objects are from android.context.Context
+<span class="fc" id="L584">        SharedPreferences settings = getActivity().getSharedPreferences(PREFERENCES_CONTADORLIGA, Context.MODE_PRIVATE);</span>
+<span class="fc" id="L585">        SharedPreferences.Editor editor = settings.edit();</span>
+<span class="fc" id="L586">        editor.putInt(PREFERENCES_CONTADORLIGA_KEY, contadorliga);</span>
+
+        // Commit the edits!
+<span class="fc" id="L589">        editor.commit();</span>
+<span class="fc" id="L590">    }</span>
+
+
+    @Override
+    public void onStart() {
+<span class="fc" id="L595">        super.onStart();</span>
+<span class="pc bpc" id="L596" title="1 of 2 branches missed.">        if(savedState != null){</span>
+<span class="nc" id="L597">            user_name.setText(savedState.getString(&quot;s_name&quot;));</span>
+<span class="nc" id="L598">            user_email_print.setText(savedState.getString(&quot;s_email&quot;));</span>
+<span class="nc" id="L599">            user_phone.setText(savedState.getString(&quot;s_phone&quot;));</span>
+<span class="nc" id="L600">            showPassword.setText(savedState.getString(&quot;s_password&quot;));</span>
+<span class="nc" id="L601">            user_image.setImageBitmap(bmp);</span>
+        }
+        else{
+<span class="fc" id="L604">            Call&lt;User&gt; call = ApiClient.getUserApiService().getUserByEmail(email);</span>
+<span class="fc" id="L605">            System.out.println(email);</span>
+<span class="fc" id="L606">            call.enqueue(new Callback&lt;User&gt;() {</span>
+                @Override
+                public void onResponse(Call&lt;User&gt; call, Response&lt;User&gt; response) {
+<span class="pc bpc" id="L609" title="1 of 2 branches missed.">                    if(response.isSuccessful()){</span>
+<span class="fc" id="L610">                        user_name.setText(response.body().getFirstName() + &quot; &quot; + response.body().getLastName());</span>
+<span class="fc" id="L611">                        name = response.body().getFirstName() + &quot; &quot; + response.body().getLastName();</span>
+<span class="fc" id="L612">                        System.out.println(response.body().getFirstName() + &quot; &quot; + response.body().getLastName());</span>
+<span class="fc" id="L613">                        user_email_print.setText(response.body().getEmail());</span>
+<span class="fc" id="L614">                        user_phone.setText(response.body().getPhoneNumber());</span>
+<span class="fc" id="L615">                        showPassword.setText(response.body().getPassword());</span>
+<span class="fc" id="L616">                        userId = response.body().getId();</span>
+                        //needs to be figured out
+<span class="fc" id="L618">                        showPassword.setTransformationMethod(new PasswordTransformationMethod());</span>
+                    }
+<span class="fc" id="L620">                }</span>
+
+                @Override
+                public void onFailure(Call&lt;User&gt; call, Throwable t) {
+
+<span class="nc" id="L625">                }</span>
+            });
+<span class="fc" id="L627">            System.out.println(userId);</span>
+        }
+
+<span class="fc" id="L630">    }</span>
+
+    @Override
+    public void onResume(){
+<span class="fc" id="L634">        super.onResume();</span>
+<span class="fc" id="L635">        super.onStart();</span>
+<span class="pc bpc" id="L636" title="1 of 2 branches missed.">        if(savedState != null){</span>
+<span class="nc" id="L637">            user_name.setText(savedState.getString(&quot;s_name&quot;));</span>
+<span class="nc" id="L638">            user_email_print.setText(savedState.getString(&quot;s_email&quot;));</span>
+<span class="nc" id="L639">            user_phone.setText(savedState.getString(&quot;s_phone&quot;));</span>
+<span class="nc" id="L640">            showPassword.setText(savedState.getString(&quot;s_password&quot;));</span>
+<span class="nc" id="L641">            user_image.setImageBitmap(bmp);</span>
+        }
+        else{
+<span class="fc" id="L644">            UserRequest userRequest = new UserRequest();</span>
+<span class="fc" id="L645">            userRequest.setEmail(email);</span>
+<span class="fc" id="L646">            Call&lt;User&gt; call = ApiClient.getUserApiService().getUserByEmail(email);</span>
+<span class="fc" id="L647">            System.out.println(email);</span>
+<span class="fc" id="L648">            call.enqueue(new Callback&lt;User&gt;() {</span>
+                @Override
+                public void onResponse(Call&lt;User&gt; call, Response&lt;User&gt; response) {
+<span class="pc bpc" id="L651" title="1 of 2 branches missed.">                    if(response.isSuccessful()){</span>
+<span class="fc" id="L652">                        user_name.setText(response.body().getFirstName() + &quot; &quot; + response.body().getLastName());</span>
+<span class="fc" id="L653">                        name = response.body().getFirstName() + &quot; &quot; + response.body().getLastName();</span>
+<span class="fc" id="L654">                        System.out.println(response.body().getFirstName() + &quot; &quot; + response.body().getLastName());</span>
+<span class="fc" id="L655">                        user_email_print.setText(response.body().getEmail());</span>
+<span class="fc" id="L656">                        user_phone.setText(response.body().getPhoneNumber());</span>
+<span class="fc" id="L657">                        showPassword.setText(response.body().getPassword());</span>
+<span class="fc" id="L658">                        userId = response.body().getId();</span>
+                        //needs to be figured out
+<span class="fc" id="L660">                        showPassword.setTransformationMethod(new PasswordTransformationMethod());</span>
+                    }
+<span class="fc" id="L662">                }</span>
+
+                @Override
+                public void onFailure(Call&lt;User&gt; call, Throwable t) {
+
+<span class="nc" id="L667">                }</span>
+            });
+<span class="fc" id="L669">            System.out.println(email);</span>
+        }
+
+<span class="fc" id="L672">    }</span>
+
+    private Bundle saveState(){
+<span class="fc" id="L675">        Bundle state = new Bundle();</span>
+<span class="fc" id="L676">        state.putString(&quot;s_name&quot;, user_name.getText().toString());</span>
+<span class="fc" id="L677">        state.putString(&quot;s_email&quot;, user_email_print.getText().toString());</span>
+<span class="fc" id="L678">        state.putString(&quot;s_phone&quot;, user_phone.getText().toString());</span>
+<span class="fc" id="L679">        state.putString(&quot;s_password&quot;, showPassword.getText().toString());</span>
+<span class="fc" id="L680">        state.putLong(&quot;s_userId&quot;, userId);</span>
+<span class="fc" id="L681">        return  state;</span>
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState){
+<span class="fc" id="L686">        super.onSaveInstanceState(outState);</span>
+<span class="pc bpc" id="L687" title="1 of 2 branches missed.">        outState.putBundle(&quot;data&quot;, (savedState != null) ? savedState : saveState());</span>
+<span class="fc" id="L688">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

@@ -1,0 +1,33 @@
+m255
+K4
+z2
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dU:/CPRE281/lab10/lab10step2
+vlab10step2b
+!s110 1649789238
+!i10b 1
+!s100 m>zI^<A>L6BmmK3XFCQJJ2
+I^XSWRO42iee1G3PT8`Gb10
+dU:/CPRE281/lab10/lab10step2b
+w1649788781
+8U:/CPRE281/lab10/lab10step2b/lab10step2b.v
+FU:/CPRE281/lab10/lab10step2b/lab10step2b.v
+!i122 0
+L0 20 117
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1649789237.000000
+!s107 U:/CPRE281/lab10/lab10step2b/lab10step2b.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|U:/CPRE281/lab10/lab10step2b/lab10step2b.v|
+!i113 0
+o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+tCvgOpt 0

@@ -1,0 +1,88 @@
+stages:
+  - mavenbuild
+  - maventest
+  - androidbuild
+  - androidtest
+  - mavendeploy
+
+maven-build:   #this is a JOB
+  stage: mavenbuild
+  tags:
+    - springboot_tag  					# this is LINK to the shell runner on the remote-server
+  script:
+    - cd Backend/app					# change directory to where you have your springboot application
+    - mvn package
+  only:
+    refs:
+      - main
+    changes:
+      - Backend/**/*
+
+maven-test:
+  stage: maventest
+  tags:
+    - springboot_tag
+  script:
+    - cd Backend/app
+    - mvn test
+  artifacts:
+    paths:
+      - Backend/target/*.jar
+  only:
+    refs:
+      - main
+    changes:
+      - Backend/**/*
+
+android-build: #this is another job
+  image:  gjandres/android-ci:latest      		# this is a directive to DOCKER
+  stage: androidbuild
+  tags:
+    - android_tag         					#this is LINK to the docker runner on the remote-server
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - chmod +x ./Frontend/gradlew			#change directory to where you have ‘gradlew’ in your android directory
+  script:
+    - cd Frontend					#change directory to where you have your android application
+    - ./gradlew build
+  artifacts:
+    paths:
+      - Frontend/app/build/outputs/
+  only:
+    refs:
+      - main
+    changes:
+      - Frontend/**/*
+
+android-test:
+  image:  gjandres/android-ci:latest
+  stage: androidtest
+  tags:
+    - android_tag
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - chmod +x ./Frontend/gradlew
+  script:
+    - cd Frontend
+    - ./gradlew test
+  only:
+    refs:
+      - main
+    changes:
+      - Frontend/**/*
+
+auto-deploy:
+  stage: mavendeploy  #do make a stage with same name!
+  tags:
+    - springboot_tag
+  script:
+    - cd Backend/app
+    - mvn package
+    - sudo mv target/*.jar /target/web-demo.jar
+    - sudo systemctl stop system-web-demo
+    - sudo systemctl start system-web-demo
+  only:
+    refs:
+      - main
+    changes:
+      - Backend/**/*

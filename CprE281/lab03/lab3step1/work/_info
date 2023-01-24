@@ -1,0 +1,44 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/questasim64_2021.2/examples
+T_opt
+!s110 1644606717
+VE=JDk3k_8LYQ`j[NPCCkC1
+04 9 4 work lab3step1 fast 0
+=1-b07b25279035-6206b4fc-de-34c0
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z0 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vlab3step1
+!s110 1644606698
+!i10b 1
+!s100 c:5l7G44fdKPb^?kO?UaR2
+I2S^F[M[P7iR`z4JzZM3L@2
+dU:/CPRE281/lab03/lab3step1
+w1644606388
+8U:/CPRE281/lab03/lab3step1/lab3step1.v
+FU:/CPRE281/lab03/lab3step1/lab3step1.v
+!i122 0
+L0 1 13
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1644606697.000000
+!s107 U:/CPRE281/lab03/lab3step1/lab3step1.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|U:/CPRE281/lab03/lab3step1/lab3step1.v|
+!i113 0
+o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0

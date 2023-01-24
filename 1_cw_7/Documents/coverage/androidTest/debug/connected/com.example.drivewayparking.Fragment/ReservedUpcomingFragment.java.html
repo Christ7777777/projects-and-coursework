@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ReservedUpcomingFragment.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Fragment</a> &gt; <span class="el_source">ReservedUpcomingFragment.java</span></div><h1>ReservedUpcomingFragment.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Fragment;
+
+import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Adapter.BookingAdapter;
+import com.example.drivewayparking.Adapter.BookingUpcomingAdapter;
+import com.example.drivewayparking.Model.BookingResponse;
+import com.example.drivewayparking.R;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+/**
+ * The type Reserved upcoming fragment.
+ * @author: Varun Advani
+ */
+public class ReservedUpcomingFragment extends Fragment {
+
+    // TODO: Rename parameter arguments, choose names that match
+    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+    private static final String ARG_PARAM1 = &quot;param1&quot;;
+    private static final String ARG_PARAM2 = &quot;param2&quot;;
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+    private Long user_id;
+    private RecyclerView recyclerView;
+    private List&lt;BookingResponse&gt; bookings;
+    private BookingUpcomingAdapter bookingAdapter;
+
+
+    /**
+     * Instantiates a new Reserved upcoming fragment.
+     */
+<span class="fc" id="L52">    public ReservedUpcomingFragment() {</span>
+        // Required empty public constructor
+<span class="fc" id="L54">    }</span>
+
+    /**
+     * New instance reserved upcoming fragment.
+     *
+     * @param param1 the param 1
+     * @param param2 the param 2
+     * @return the reserved upcoming fragment
+     */
+// TODO: Rename and change types and number of parameters
+    public static ReservedUpcomingFragment newInstance(String param1, String param2) {
+<span class="nc" id="L65">        ReservedUpcomingFragment fragment = new ReservedUpcomingFragment();</span>
+<span class="nc" id="L66">        Bundle args = new Bundle();</span>
+<span class="nc" id="L67">        args.putString(ARG_PARAM1, param1);</span>
+<span class="nc" id="L68">        args.putString(ARG_PARAM2, param2);</span>
+<span class="nc" id="L69">        fragment.setArguments(args);</span>
+<span class="nc" id="L70">        return fragment;</span>
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+<span class="fc" id="L75">        super.onCreate(savedInstanceState);</span>
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">        if (getArguments() != null) {</span>
+<span class="fc" id="L77">            mParam1 = getArguments().getString(ARG_PARAM1);</span>
+<span class="fc" id="L78">            mParam2 = getArguments().getString(ARG_PARAM2);</span>
+
+<span class="fc" id="L80">            user_id  = getArguments().getLong(&quot;user_id&quot;);</span>
+<span class="fc" id="L81">            bookings = new ArrayList&lt;BookingResponse&gt;();</span>
+<span class="fc" id="L82">            System.out.println(user_id);</span>
+        }
+<span class="fc" id="L84">    }</span>
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+<span class="fc" id="L89">        View view = inflater.inflate(R.layout.fragment_reserved_upcoming, container, false);</span>
+<span class="fc" id="L90">        recyclerView = view.findViewById(R.id.recyclerView_bookings_upcoming);</span>
+<span class="fc" id="L91">        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));</span>
+
+
+        // Inflate the layout for this fragment
+<span class="fc" id="L95">        Call&lt;List&lt;BookingResponse&gt;&gt; call = ApiClient.getBookingApiService().getBookingByUser(user_id);</span>
+<span class="fc" id="L96">        System.out.println(user_id + &quot;&quot;);</span>
+<span class="fc" id="L97">        call.enqueue(new Callback&lt;List&lt;BookingResponse&gt;&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;List&lt;BookingResponse&gt;&gt; call, Response&lt;List&lt;BookingResponse&gt;&gt; response) {
+<span class="pc bpc" id="L100" title="1 of 2 branches missed.">                if(response.isSuccessful()){</span>
+<span class="pc bpc" id="L101" title="1 of 2 branches missed.">                    for(BookingResponse booking : response.body()){</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">                        if(new Date().before(booking.getCheck_out())){</span>
+<span class="nc" id="L103">                            bookings.add(booking);</span>
+                        }
+<span class="nc" id="L105">                    }</span>
+                    //bookings = response.body();
+<span class="pc bpc" id="L107" title="1 of 2 branches missed.">                    if(bookings != null) {//Toast.makeText(getActivity(), &quot;No upcoming bookings&quot;, Toast.LENGTH_SHORT).show();</span>
+<span class="fc" id="L108">                        bookingAdapter = new BookingUpcomingAdapter(getActivity(), bookings);</span>
+<span class="fc" id="L109">                        recyclerView.setAdapter(bookingAdapter);</span>
+                    }
+                }
+                else{
+<span class="nc" id="L113">                    Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                }
+<span class="fc" id="L115">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;List&lt;BookingResponse&gt;&gt; call, Throwable t) {
+<span class="nc" id="L119">               Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L120">            }</span>
+        });
+        // Inflate the layout for this fragment
+<span class="fc" id="L123">        return view;</span>
+    }
+
+//    @Override
+//    public void onStart() {
+//        // Inflate the layout for this fragment
+//        super.onStart();
+//        Call&lt;List&lt;BookingResponse&gt;&gt; call = ApiClient.getBookingApiService().getBookingByUser(user_id);
+//        System.out.println(user_id + &quot;&quot;);
+//        call.enqueue(new Callback&lt;List&lt;BookingResponse&gt;&gt;() {
+//            @Override
+//            public void onResponse(Call&lt;List&lt;BookingResponse&gt;&gt; call, Response&lt;List&lt;BookingResponse&gt;&gt; response) {
+//                if (response.isSuccessful()) {
+//                    bookings = response.body();
+//                    if (bookings.size() == 0) {
+//                        Toast.makeText(getActivity(), &quot;No upcoming bookings&quot;, Toast.LENGTH_SHORT).show();
+//                    }
+//                    bookingAdapter = new BookingAdapter(getActivity(), bookings);
+//                    recyclerView.setAdapter(bookingAdapter);
+//                } else {
+//                    Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call&lt;List&lt;BookingResponse&gt;&gt; call, Throwable t) {
+//                Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+//    @Override
+//    public void onResume() {
+//        // Inflate the layout for this fragment
+//        super.onResume();
+//        Call&lt;List&lt;BookingResponse&gt;&gt; call = ApiClient.getBookingApiService().getBookingByUser(user_id);
+//        System.out.println(user_id + &quot;&quot;);
+//        call.enqueue(new Callback&lt;List&lt;BookingResponse&gt;&gt;() {
+//            @Override
+//            public void onResponse(Call&lt;List&lt;BookingResponse&gt;&gt; call, Response&lt;List&lt;BookingResponse&gt;&gt; response) {
+//                if (response.isSuccessful()) {
+//                    bookings = response.body();
+//                    if (bookings.size() == 0) {
+//                        Toast.makeText(getActivity(), &quot;No upcoming bookings&quot;, Toast.LENGTH_SHORT).show();
+//                    }
+//                    bookingAdapter = new BookingAdapter(getActivity(), bookings);
+//                    recyclerView.setAdapter(bookingAdapter);
+//                } else {
+//                    Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call&lt;List&lt;BookingResponse&gt;&gt; call, Throwable t) {
+//                Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        // Inflate the layout for this fragment
+//    }
+    // Inflate the layout for this fragment
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

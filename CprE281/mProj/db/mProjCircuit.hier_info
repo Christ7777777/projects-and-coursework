@@ -1,0 +1,26 @@
+|mProjCircuit
+P <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+A => gdfx_temp0.IN0
+B => gdfx_temp1.IN0
+C => bobs_circuit:inst.y
+C => inst4.IN1
+C => inst3.IN2
+D => bobs_circuit:inst.z
+D => inst4.IN2
+D => inst3.IN3
+
+
+|mProjCircuit|bobs_circuit:inst
+w => b.IN0
+w => b.IN0
+x => b.IN0
+x => b.IN1
+y => b.IN1
+y => b.IN1
+y => b.IN1
+z => b.IN1
+z => b.IN1
+z => b.IN1
+b <= b.DB_MAX_OUTPUT_PORT_TYPE
+
+

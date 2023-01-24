@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainActivityAdmin.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Activity</a> &gt; <span class="el_source">MainActivityAdmin.java</span></div><h1>MainActivityAdmin.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Activity;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Fragment.DisputeFragment;
+import com.example.drivewayparking.Model.Admin;
+import com.example.drivewayparking.Model.User;
+import com.example.drivewayparking.R;
+import com.example.drivewayparking.Fragment.FindFragment;
+import com.example.drivewayparking.Fragment.InboxFragment;
+import com.example.drivewayparking.Fragment.ProfileFragment;
+import com.example.drivewayparking.Fragment.ReservedFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+
+/**
+ * The type Main activity admin.
+ * @author: Varun Advani
+ */
+<span class="fc" id="L31">public class MainActivityAdmin extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {</span>
+
+    /**
+     * The Bottom navigation view.
+     */
+    BottomNavigationView bottomNavigationView;
+
+    Bundle bundle;
+    long admin_id;
+    String email, admin_email;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+<span class="fc" id="L44">        super.onCreate(savedInstanceState);</span>
+<span class="fc" id="L45">        setContentView(R.layout.activity_main_host);</span>
+
+<span class="fc" id="L47">        bottomNavigationView = findViewById(R.id.bottom_navigation);</span>
+<span class="fc" id="L48">        bundle = new Bundle();</span>
+<span class="fc" id="L49">        bottomNavigationView.setOnNavigationItemSelectedListener(this);</span>
+<span class="fc" id="L50">        email = getIntent().getStringExtra(&quot;f_email&quot;);</span>
+<span class="fc" id="L51">        admin_email = getIntent().getStringExtra(&quot;admin_email&quot;);</span>
+<span class="fc" id="L52">        Call&lt;Admin&gt; call = ApiClient.getAdminApiService().getAdminByEmail(admin_email);</span>
+<span class="fc" id="L53">        call.enqueue(new Callback&lt;Admin&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;Admin&gt; call, Response&lt;Admin&gt; response) {
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">                if(response.isSuccessful()){</span>
+<span class="fc" id="L57">                    admin_id = response.body().getId();</span>
+                }
+<span class="fc" id="L59">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;Admin&gt; call, Throwable t) {
+
+<span class="nc" id="L64">            }</span>
+        });
+
+<span class="fc" id="L67">        System.out.println(&quot;email: &quot; + email);</span>
+<span class="fc" id="L68">        bottomNavigationView.setSelectedItemId(R.id.find);</span>
+<span class="fc" id="L69">    }</span>
+
+    /**
+     * The Park fragment.
+     */
+<span class="fc" id="L74">    FindFragment parkFragment = new FindFragment();</span>
+<span class="fc" id="L75">    DisputeFragment disputeFragment = new DisputeFragment();</span>
+<span class="fc" id="L76">    InboxFragment inboxFragment = new InboxFragment();</span>
+    /**
+     * The Profile fragment.
+     */
+<span class="fc" id="L80">    ProfileFragment profileFragment = new ProfileFragment();</span>
+
+    @Override
+    public void overridePendingTransition(int enterAnim, int exitAnim) {
+<span class="nc" id="L84">        super.overridePendingTransition(enterAnim, exitAnim);</span>
+<span class="nc" id="L85">    }</span>
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+<span class="pc bpc" id="L89" title="3 of 5 branches missed.">        switch (item.getItemId()) {</span>
+            case R.id.find:
+<span class="fc" id="L91">                bundle.putString(&quot;f_email&quot;,email);</span>
+<span class="fc" id="L92">                parkFragment.setArguments(bundle);</span>
+<span class="fc" id="L93">                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, parkFragment).commit();</span>
+                //startActivity(new Intent(getApplicationContext(), CreateBookingActivity.class));
+<span class="fc" id="L95">                return true;</span>
+
+            case R.id.reserved:
+                //startActivity(new Intent(getApplicationContext(), CreatePropertyActivity.class));
+
+//                Call&lt;User&gt; call = ApiClient.getUserApiService().getUserByEmail(email);
+//                call.enqueue(new Callback&lt;User&gt;() {
+//                    @Override
+//                    public void onResponse(Call&lt;User&gt; call, Response&lt;User&gt; response) {
+//                        user_id = response.body().getId();
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call&lt;User&gt; call, Throwable t) {
+//                        Toast.makeText(MainActivityAdmin.this, &quot;Get user ID by email error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+//
+//                bundle.putLong(&quot;user_id&quot;, user_id);
+<span class="fc" id="L114">                bundle.putString(&quot;admin_email&quot;, admin_email);</span>
+<span class="fc" id="L115">                bundle.putLong(&quot;admin_id&quot;, admin_id);</span>
+<span class="fc" id="L116">                disputeFragment.setArguments(bundle);</span>
+<span class="fc" id="L117">                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, disputeFragment).commit();</span>
+<span class="fc" id="L118">                return true;</span>
+
+            case R.id.inbox:
+<span class="nc" id="L121">                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, inboxFragment).commit();</span>
+<span class="nc" id="L122">                return true;</span>
+
+            case R.id.profile:
+<span class="nc" id="L125">                bundle.putString(&quot;admin_email&quot;,admin_email);</span>
+<span class="nc" id="L126">                profileFragment.setArguments(bundle);</span>
+<span class="nc" id="L127">                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, profileFragment).commit();</span>
+                //startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                //Intent intent = new Intent(MainActivityAdmin.this, ProfileActivity.class);
+                //intent.putExtra(&quot;f_name&quot;, getIntent().getStringExtra(&quot;f_name&quot;));
+//                intent.putExtra(&quot;f_email&quot;, getIntent().getStringExtra(&quot;f_email&quot;));
+//                //intent.putExtra(&quot;f_phone&quot;, getIntent().getStringExtra(&quot;f_phone&quot;));
+//                //intent.putExtra(&quot;f_password&quot;, getIntent().getStringExtra(&quot;f_password&quot;));
+//                startActivity(intent);
+<span class="nc" id="L135">                overridePendingTransition(R.anim.fadein, R.anim.fadeout);</span>
+<span class="nc" id="L136">                return true;</span>
+        }
+<span class="nc" id="L138">        return false;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

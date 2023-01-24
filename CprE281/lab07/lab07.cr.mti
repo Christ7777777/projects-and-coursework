@@ -1,0 +1,22 @@
+U:/CPRE281/lab07/adder_subtracter.v {1 {vlog -work work -vopt -stats=none U:/CPRE281/lab07/adder_subtracter.v
+QuestaSim-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module adder_subtracter
+
+Top level modules:
+	adder_subtracter
+
+} {} {}} U:/CPRE281/lab07/adder_4bit.v {1 {vlog -work work -vopt -stats=none U:/CPRE281/lab07/adder_4bit.v
+QuestaSim-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module adder_4bit
+
+Top level modules:
+	adder_4bit
+
+} {} {}} U:/CPRE281/lab07/FA.v {1 {vlog -work work -vopt -stats=none U:/CPRE281/lab07/FA.v
+QuestaSim-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module FA
+
+Top level modules:
+	FA
+
+} {} {}}

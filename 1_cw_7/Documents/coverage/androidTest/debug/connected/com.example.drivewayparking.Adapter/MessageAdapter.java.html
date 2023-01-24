@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MessageAdapter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Adapter</a> &gt; <span class="el_source">MessageAdapter.java</span></div><h1>MessageAdapter.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Adapter;
+
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.drivewayparking.Model.MessageRequest;
+import com.example.drivewayparking.Model.MessageResponse;
+import com.example.drivewayparking.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+public class MessageAdapter extends RecyclerView.Adapter {
+
+    private static final int TYPE_MESSAGE_SENT = 0;
+    private static final int TYPE_MESSAGE_RECEIVED = 1;
+    private static final int TYPE_IMAGE_SENT = 2;
+    private static final int TYPE_IMAGE_RECEIVED = 3;
+
+    private LayoutInflater inflater;
+<span class="pc" id="L36">    private List&lt;MessageResponse&gt; messages = new ArrayList&lt;&gt;();</span>
+    private String date;
+    private String time;
+
+<span class="nc" id="L40">    public MessageAdapter (LayoutInflater inflater) {</span>
+<span class="nc" id="L41">        this.inflater = inflater;</span>
+<span class="nc" id="L42">    }</span>
+
+<span class="fc" id="L44">    public MessageAdapter(LayoutInflater inflater, String date, String time) {</span>
+<span class="fc" id="L45">        this.inflater = inflater;</span>
+<span class="fc" id="L46">        this.date = date;</span>
+<span class="fc" id="L47">        this.time = time;</span>
+
+<span class="fc" id="L49">    }</span>
+
+    private class SentMessageHolder extends RecyclerView.ViewHolder {
+
+        TextView messageTxt;
+        TextView sentDate;
+        TextView sentTime;
+
+<span class="fc" id="L57">        public SentMessageHolder(@NonNull View itemView) {</span>
+<span class="fc" id="L58">            super(itemView);</span>
+<span class="fc" id="L59">            messageTxt = itemView.findViewById(R.id.sent_text);</span>
+<span class="fc" id="L60">            sentDate = itemView.findViewById(R.id.sent_date);</span>
+<span class="fc" id="L61">            sentTime = itemView.findViewById(R.id.sent_time);</span>
+<span class="fc" id="L62">        }</span>
+    }
+
+    private class SentImageHolder extends RecyclerView.ViewHolder {
+
+        ImageView imageView;
+
+<span class="nc" id="L69">        public SentImageHolder(@NonNull View itemView) {</span>
+<span class="nc" id="L70">            super(itemView);</span>
+
+<span class="nc" id="L72">            imageView = itemView.findViewById(R.id.imageView);</span>
+<span class="nc" id="L73">        }</span>
+    }
+
+    private class ReceivedMessageHolder extends RecyclerView.ViewHolder {
+
+        TextView nameTxt, messageTxt;
+
+<span class="fc" id="L80">        public ReceivedMessageHolder(@NonNull View itemView) {</span>
+<span class="fc" id="L81">            super(itemView);</span>
+
+<span class="fc" id="L83">            nameTxt = itemView.findViewById(R.id.nameTxt);</span>
+<span class="fc" id="L84">            messageTxt = itemView.findViewById(R.id.received_text);</span>
+<span class="fc" id="L85">        }</span>
+    }
+
+    private class ReceivedImageHolder extends RecyclerView.ViewHolder {
+
+        ImageView imageView;
+        TextView nameTxt;
+
+<span class="nc" id="L93">        public ReceivedImageHolder(@NonNull View itemView) {</span>
+<span class="nc" id="L94">            super(itemView);</span>
+
+<span class="nc" id="L96">            imageView = itemView.findViewById(R.id.imageView);</span>
+<span class="nc" id="L97">            nameTxt = itemView.findViewById(R.id.nameTxt);</span>
+
+<span class="nc" id="L99">        }</span>
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+
+<span class="fc" id="L105">        MessageResponse message = messages.get(position);</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">            if (message.isSent()) {</span>
+<span class="fc" id="L107">                    return TYPE_MESSAGE_SENT;</span>
+
+            } else {
+<span class="fc" id="L110">                    return TYPE_MESSAGE_RECEIVED;</span>
+            }
+    }
+
+    @NonNull
+    @Override
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        View view;
+
+<span class="pc bpc" id="L120" title="1 of 3 branches missed.">        switch (viewType) {</span>
+            case TYPE_MESSAGE_SENT:
+<span class="fc" id="L122">                view = inflater.inflate(R.layout.item_sent_message, parent, false);</span>
+<span class="fc" id="L123">                return new SentMessageHolder(view);</span>
+            case TYPE_MESSAGE_RECEIVED:
+
+<span class="fc" id="L126">                view = inflater.inflate(R.layout.item_received_message, parent, false);</span>
+<span class="fc" id="L127">                return new ReceivedMessageHolder(view);</span>
+
+//            case TYPE_IMAGE_SENT:
+//
+//                view = inflater.inflate(R.layout.item_sent_image, parent, false);
+//                return new SentImageHolder(view);
+//
+//            case TYPE_IMAGE_RECEIVED:
+//                view = inflater.inflate(R.layout.item_received_image, parent, false);
+//                return new ReceivedImageHolder(view);
+
+        }
+
+<span class="nc" id="L140">        return null;</span>
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+<span class="fc" id="L146">        MessageResponse message = messages.get(position);</span>
+
+
+<span class="fc bfc" id="L149" title="All 2 branches covered.">            if (message.isSent()) {</span>
+
+<span class="fc" id="L151">                    SentMessageHolder messageHolder = (SentMessageHolder) holder;</span>
+<span class="fc" id="L152">                    messageHolder.messageTxt.setText(message.getMessage());</span>
+//                    SimpleDateFormat simpleDate = new SimpleDateFormat(&quot;MM/dd/yyyy&quot;);
+//                    SimpleDateFormat simpleTime = new SimpleDateFormat(&quot;hh:mm a&quot;);
+//                    Calendar calendar = Calendar.getInstance();
+//                    if(position == 0) {
+//                        messageHolder.sentDate.setText(simpleDate.format(calendar.getTime()));
+//                    }
+//                    else {
+//                        messageHolder.sentDate.setText(&quot;&quot;);
+//                    }
+//                    messageHolder.sentTime.setText(simpleTime.format(calendar.getTime()));
+
+
+
+<span class="fc" id="L166">            } else {</span>
+<span class="fc" id="L167">                    ReceivedMessageHolder messageHolder = (ReceivedMessageHolder) holder;</span>
+<span class="fc" id="L168">                    messageHolder.nameTxt.setText(message.getName());</span>
+<span class="fc" id="L169">                    messageHolder.messageTxt.setText(message.getMessage());</span>
+        }
+<span class="fc" id="L171">    }</span>
+
+    private Bitmap getBitmapFromString(String image) {
+
+<span class="nc" id="L175">        byte[] bytes = Base64.decode(image, Base64.DEFAULT);</span>
+<span class="nc" id="L176">        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);</span>
+    }
+
+    @Override
+    public int getItemCount() {
+<span class="fc" id="L181">        return messages.size();</span>
+    }
+
+    public void addItem (MessageResponse message) {
+<span class="fc" id="L185">        messages.add(message);</span>
+<span class="fc" id="L186">        notifyDataSetChanged();</span>
+<span class="fc" id="L187">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/itemMenuTitle"
+        android:title="@string/action_done"
+        android:textAllCaps="false"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/item12"
+        android:title="@string/report"
+        android:top="10dp"
+        android:bottom="10dp"
+        android:right="10dp"
+        android:left="10dp"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/item1"
+        android:title="@string/my_profile"
+        android:top="10dp"
+        android:bottom="10dp"
+        android:right="10dp"
+        android:left="10dp"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/item3"
+        android:title="Rent Your Space"
+        android:top="10dp"
+        android:bottom="10dp"
+        android:right="10dp"
+        android:left="10dp"
+        app:showAsAction="never"/>
+
+
+
+
+</menu>

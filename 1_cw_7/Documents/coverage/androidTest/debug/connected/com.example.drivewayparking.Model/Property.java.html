@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Property.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Model</a> &gt; <span class="el_source">Property.java</span></div><h1>Property.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Model;
+
+import com.google.gson.annotations.SerializedName;
+
+import java.util.Comparator;
+
+/**
+ * The type Property.
+ */
+public class Property {
+
+    @SerializedName(&quot;id&quot;)
+    private Long pid;
+    private String title;
+    private String street;
+    private String zipcode;
+    private String city;
+    private String state;
+    private String country;
+    private Double ratePerHour;
+    private double latitude;
+    private double longitude;
+    private String property_type;
+    // Every new property needs to be approved by the admin
+<span class="fc" id="L25">    private Boolean approved = false;</span>
+
+    // Type of parking
+<span class="fc" id="L28">    private Boolean driveway = false;</span>
+<span class="fc" id="L29">    private Boolean garage = false;</span>
+<span class="fc" id="L30">    private Boolean parkingLot = false;</span>
+<span class="fc" id="L31">    private Boolean handicapped = false;</span>
+
+    // Vehicle type
+<span class="fc" id="L34">    private Boolean car = false;</span>
+<span class="fc" id="L35">    private Boolean truck = false;</span>
+<span class="fc" id="L36">    private Boolean motorcycle = false;</span>
+<span class="fc" id="L37">    private Boolean oversized = false;</span>
+
+    // Amenities
+<span class="fc" id="L40">    private Boolean EVcharging = false;</span>
+<span class="fc" id="L41">    private Boolean inOut = false;</span>
+<span class="fc" id="L42">    private Boolean tailgating = false;</span>
+<span class="fc" id="L43">    private Boolean shuttle = false;</span>
+
+
+    /**
+     * Instantiates a new Property.
+     */
+<span class="fc" id="L49">    public Property(){}</span>
+
+    /**
+     * Gets pid.
+     *
+     * @return the pid
+     */
+    public Long getPid() {
+<span class="nc" id="L57">        return pid;</span>
+    }
+
+    /**
+     * Sets pid.
+     *
+     * @param pid the pid
+     */
+    public void setPid(Long pid) {
+<span class="nc" id="L66">        this.pid = pid;</span>
+<span class="nc" id="L67">    }</span>
+
+    /**
+     * Gets rate per hour.
+     *
+     * @return the rate per hour
+     */
+    public Double getRatePerHour() {
+<span class="fc" id="L75">        return ratePerHour;</span>
+    }
+
+    /**
+     * Sets rate per hour.
+     *
+     * @param ratePerHour the rate per hour
+     */
+    public void setRatePerHour(Double ratePerHour) {
+<span class="nc" id="L84">        this.ratePerHour = ratePerHour;</span>
+<span class="nc" id="L85">    }</span>
+
+    /**
+     * Gets title.
+     *
+     * @return the title
+     */
+    public String getTitle() {
+<span class="fc" id="L93">        return title;</span>
+    }
+
+    /**
+     * Sets title.
+     *
+     * @param title the title
+     */
+    public void setTitle(String title) {
+<span class="nc" id="L102">        this.title = title;</span>
+<span class="nc" id="L103">    }</span>
+
+    /**
+     * Gets property type.
+     *
+     * @return the property type
+     */
+    public String getProperty_type() {
+<span class="nc" id="L111">        return property_type;</span>
+    }
+
+    /**
+     * Sets property type.
+     *
+     * @param property_type the property type
+     */
+    public void setProperty_type(String property_type) {
+<span class="nc" id="L120">        this.property_type = property_type;</span>
+<span class="nc" id="L121">    }</span>
+
+    /**
+     * Gets zipcode.
+     *
+     * @return the zipcode
+     */
+    public String getZipcode() {
+<span class="fc" id="L129">        return zipcode;</span>
+    }
+
+    /**
+     * Sets zipcode.
+     *
+     * @param zipcode the zipcode
+     */
+    public void setZipcode(String zipcode) {
+<span class="nc" id="L138">        this.zipcode = zipcode;</span>
+<span class="nc" id="L139">    }</span>
+
+    /**
+     * Gets latitude.
+     *
+     * @return the latitude
+     */
+    public double getLatitude() {
+<span class="fc" id="L147">        return latitude;</span>
+    }
+
+    /**
+     * Sets latitude.
+     *
+     * @param latitude the latitude
+     */
+    public void setLatitude(double latitude) {
+<span class="nc" id="L156">        this.latitude = latitude;</span>
+<span class="nc" id="L157">    }</span>
+
+    /**
+     * Gets longitude.
+     *
+     * @return the longitude
+     */
+    public double getLongitude() {
+<span class="fc" id="L165">        return longitude;</span>
+    }
+
+    /**
+     * Sets longitude.
+     *
+     * @param longitude the longitude
+     */
+    public void setLongitude(double longitude) {
+<span class="nc" id="L174">        this.longitude = longitude;</span>
+<span class="nc" id="L175">    }</span>
+
+    /**
+     * Gets street.
+     *
+     * @return the street
+     */
+    public String getStreet() {
+<span class="fc" id="L183">        return street;</span>
+    }
+
+    /**
+     * Sets street.
+     *
+     * @param street the street
+     */
+    public void setStreet(String street) {
+<span class="nc" id="L192">        this.street = street;</span>
+<span class="nc" id="L193">    }</span>
+
+    /**
+     * Gets city.
+     *
+     * @return the city
+     */
+    public String getCity() {
+<span class="fc" id="L201">        return city;</span>
+    }
+
+    /**
+     * Gets state.
+     *
+     * @return the state
+     */
+    public String getState() {
+<span class="nc" id="L210">        return state;</span>
+    }
+
+    /**
+     * Sets state.
+     *
+     * @param state the state
+     */
+    public void setState(String state) {
+<span class="nc" id="L219">        this.state = state;</span>
+<span class="nc" id="L220">    }</span>
+
+    /**
+     * Sets city.
+     *
+     * @param city the city
+     */
+    public void setCity(String city) {
+<span class="nc" id="L228">        this.city = city;</span>
+<span class="nc" id="L229">    }</span>
+
+    /**
+     * Gets country.
+     *
+     * @return the country
+     */
+    public String getCountry() {
+<span class="nc" id="L237">        return country;</span>
+    }
+
+    /**
+     * Sets country.
+     *
+     * @param country the country
+     */
+    public void setCountry(String country) {
+<span class="nc" id="L246">        this.country = country;</span>
+<span class="nc" id="L247">    }</span>
+
+    /**
+     * Gets approved.
+     *
+     * @return the approved
+     */
+    public Boolean getApproved() {
+<span class="nc" id="L255">        return approved;</span>
+    }
+
+    /**
+     * Sets approved.
+     *
+     * @param approved the approved
+     */
+    public void setApproved(Boolean approved) {
+<span class="nc" id="L264">        this.approved = approved;</span>
+<span class="nc" id="L265">    }</span>
+
+    /**
+     * Gets driveway.
+     *
+     * @return the driveway
+     */
+    public Boolean getDriveway() {
+<span class="nc" id="L273">        return driveway;</span>
+    }
+
+    /**
+     * Sets driveway.
+     *
+     * @param driveway the driveway
+     */
+    public void setDriveway(Boolean driveway) {
+<span class="nc" id="L282">        this.driveway = driveway;</span>
+<span class="nc" id="L283">    }</span>
+
+    /**
+     * Gets garage.
+     *
+     * @return the garage
+     */
+    public Boolean getGarage() {
+<span class="nc" id="L291">        return garage;</span>
+    }
+
+    /**
+     * Sets garage.
+     *
+     * @param garage the garage
+     */
+    public void setGarage(Boolean garage) {
+<span class="nc" id="L300">        this.garage = garage;</span>
+<span class="nc" id="L301">    }</span>
+
+    /**
+     * Gets parking lot.
+     *
+     * @return the parking lot
+     */
+    public Boolean getParkingLot() {
+<span class="nc" id="L309">        return parkingLot;</span>
+    }
+
+    /**
+     * Sets parking lot.
+     *
+     * @param parkingLot the parking lot
+     */
+    public void setParkingLot(Boolean parkingLot) {
+<span class="nc" id="L318">        this.parkingLot = parkingLot;</span>
+<span class="nc" id="L319">    }</span>
+
+    /**
+     * Gets handicapped.
+     *
+     * @return the handicapped
+     */
+    public Boolean getHandicapped() {
+<span class="nc" id="L327">        return handicapped;</span>
+    }
+
+    /**
+     * Sets handicapped.
+     *
+     * @param handicapped the handicapped
+     */
+    public void setHandicapped(Boolean handicapped) {
+<span class="nc" id="L336">        this.handicapped = handicapped;</span>
+<span class="nc" id="L337">    }</span>
+
+    /**
+     * Gets car.
+     *
+     * @return the car
+     */
+    public Boolean getCar() {
+<span class="nc" id="L345">        return car;</span>
+    }
+
+    /**
+     * Sets car.
+     *
+     * @param car the car
+     */
+    public void setCar(Boolean car) {
+<span class="nc" id="L354">        this.car = car;</span>
+<span class="nc" id="L355">    }</span>
+
+    /**
+     * Gets truck.
+     *
+     * @return the truck
+     */
+    public Boolean getTruck() {
+<span class="nc" id="L363">        return truck;</span>
+    }
+
+    /**
+     * Sets truck.
+     *
+     * @param truck the truck
+     */
+    public void setTruck(Boolean truck) {
+<span class="nc" id="L372">        this.truck = truck;</span>
+<span class="nc" id="L373">    }</span>
+
+    /**
+     * Gets motorcycle.
+     *
+     * @return the motorcycle
+     */
+    public Boolean getMotorcycle() {
+<span class="nc" id="L381">        return motorcycle;</span>
+    }
+
+    /**
+     * Sets motorcycle.
+     *
+     * @param motorcycle the motorcycle
+     */
+    public void setMotorcycle(Boolean motorcycle) {
+<span class="nc" id="L390">        this.motorcycle = motorcycle;</span>
+<span class="nc" id="L391">    }</span>
+
+    /**
+     * Gets oversized.
+     *
+     * @return the oversized
+     */
+    public Boolean getOversized() {
+<span class="nc" id="L399">        return oversized;</span>
+    }
+
+    /**
+     * Sets oversized.
+     *
+     * @param oversized the oversized
+     */
+    public void setOversized(Boolean oversized) {
+<span class="nc" id="L408">        this.oversized = oversized;</span>
+<span class="nc" id="L409">    }</span>
+
+    /**
+     * Gets e vcharging.
+     *
+     * @return the e vcharging
+     */
+    public Boolean getEVcharging() {
+<span class="nc" id="L417">        return EVcharging;</span>
+    }
+
+    /**
+     * Sets e vcharging.
+     *
+     * @param EVcharging the e vcharging
+     */
+    public void setEVcharging(Boolean EVcharging) {
+<span class="nc" id="L426">        this.EVcharging = EVcharging;</span>
+<span class="nc" id="L427">    }</span>
+
+    /**
+     * Gets in out.
+     *
+     * @return the in out
+     */
+    public Boolean getInOut() {
+<span class="nc" id="L435">        return inOut;</span>
+    }
+
+    /**
+     * Sets in out.
+     *
+     * @param inOut the in out
+     */
+    public void setInOut(Boolean inOut) {
+<span class="nc" id="L444">        this.inOut = inOut;</span>
+<span class="nc" id="L445">    }</span>
+
+    /**
+     * Gets tailgating.
+     *
+     * @return the tailgating
+     */
+    public Boolean getTailgating() {
+<span class="nc" id="L453">        return tailgating;</span>
+    }
+
+    /**
+     * Sets tailgating.
+     *
+     * @param tailgating the tailgating
+     */
+    public void setTailgating(Boolean tailgating) {
+<span class="nc" id="L462">        this.tailgating = tailgating;</span>
+<span class="nc" id="L463">    }</span>
+
+    /**
+     * Gets shuttle.
+     *
+     * @return the shuttle
+     */
+    public Boolean getShuttle() {
+<span class="nc" id="L471">        return shuttle;</span>
+    }
+
+    /**
+     * Sets shuttle.
+     *
+     * @param shuttle the shuttle
+     */
+    public void setShuttle(Boolean shuttle) {
+<span class="nc" id="L480">        this.shuttle = shuttle;</span>
+<span class="nc" id="L481">    }</span>
+
+    /**
+     * The constant sortByCheapest.
+     */
+<span class="fc" id="L486">    public static Comparator&lt;Property&gt; sortByCheapest = new Comparator&lt;Property&gt;() {</span>
+        @Override
+        public int compare(Property o1, Property o2) {
+<span class="fc" id="L489">            return o1.getRatePerHour().compareTo(o2.getRatePerHour());</span>
+        }
+
+    };
+
+    /**
+     * The constant mostExpensive.
+     */
+<span class="fc" id="L497">    public static Comparator&lt;Property&gt; mostExpensive = new Comparator&lt;Property&gt;() {</span>
+        @Override
+        public int compare(Property o1, Property o2) {
+<span class="fc" id="L500">            return o2.getRatePerHour().compareTo(o1.getRatePerHour());</span>
+        }
+
+    };
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

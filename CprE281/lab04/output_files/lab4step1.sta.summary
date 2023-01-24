@@ -1,0 +1,41 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'cabbage'
+Slack : -1.295
+TNS   : -1.295
+
+Type  : Slow 1200mV 85C Model Hold 'cabbage'
+Slack : 0.788
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'cabbage'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 0C Model Setup 'cabbage'
+Slack : -1.100
+TNS   : -1.100
+
+Type  : Slow 1200mV 0C Model Hold 'cabbage'
+Slack : 0.741
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'cabbage'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV 0C Model Setup 'cabbage'
+Slack : -0.743
+TNS   : -0.743
+
+Type  : Fast 1200mV 0C Model Hold 'cabbage'
+Slack : 0.357
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'cabbage'
+Slack : -3.000
+TNS   : -3.000
+
+------------------------------------------------------------

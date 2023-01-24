@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>HostPropertyAdapter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Adapter</a> &gt; <span class="el_source">HostPropertyAdapter.java</span></div><h1>HostPropertyAdapter.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Adapter;
+
+
+
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Activity.ViewAllBookingsActivity;
+import com.example.drivewayparking.Activity.ViewAllUserPropertyActivity;
+import com.example.drivewayparking.Activity.ViewSpecificPropertyActivity;
+import com.example.drivewayparking.Model.Booking;
+import com.example.drivewayparking.Model.BookingRequest;
+import com.example.drivewayparking.Model.Property;
+import com.example.drivewayparking.R;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+/**
+ * The type Host property adapter.
+ * @author: Varun Advani
+ */
+public class HostPropertyAdapter extends RecyclerView.Adapter&lt;HostPropertyAdapter.PropertyViewHolder&gt; {
+    private Context context;
+    private List&lt;Property&gt; propertyList;
+    private String start;
+    private String end;
+    private Long user_id;
+<span class="pc" id="L46">    private int IMAGE_REQUEST_ID = 1;</span>
+
+
+    /**
+     * Instantiates a new Host property adapter.
+     *
+     * @param context      the context
+     * @param propertyList the property list
+     */
+<span class="fc" id="L55">    public HostPropertyAdapter(Context context, List&lt;Property&gt; propertyList) {</span>
+<span class="fc" id="L56">        this.context = context;</span>
+<span class="fc" id="L57">        this.propertyList = propertyList;</span>
+<span class="fc" id="L58">    }</span>
+
+    /**
+     * Instantiates a new Host property adapter.
+     *
+     * @param context      the context
+     * @param propertyList the property list
+     * @param start        the start
+     * @param end          the end
+     * @param user_id      the user id
+     */
+<span class="nc" id="L69">    public HostPropertyAdapter(Context context, List&lt;Property&gt; propertyList, String start, String end, Long user_id) {</span>
+<span class="nc" id="L70">        this.context = context;</span>
+<span class="nc" id="L71">        this.propertyList = propertyList;</span>
+<span class="nc" id="L72">        this.start = start;</span>
+<span class="nc" id="L73">        this.end = end;</span>
+<span class="nc" id="L74">        this.user_id = user_id;</span>
+<span class="nc" id="L75">    }</span>
+
+    @NonNull
+    @Override
+    public PropertyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+<span class="fc" id="L80">        View view = LayoutInflater.from(context).inflate(R.layout.property_list_view_host, parent, false);</span>
+<span class="fc" id="L81">        return new PropertyViewHolder(view);</span>
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull PropertyViewHolder holder, final int position) {
+<span class="fc" id="L86">        final Property list = propertyList.get(position);</span>
+        //Long propertyId = list.getPid();
+<span class="fc" id="L88">        String street = list.getStreet();</span>
+<span class="fc" id="L89">        String city = list.getCity();</span>
+<span class="fc" id="L90">        String zipcode = list.getZipcode();</span>
+<span class="fc" id="L91">        Double rate = list.getRatePerHour();</span>
+<span class="pc bpc" id="L92" title="3 of 6 branches missed.">        if(street == null || city == null || zipcode == null) {</span>
+<span class="nc" id="L93">            street = &quot;&quot;;</span>
+<span class="nc" id="L94">            city = &quot;&quot;;</span>
+<span class="nc" id="L95">            zipcode = &quot;&quot;;</span>
+        }
+<span class="fc" id="L97">        holder.propertyName.setText(list.getTitle());</span>
+<span class="fc" id="L98">        holder.propertyAddress.setText(street + &quot; &quot; + city + &quot; &quot; + zipcode);</span>
+<span class="pc bpc" id="L99" title="1 of 2 branches missed.">        if(rate != null) {</span>
+<span class="fc" id="L100">            holder.propertyRate.setText(&quot;&quot; + rate);</span>
+        }
+        else{
+<span class="nc" id="L103">            holder.propertyRate.setText(&quot;N/A&quot;);</span>
+        }
+
+
+
+<span class="fc" id="L108">        holder.bookProperty.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View view) {
+<span class="nc" id="L111">             Intent intent = new Intent(context.getApplicationContext(), ViewAllBookingsActivity.class);</span>
+<span class="nc" id="L112">             Bundle bundle = new Bundle();</span>
+<span class="nc" id="L113">             bundle.putLong(&quot;pid&quot;, list.getPid());</span>
+<span class="nc" id="L114">             intent.putExtras(bundle);</span>
+<span class="nc" id="L115">             context.startActivity(intent);</span>
+<span class="nc" id="L116">            }</span>
+        });
+
+<span class="fc" id="L119">        holder.uploadImages.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View view) {
+<span class="nc" id="L122">               Intent intent = new Intent(Intent.ACTION_GET_CONTENT);</span>
+                //intent.setClass(context, ViewAllUserPropertyActivity.class);
+<span class="nc" id="L124">                Bundle bundle = new Bundle();</span>
+<span class="nc" id="L125">                intent.setType(&quot;image/*&quot;);</span>
+<span class="nc" id="L126">                intent.putExtra(&quot;pid&quot;, list.getPid());</span>
+<span class="nc" id="L127">                ((Activity) context).startActivityForResult(Intent.createChooser(intent, &quot;Pick image&quot;),</span>
+<span class="nc" id="L128">                        IMAGE_REQUEST_ID);</span>
+
+
+<span class="nc" id="L131">            }</span>
+        });
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view)  {
+//                Intent intent = new Intent(context, ViewSpecificPropertyActivity.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putLong(&quot;pid&quot;, list.getPid());
+//                intent.putExtras(bundle);
+//                context.startActivity(intent);
+//            }
+//        });
+<span class="fc" id="L143">    }</span>
+
+    @Override
+    public int getItemCount() {
+<span class="fc" id="L147">        return propertyList.size();</span>
+    }
+
+    /**
+     * The type Property view holder.
+     */
+    static class PropertyViewHolder extends RecyclerView.ViewHolder{
+        /**
+         * The Property name.
+         */
+        TextView propertyName,
+        /**
+         * The Property address.
+         */
+        propertyAddress,
+        /**
+         * The Property rating.
+         */
+        propertyRating,
+        /**
+         * The Delete property.
+         */
+        deleteProperty,
+        /**
+         * The Property rate.
+         */
+        propertyRate,
+        /**
+         * The Book property.
+         */
+        bookProperty,
+        /**
+         * Upload property Images
+         */
+        uploadImages;
+        /**
+         * The Layout.
+         */
+        LinearLayout layout;
+
+
+        /**
+         * Instantiates a new Property view holder.
+         *
+         * @param itemView the item view
+         */
+        public PropertyViewHolder(@NonNull View itemView) {
+<span class="fc" id="L194">            super(itemView);</span>
+<span class="fc" id="L195">            propertyName = itemView.findViewById(R.id.textView_propertyName_host);</span>
+<span class="fc" id="L196">            propertyAddress = itemView.findViewById(R.id.textView_address_host);</span>
+<span class="fc" id="L197">            propertyRate = itemView.findViewById(R.id.textView_rate_host);</span>
+<span class="fc" id="L198">            bookProperty = itemView.findViewById(R.id.textView_view_all_booked_property);</span>
+<span class="fc" id="L199">            uploadImages = itemView.findViewById(R.id.upload_images_property);</span>
+            //layout = itemView.findViewById(R.id.linearLayout_propertyList);
+
+<span class="fc" id="L202">        }</span>
+    }
+
+    /**
+     * Set filter.
+     *
+     * @param dataModels the data models
+     */
+    public void setFilter(List&lt;Property&gt; dataModels){
+<span class="nc" id="L211">        propertyList = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L212">        propertyList.addAll(dataModels);</span>
+<span class="nc" id="L213">        notifyDataSetChanged();</span>
+<span class="nc" id="L214">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

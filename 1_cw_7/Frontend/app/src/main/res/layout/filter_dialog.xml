@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#000000"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/sortByRatings"
+            android:layout_width="97dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="52dp"
+            android:text="Ratings"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/sortByMostExpensive"
+            android:layout_width="107dp"
+            android:layout_height="39dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="151dp"
+            android:text="Price: High to Low"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sortByRatings"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/sortByCheapest"
+            android:layout_width="122dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="28dp"
+            android:text="Price: Low to High"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sortByMostExpensive"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/sortButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="View Properties"
+            app:layout_constraintTop_toBottomOf="@id/sortByMostExpensive"
+            tools:layout_editor_absoluteX="119dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

@@ -1,0 +1,69 @@
+
+#
+# CprE 381 toolflow Timing dump
+#
+
+FMax: 52.90mhz Clk Constraint: 20.00ns Slack: 1.09ns
+
+The path is given below
+
+ ===================================================================
+ From Node    : MIPS_pc:pcReg|MIPS_pc_dffg:\G_NBit_DFFG:3:ONESCOMPI|s_Q
+ To Node      : MIPS_pc:pcReg|MIPS_pc_dffg:\G_NBit_DFFG:6:ONESCOMPI|s_Q
+ Launch Clock : iCLK
+ Latch Clock  : iCLK
+ Data Arrival Path:
+ Total (ns)  Incr (ns)     Type  Element
+ ==========  ========= ==  ====  ===================================
+      0.000      0.000           launch edge time
+      3.124      3.124  R        clock network delay
+      3.356      0.232     uTco  MIPS_pc:pcReg|MIPS_pc_dffg:\G_NBit_DFFG:3:ONESCOMPI|s_Q
+      3.356      0.000 FF  CELL  pcReg|\G_NBit_DFFG:3:ONESCOMPI|s_Q|q
+      4.283      0.927 FF    IC  s_IMemAddr[3]~3|datad
+      4.408      0.125 FF  CELL  s_IMemAddr[3]~3|combout
+      7.230      2.822 FF    IC  IMem|ram~39439|datad
+      7.380      0.150 FR  CELL  IMem|ram~39439|combout
+      8.130      0.750 RR    IC  IMem|ram~39440|dataa
+      8.547      0.417 RR  CELL  IMem|ram~39440|combout
+      9.794      1.247 RR    IC  IMem|ram~39443|dataa
+     10.194      0.400 RR  CELL  IMem|ram~39443|combout
+     10.431      0.237 RR    IC  IMem|ram~39446|dataa
+     10.802      0.371 RF  CELL  IMem|ram~39446|combout
+     11.034      0.232 FF    IC  IMem|ram~39447|datac
+     11.315      0.281 FF  CELL  IMem|ram~39447|combout
+     11.583      0.268 FF    IC  IMem|ram~39458|datab
+     11.987      0.404 FF  CELL  IMem|ram~39458|combout
+     14.196      2.209 FF    IC  IMem|ram~39459|datab
+     14.589      0.393 FF  CELL  IMem|ram~39459|combout
+     14.817      0.228 FF    IC  IMem|ram~39460|datad
+     14.942      0.125 FF  CELL  IMem|ram~39460|combout
+     15.219      0.277 FF    IC  IMem|ram~39631|dataa
+     15.623      0.404 FF  CELL  IMem|ram~39631|combout
+     16.424      0.801 FF    IC  hazardDetection|Equal4~0|datac
+     16.685      0.261 FR  CELL  hazardDetection|Equal4~0|combout
+     16.929      0.244 RR    IC  hazardDetection|o_stall~6|dataa
+     17.281      0.352 RF  CELL  hazardDetection|o_stall~6|combout
+     17.509      0.228 FF    IC  hazardDetection|o_stall~7|datad
+     17.634      0.125 FF  CELL  hazardDetection|o_stall~7|combout
+     17.925      0.291 FF    IC  hazardDetection|o_stall~18|datab
+     18.329      0.404 FF  CELL  hazardDetection|o_stall~18|combout
+     18.857      0.528 FF    IC  Jump|\G_NBit_MUX:4:MUXI|x4|o_F~0|datad
+     18.982      0.125 FF  CELL  Jump|\G_NBit_MUX:4:MUXI|x4|o_F~0|combout
+     20.957      1.975 FF    IC  Jump|\G_NBit_MUX:6:MUXI|x4|o_F~0|datad
+     21.082      0.125 FF  CELL  Jump|\G_NBit_MUX:6:MUXI|x4|o_F~0|combout
+     21.350      0.268 FF    IC  Jump|\G_NBit_MUX:6:MUXI|x4|o_F~1|datab
+     21.775      0.425 FF  CELL  Jump|\G_NBit_MUX:6:MUXI|x4|o_F~1|combout
+     21.775      0.000 FF    IC  pcReg|\G_NBit_DFFG:6:ONESCOMPI|s_Q|d
+     21.879      0.104 FF  CELL  MIPS_pc:pcReg|MIPS_pc_dffg:\G_NBit_DFFG:6:ONESCOMPI|s_Q
+ Data Required Path:
+ Total (ns)  Incr (ns)     Type  Element
+ ==========  ========= ==  ====  ===================================
+     20.000     20.000           latch edge time
+     22.968      2.968  R        clock network delay
+     22.976      0.008           clock pessimism removed
+     22.956     -0.020           clock uncertainty
+     22.974      0.018     uTsu  MIPS_pc:pcReg|MIPS_pc_dffg:\G_NBit_DFFG:6:ONESCOMPI|s_Q
+ Data Arrival Time  :    21.879
+ Data Required Time :    22.974
+ Slack              :     1.095
+ ===================================================================

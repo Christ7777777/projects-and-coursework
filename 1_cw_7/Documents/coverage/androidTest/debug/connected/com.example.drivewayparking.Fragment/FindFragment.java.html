@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FindFragment.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Fragment</a> &gt; <span class="el_source">FindFragment.java</span></div><h1>FindFragment.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Fragment;
+
+import android.app.Dialog;
+import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import androidx.appcompat.widget.SearchView;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Activity.ViewAllPropertiesActivity;
+import com.example.drivewayparking.Activity.ViewAllPropertiesByDateActivity;
+import com.example.drivewayparking.Model.Booking;
+import com.example.drivewayparking.Model.Property;
+import com.example.drivewayparking.Model.PropertyRequest;
+import com.example.drivewayparking.Model.User;
+import com.example.drivewayparking.Model.UserRequest;
+import com.example.drivewayparking.R;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+/**
+ * The type Find fragment.
+ * @author: Varun Advani
+ */
+public class FindFragment extends Fragment implements OnMapReadyCallback{
+
+    private GoogleMap map;
+    private SupportMapFragment mapFragment;
+    private Button toggleView, filterView;
+    private SearchView searchView;
+    private Bundle bundle;
+    private double latitude;
+    /**
+     * The Email.
+     */
+    String email, admin_email;
+    private double longitude;
+    private List&lt;String&gt; title;
+    /**
+     * The Addresses.
+     */
+    List&lt;Address&gt; addresses;
+    private static final String ARG_PARAM1 = &quot;param1&quot;;
+    private static final String ARG_PARAM2 = &quot;param2&quot;;
+    private String mParam1;
+    private String mParam2;
+    private Long user_id;
+
+    private ArrayList&lt;LatLng&gt; locationArrayList;
+
+    /**
+     * Instantiates a new Find fragment.
+     */
+<span class="fc" id="L85">    public FindFragment() {</span>
+        // Required empty public constructor
+<span class="fc" id="L87">    }</span>
+
+    /**
+     * New instance find fragment.
+     *
+     * @param param1 the param 1
+     * @param param2 the param 2
+     * @return the find fragment
+     */
+    public static FindFragment newInstance(String param1, String param2) {
+<span class="nc" id="L97">        FindFragment fragment = new FindFragment();</span>
+<span class="nc" id="L98">        Bundle args = new Bundle();</span>
+<span class="nc" id="L99">        args.putString(ARG_PARAM1, param1);</span>
+<span class="nc" id="L100">        args.putString(ARG_PARAM2, param2);</span>
+<span class="nc" id="L101">        fragment.setArguments(args);</span>
+<span class="nc" id="L102">        return fragment;</span>
+    }
+
+    /**
+     * New inst find fragment.
+     *
+     * @param args the args
+     * @return the find fragment
+     */
+    public static FindFragment newInst(Bundle args) {
+<span class="fc" id="L112">        FindFragment fragment = new FindFragment();</span>
+<span class="fc" id="L113">        fragment.setArguments(args);</span>
+<span class="fc" id="L114">        return fragment;</span>
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+<span class="fc" id="L119">        super.onCreate(savedInstanceState);</span>
+<span class="pc bpc" id="L120" title="1 of 2 branches missed.">        if(getArguments() != null) {</span>
+<span class="fc" id="L121">            mParam1 = getArguments().getString(ARG_PARAM1);</span>
+<span class="fc" id="L122">            mParam2 = getArguments().getString(ARG_PARAM2);</span>
+<span class="fc" id="L123">            email = getArguments().getString(&quot;f_email&quot;);</span>
+
+<span class="fc" id="L125">            System.out.println(email);</span>
+        }
+
+        //email = getArguments().getString(&quot;f_email&quot;);
+<span class="fc" id="L129">    }</span>
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+<span class="fc" id="L134">        View view = inflater.inflate(R.layout.fragment_find, container, false);</span>
+
+<span class="fc" id="L136">        mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);</span>
+<span class="fc" id="L137">        mapFragment.onCreate(savedInstanceState);</span>
+<span class="fc" id="L138">        mapFragment.getMapAsync(this);</span>
+<span class="fc" id="L139">        toggleView = view.findViewById(R.id.button_list_view);</span>
+        //searchView = view.findViewById(R.id.idSearchView_renter);
+<span class="fc" id="L141">        filterView = view.findViewById(R.id.button_filter);</span>
+//        searchView.setFocusable(true);
+//        searchView.setIconified(false);
+<span class="fc" id="L144">        bundle = new Bundle();</span>
+//        if(user_id != null) {
+//            bundle.putLong(&quot;id&quot;, user_id);
+//            System.out.println(user_id);
+//        }
+
+<span class="fc bfc" id="L150" title="All 2 branches covered.">        if(email != null) {</span>
+<span class="fc" id="L151">            Call&lt;User&gt; call = ApiClient.getUserApiService().getUserByEmail(email);</span>
+<span class="fc" id="L152">            call.enqueue(new Callback&lt;User&gt;() {</span>
+                @Override
+                public void onResponse(Call&lt;User&gt; call, Response&lt;User&gt; response) {
+<span class="pc bpc" id="L155" title="1 of 2 branches missed.">                    if (response.isSuccessful()) {</span>
+<span class="pc bpc" id="L156" title="1 of 2 branches missed.">                        if (response.body() != null) {</span>
+<span class="fc" id="L157">                            bundle.putLong(&quot;user_id&quot;, response.body().getId());</span>
+<span class="fc" id="L158">                            System.out.println(response.body().getId());</span>
+                        }
+                    } else {
+<span class="nc" id="L161">                        Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                    }
+<span class="fc" id="L163">                }</span>
+
+                @Override
+                public void onFailure(Call&lt;User&gt; call, Throwable t) {
+<span class="nc" id="L167">                    Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L168">                    System.out.println(&quot;Error: &quot; + t.getMessage());</span>
+<span class="nc" id="L169">                }</span>
+            });
+        }
+<span class="fc" id="L172">        toggleView.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View view) {
+<span class="fc" id="L175">                Intent intent = new Intent(getActivity(), ViewAllPropertiesByDateActivity.class);</span>
+<span class="fc" id="L176">                intent.putExtras(bundle);</span>
+<span class="fc" id="L177">                startActivity(intent);</span>
+<span class="fc" id="L178">            }</span>
+        });
+
+<span class="fc" id="L181">  filterView.setOnClickListener(new View.OnClickListener() {</span>
+    @Override
+    public void onClick(View view) {
+<span class="fc" id="L184">        Dialog dialog = new Dialog(getActivity());</span>
+<span class="fc" id="L185">        dialog.setCancelable(true);</span>
+<span class="fc" id="L186">        dialog.setCanceledOnTouchOutside(true);</span>
+<span class="fc" id="L187">        dialog.setContentView(R.layout.activity_create_booking);</span>
+<span class="fc" id="L188">        EditText start_date = dialog.findViewById(R.id.editTextListingStartDate);</span>
+<span class="fc" id="L189">        EditText end_date = dialog.findViewById(R.id.editTextListingEndDate);</span>
+<span class="fc" id="L190">        EditText start_time = dialog.findViewById(R.id.editTextListingStartTime);</span>
+<span class="fc" id="L191">        EditText end_time = dialog.findViewById(R.id.editTextListingEndTime);</span>
+<span class="fc" id="L192">        EditText zip_code = dialog.findViewById(R.id.editTextZipcode);</span>
+<span class="fc" id="L193">        EditText location = dialog.findViewById(R.id.editTextLocation);</span>
+<span class="fc" id="L194">        CheckBox isDriveway = dialog.findViewById(R.id.checkbox_driveway);</span>
+<span class="fc" id="L195">        CheckBox isCar = dialog.findViewById(R.id.checkbox_car);</span>
+<span class="fc" id="L196">        CheckBox isEV = dialog.findViewById(R.id.checkbox_ev);</span>
+<span class="fc" id="L197">        CheckBox isGarage = dialog.findViewById(R.id.checkbox_garage);</span>
+<span class="fc" id="L198">        CheckBox isTruck = dialog.findViewById(R.id.checkbox_truck);</span>
+<span class="fc" id="L199">        CheckBox isInout = dialog.findViewById(R.id.checkbox_inout);</span>
+<span class="fc" id="L200">        CheckBox isParkingLot = dialog.findViewById(R.id.checkbox_parkinglot);</span>
+<span class="fc" id="L201">        CheckBox isHandicapped = dialog.findViewById(R.id.checkbox_handicapped);</span>
+<span class="fc" id="L202">        CheckBox isOversize = dialog.findViewById(R.id.checkbox_oversized);</span>
+<span class="fc" id="L203">        CheckBox isMotorcycle = dialog.findViewById(R.id.checkbox_motorcycle);</span>
+<span class="fc" id="L204">        CheckBox isTailgating = dialog.findViewById(R.id.checkbox_tailgating);</span>
+<span class="fc" id="L205">        CheckBox isShuttle = dialog.findViewById(R.id.checkbox_shuttle);</span>
+<span class="fc" id="L206">        Button view_all_properties = dialog.findViewById(R.id.viewAllBookings);</span>
+<span class="fc" id="L207">        view_all_properties.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View view) {
+<span class="fc" id="L210">                Booking booking = new Booking();</span>
+
+<span class="fc" id="L212">                Intent intent = new Intent(getActivity(), ViewAllPropertiesByDateActivity.class);</span>
+<span class="fc" id="L213">                String start = start_date.getText().toString() + &quot; &quot; + start_time.getText().toString();</span>
+<span class="pc bpc" id="L214" title="1 of 2 branches missed.">                if(TextUtils.isEmpty(start)){</span>
+<span class="nc" id="L215">                    start_date.setError(&quot;Please put in a start date&quot;);</span>
+<span class="nc" id="L216">                    start_time.setError(&quot;Please put in a start time&quot;);</span>
+                }
+<span class="fc" id="L218">                String end = end_date.getText().toString() + &quot; &quot; + end_time.getText().toString();</span>
+<span class="pc bpc" id="L219" title="1 of 2 branches missed.">                if(TextUtils.isEmpty(start)){</span>
+<span class="nc" id="L220">                    end_date.setError(&quot;Please put in a start date&quot;);</span>
+<span class="nc" id="L221">                    end_time.setError(&quot;Please put in a start time&quot;);</span>
+                }
+<span class="fc" id="L223">                String zipcode = zip_code.getText().toString();</span>
+<span class="fc" id="L224">                String location_temp = location.getText().toString();</span>
+<span class="pc bpc" id="L225" title="1 of 2 branches missed.">                if(TextUtils.isEmpty(location_temp)){</span>
+<span class="nc" id="L226">                    location.setError(&quot;Please put in location&quot;);</span>
+                }
+
+<span class="fc" id="L229">                Boolean is_driveway = isDriveway.isChecked();</span>
+<span class="fc" id="L230">                Boolean is_car = isCar.isChecked();</span>
+<span class="fc" id="L231">                Boolean is_EV = isEV.isChecked();</span>
+<span class="fc" id="L232">                Boolean is_garage = isGarage.isChecked();</span>
+<span class="fc" id="L233">                Boolean is_truck = isTruck.isChecked();</span>
+<span class="fc" id="L234">                Boolean is_inout = isInout.isChecked();</span>
+<span class="fc" id="L235">                Boolean is_parkingLot = isParkingLot.isChecked();</span>
+<span class="fc" id="L236">                Boolean is_handicapped = isHandicapped.isChecked();</span>
+<span class="fc" id="L237">                Boolean is_oversize = isOversize.isChecked();</span>
+<span class="fc" id="L238">                Boolean is_motorcycle = isMotorcycle.isChecked();</span>
+<span class="fc" id="L239">                Boolean is_tailgating = isTailgating.isChecked();</span>
+<span class="fc" id="L240">                Boolean is_shuttle = isShuttle.isChecked();</span>
+
+<span class="fc" id="L242">                bundle.putBoolean(&quot;driveway&quot;, is_driveway);</span>
+<span class="fc" id="L243">                bundle.putBoolean(&quot;car&quot;, is_car);</span>
+<span class="fc" id="L244">                bundle.putBoolean(&quot;EV&quot;, is_EV);</span>
+<span class="fc" id="L245">                bundle.putBoolean(&quot;garage&quot;, is_garage);</span>
+<span class="fc" id="L246">                bundle.putBoolean(&quot;truck&quot;, is_truck);</span>
+<span class="fc" id="L247">                bundle.putBoolean(&quot;inout&quot;, is_inout);</span>
+<span class="fc" id="L248">                bundle.putBoolean(&quot;parkingLot&quot;, is_parkingLot);</span>
+<span class="fc" id="L249">                bundle.putBoolean(&quot;handicapped&quot;, is_handicapped);</span>
+<span class="fc" id="L250">                bundle.putBoolean(&quot;oversize&quot;, is_oversize);</span>
+<span class="fc" id="L251">                bundle.putBoolean(&quot;motorcycle&quot;, is_motorcycle);</span>
+<span class="fc" id="L252">                bundle.putBoolean(&quot;tailgating&quot;, is_tailgating);</span>
+<span class="fc" id="L253">                bundle.putBoolean(&quot;shuttle&quot;, is_shuttle);</span>
+
+
+
+
+<span class="fc" id="L258">                Geocoder geocoder = new Geocoder(getActivity(), Locale.getDefault());</span>
+
+                try {
+<span class="fc" id="L261">                    addresses = geocoder.getFromLocationName(location_temp + &quot; &quot; + zipcode, 1);</span>
+<span class="nc" id="L262">                } catch (IOException e) {</span>
+<span class="nc" id="L263">                    e.printStackTrace();</span>
+<span class="fc" id="L264">                }</span>
+<span class="pc bpc" id="L265" title="1 of 2 branches missed.">                if(addresses.size() == 0){</span>
+<span class="nc" id="L266">                    Toast.makeText(getActivity(), &quot;No Property found&quot;, Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L267">                    return;</span>
+                }
+<span class="fc" id="L269">                latitude = addresses.get(0).getLatitude();</span>
+<span class="fc" id="L270">                bundle.putDouble(&quot;latitude&quot;, latitude);</span>
+<span class="fc" id="L271">                System.out.println(addresses.get(0).getLatitude());</span>
+<span class="fc" id="L272">                longitude = addresses.get(0).getLongitude();</span>
+<span class="fc" id="L273">                bundle.putDouble(&quot;longitude&quot;, longitude);</span>
+<span class="fc" id="L274">                System.out.println(addresses.get(0).getLongitude());</span>
+<span class="fc" id="L275">                addresses.remove(0);</span>
+<span class="fc" id="L276">                SimpleDateFormat sdf = new SimpleDateFormat(&quot;MM/dd/yyyy HH:mm:ss&quot;);</span>
+<span class="fc" id="L277">                SimpleDateFormat output = new SimpleDateFormat(&quot;yyyy-MM-dd'T'HH:mm:ss&quot;);</span>
+<span class="fc" id="L278">                output.setTimeZone(TimeZone.getTimeZone(&quot;CST&quot;));</span>
+
+                try {
+<span class="fc" id="L281">                    Date start_d = sdf.parse(start);</span>
+<span class="fc" id="L282">                    String format_one = output.format(start_d);</span>
+<span class="fc" id="L283">                    System.out.println(format_one);</span>
+<span class="fc" id="L284">                    booking.setCheck_in(format_one);</span>
+<span class="fc" id="L285">                    bundle.putString(&quot;start_date&quot;, format_one);</span>
+                }
+<span class="nc" id="L287">                catch(ParseException e) {</span>
+<span class="nc" id="L288">                    e.printStackTrace();</span>
+<span class="fc" id="L289">                }</span>
+                try {
+<span class="fc" id="L291">                    Date end_d = sdf.parse(end);</span>
+<span class="fc" id="L292">                    String format_two = output.format(end_d);</span>
+<span class="fc" id="L293">                    System.out.println(format_two);</span>
+<span class="fc" id="L294">                    booking.setCheck_out(format_two);</span>
+<span class="fc" id="L295">                    bundle.putString(&quot;end_date&quot;, format_two);</span>
+                }
+<span class="nc" id="L297">                catch(ParseException e) {</span>
+<span class="nc" id="L298">                    e.printStackTrace();</span>
+<span class="fc" id="L299">                }</span>
+
+<span class="fc" id="L301">                bundle.putString(&quot;f_zipcode&quot;, zipcode);</span>
+
+
+<span class="fc" id="L304">                dialog.dismiss();</span>
+<span class="fc" id="L305">                map.animateCamera(CameraUpdateFactory.zoomTo(18.0f));</span>
+<span class="fc" id="L306">                map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitude), 10.0f));</span>
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+
+
+
+                // Call&lt;Integer&gt; call = ApiClient.getBookingApiService().addBooking()
+<span class="fc" id="L313">            }</span>
+        });
+//        WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
+//        lp.copyFrom(dialog.getWindow().getAttributes());
+//        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+//        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+<span class="fc" id="L319">        dialog.show();</span>
+        //dialog.getWindow().setAttributes(lp);
+
+      //  startActivity(new Intent (getActivity(), CreateBookingActivity.class));
+<span class="fc" id="L323">    }</span>
+});
+<span class="fc" id="L325">        return view;</span>
+
+    }
+
+
+    @Override
+    public void onMapReady(@NonNull GoogleMap googleMap) {
+<span class="fc" id="L332">        map = googleMap;</span>
+<span class="fc" id="L333">        map.setMinZoomPreference(1.0f);</span>
+<span class="fc" id="L334">        map.setMaxZoomPreference(14.0f);</span>
+        //map.getUiSettings().setMyLocationButtonEnabled(false);
+        //map.setMyLocationEnabled(true);
+<span class="fc" id="L337">        Call&lt;List&lt;Property&gt;&gt; call = ApiClient.getPropertyApiService().getAllProperties();</span>
+<span class="fc" id="L338">        call.enqueue(new Callback&lt;List&lt;Property&gt;&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;List&lt;Property&gt;&gt; call, Response&lt;List&lt;Property&gt;&gt; response) {
+<span class="pc bpc" id="L341" title="1 of 2 branches missed.">                if(response.isSuccessful()){</span>
+<span class="fc" id="L342">                    List&lt;Property&gt; properties = response.body();</span>
+<span class="fc" id="L343">                    System.out.println(properties.size());</span>
+<span class="fc bfc" id="L344" title="All 2 branches covered.">                    for (Property property : properties) {</span>
+<span class="fc" id="L345">                      map.addMarker(new MarkerOptions()</span>
+<span class="fc" id="L346">                              .position(new LatLng(property.getLatitude(), property.getLongitude()))</span>
+<span class="fc" id="L347">                              .title(property.getTitle())</span>
+<span class="fc" id="L348">                              .snippet(&quot;Hourly Rate: &quot; + property.getRatePerHour()));</span>
+<span class="fc" id="L349">                      System.out.println(property.getTitle());</span>
+<span class="fc" id="L350">                    }</span>
+<span class="fc" id="L351">                }</span>
+                else{
+<span class="nc" id="L353">                    Toast.makeText(getActivity(), &quot;Code: &quot; + response.code(), Toast.LENGTH_LONG).show();</span>
+                }
+<span class="fc" id="L355">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;List&lt;Property&gt;&gt; call, Throwable t) {
+<span class="nc" id="L359">                   Toast.makeText(getActivity(), &quot;Error: &quot; + t.getMessage(),Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L360">            }</span>
+        });
+<span class="fc" id="L362">            float zoom = 3.0f;</span>
+<span class="fc" id="L363">            LatLng ISU = new LatLng(42.0267, -93.6465);</span>
+            //map.addMarker(new MarkerOptions().position(ISU).title(&quot;Default&quot;));
+<span class="fc" id="L365">            map.animateCamera(CameraUpdateFactory.zoomTo(18.0f));</span>
+<span class="fc" id="L366">            map.moveCamera(CameraUpdateFactory.newLatLngZoom(ISU, zoom));</span>
+
+<span class="fc" id="L368">    }</span>
+    /*
+    @Override
+    public void onResume() {
+        mapView.onResume();
+        super.onResume();
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mapView.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mapView.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapView.onLowMemory();
+    }
+    */
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

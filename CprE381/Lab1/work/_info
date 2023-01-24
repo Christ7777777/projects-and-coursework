@@ -1,0 +1,1048 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+!s11e vcom 2022.2 2022.04, Apr 25 2022
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/vsadvani/CprE381/Lab1
+T_opt
+!s110 1662656414
+Vj:kZPX=i`[Z<dFAWeK?fF1
+04 16 10 work adder_subtractor structural 1
+04 19 9 work tb_adder_subtractor structure 1
+=1-00133b5b2bc5-631a1f9e-8c166-7d9
+R0
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;2022.2;75
+Eadder
+Z2 w1578332330
+Z3 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z4 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 27
+R1
+Z5 8/home/vsadvani/CprE381/Lab1/Adder.vhd
+Z6 F/home/vsadvani/CprE381/Lab1/Adder.vhd
+l0
+Z7 L26 1
+V=mi5_=N]ZU=Ge0CznD>>H3
+!s100 I7A>njHe2:W8IZC]dG6j20
+Z8 OL;C;2022.2;75
+32
+Z9 !s110 1662656392
+!i10b 1
+Z10 !s108 1662656391.000000
+Z11 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/Adder.vhd|
+Z12 !s107 /home/vsadvani/CprE381/Lab1/Adder.vhd|
+!i113 0
+Z13 o-work work
+Z14 tExplicit 1 CvgOpt 0
+Abehavior
+R3
+R4
+DEx4 work 5 adder 0 22 =mi5_=N]ZU=Ge0CznD>>H3
+!i122 27
+l36
+Z15 L35 11
+V_gXogG?B2DDYFGk[AU0j73
+!s100 8hVGk<>zE4m05O5ETH9Ca1
+R8
+32
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Eadder_subtractor
+Z16 w1662653856
+R3
+R4
+!i122 25
+R1
+Z17 8/home/vsadvani/CprE381/Lab1/Adder_Subtractor.vhd
+Z18 F/home/vsadvani/CprE381/Lab1/Adder_Subtractor.vhd
+l0
+L6 1
+V4982mHhH_aRXL4OCh[oza1
+!s100 _d[iEL7E6jEcD;77hXazQ3
+R8
+32
+Z19 !s110 1662656391
+!i10b 1
+R10
+Z20 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/Adder_Subtractor.vhd|
+Z21 !s107 /home/vsadvani/CprE381/Lab1/Adder_Subtractor.vhd|
+!i113 0
+R13
+R14
+Astructural
+R3
+R4
+DEx4 work 16 adder_subtractor 0 22 4982mHhH_aRXL4OCh[oza1
+!i122 25
+l45
+L16 49
+VHQzaIj4hANSfNBV<jez]O1
+!s100 z1G@e4A2FzdoT9d`maJBB0
+R8
+32
+R19
+!i10b 1
+R10
+R20
+R21
+!i113 0
+R13
+R14
+Eandg2
+Z22 w1575899276
+R3
+R4
+!i122 41
+R1
+Z23 8/home/vsadvani/CprE381/Lab1/andg2.vhd
+Z24 F/home/vsadvani/CprE381/Lab1/andg2.vhd
+l0
+Z25 L23 1
+VQf>?20ho>9XHGTg4:jo373
+!s100 0e<Rg^QbB^Y@JP[zKSc0[3
+R8
+32
+Z26 !s110 1662656393
+!i10b 1
+Z27 !s108 1662656393.000000
+Z28 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/andg2.vhd|
+Z29 !s107 /home/vsadvani/CprE381/Lab1/andg2.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R3
+R4
+DEx4 work 5 andg2 0 22 Qf>?20ho>9XHGTg4:jo373
+!i122 41
+l32
+Z30 L31 6
+VHdBJDB9no8cjMZ2eVYWH;1
+!s100 CbBW?3Q;N[15?`QCEQ<@f2
+R8
+32
+R26
+!i10b 1
+R27
+R28
+R29
+!i113 0
+R13
+R14
+Efull_adder
+Z31 w1661746382
+R3
+R4
+!i122 28
+R1
+Z32 8/home/vsadvani/CprE381/Lab1/Full_Adder.vhd
+Z33 F/home/vsadvani/CprE381/Lab1/Full_Adder.vhd
+l0
+L7 1
+VLhk43UBPR9VLl?BjePYU=0
+!s100 iYNA3@IU?TKUf6YUU<6km1
+R8
+32
+R9
+!i10b 1
+Z34 !s108 1662656392.000000
+Z35 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/Full_Adder.vhd|
+Z36 !s107 /home/vsadvani/CprE381/Lab1/Full_Adder.vhd|
+!i113 0
+R13
+R14
+Abehavior
+R3
+R4
+DEx4 work 10 full_adder 0 22 Lhk43UBPR9VLl?BjePYU=0
+!i122 28
+l45
+L18 59
+V:X02QfBm`8MdO:PCNEVOo0
+!s100 bZRHi1UCCCz]S2i^i`:g11
+R8
+32
+R9
+!i10b 1
+R34
+R35
+R36
+!i113 0
+R13
+R14
+Efull_adder_n
+Z37 w1661999979
+R3
+R4
+!i122 29
+R1
+Z38 8/home/vsadvani/CprE381/Lab1/Full_Adder_N.vhd
+Z39 F/home/vsadvani/CprE381/Lab1/Full_Adder_N.vhd
+l0
+L8 1
+V<?M3cB::aM`IfBa1zJb<21
+!s100 d_cYh<:z4@;@JaodQZJ`m0
+R8
+32
+R9
+!i10b 1
+R34
+Z40 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/Full_Adder_N.vhd|
+Z41 !s107 /home/vsadvani/CprE381/Lab1/Full_Adder_N.vhd|
+!i113 0
+R13
+R14
+Astructural
+R3
+R4
+DEx4 work 12 full_adder_n 0 22 <?M3cB::aM`IfBa1zJb<21
+!i122 29
+l32
+L19 33
+VBkgE4Uki@md?DZeUFkAe03
+!s100 a0?lWEbl=13MgQD7P[8BD0
+R8
+32
+R9
+!i10b 1
+R34
+R40
+R41
+!i113 0
+R13
+R14
+Einvg
+R22
+R3
+R4
+!i122 34
+R1
+Z42 8/home/vsadvani/CprE381/Lab1/invg.vhd
+Z43 F/home/vsadvani/CprE381/Lab1/invg.vhd
+l0
+R25
+V]eXOe]3lZ=l7S8@9?:L9T1
+!s100 5^0jfQ^dVk:bl_Za_KajG0
+R8
+32
+R9
+!i10b 1
+R34
+Z44 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/invg.vhd|
+Z45 !s107 /home/vsadvani/CprE381/Lab1/invg.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R3
+R4
+DEx4 work 4 invg 0 22 ]eXOe]3lZ=l7S8@9?:L9T1
+!i122 34
+l31
+L30 6
+Ve`;fA[BQP?1Y52gl`N_a?3
+!s100 Q?`9^ToWC]zk1[=<LdPdE3
+R8
+32
+R9
+!i10b 1
+R34
+R44
+R45
+!i113 0
+R13
+R14
+Emultiplier
+R2
+R3
+R4
+!i122 35
+R1
+Z46 8/home/vsadvani/CprE381/Lab1/Multiplier.vhd
+Z47 F/home/vsadvani/CprE381/Lab1/Multiplier.vhd
+l0
+R7
+Vb]V9ikc?MmVh6aY11R4Oo2
+!s100 ^MHRih?aY<Omkn@dEhXM40
+R8
+32
+R9
+!i10b 1
+R34
+Z48 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/Multiplier.vhd|
+Z49 !s107 /home/vsadvani/CprE381/Lab1/Multiplier.vhd|
+!i113 0
+R13
+R14
+Abehavior
+R3
+R4
+DEx4 work 10 multiplier 0 22 b]V9ikc?MmVh6aY11R4Oo2
+!i122 35
+l36
+R15
+Vf^=hj@M9[[n7QPiE6aHJ<1
+!s100 K^malI_WgOe]RNP4MBI<?0
+R8
+32
+R9
+!i10b 1
+R34
+R48
+R49
+!i113 0
+R13
+R14
+Emux2t1
+Z50 w1661729076
+R3
+R4
+!i122 30
+R1
+Z51 8/home/vsadvani/CprE381/Lab1/mux2t1.vhd
+Z52 F/home/vsadvani/CprE381/Lab1/mux2t1.vhd
+l0
+L6 1
+V<bXE8XVUdPSSAnbCJD9=?2
+!s100 @ea4Bcl>Ff=iDUT^<^[W`3
+R8
+32
+R9
+!i10b 1
+R34
+Z53 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/mux2t1.vhd|
+Z54 !s107 /home/vsadvani/CprE381/Lab1/mux2t1.vhd|
+!i113 0
+R13
+R14
+Abehavior
+R3
+R4
+DEx4 work 6 mux2t1 0 22 <bXE8XVUdPSSAnbCJD9=?2
+!i122 30
+l40
+L14 50
+V;L8E:n0;e0DAZ7Q:<?8HL2
+!s100 6[5Nn:^8LZGZN_Bo=Ic2T2
+R8
+32
+R9
+!i10b 1
+R34
+R53
+R54
+!i113 0
+R13
+R14
+Emux2t1_dataflow
+Z55 w1662654918
+R3
+R4
+!i122 31
+R1
+Z56 8/home/vsadvani/CprE381/Lab1/mux2t1_dataflow.vhd
+Z57 F/home/vsadvani/CprE381/Lab1/mux2t1_dataflow.vhd
+l0
+L7 1
+VlJQD;0eC<WRX>51[iBOoX2
+!s100 Gd5E@Dfi@azYizN;3J:D`0
+R8
+32
+R9
+!i10b 1
+R34
+Z58 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/mux2t1_dataflow.vhd|
+Z59 !s107 /home/vsadvani/CprE381/Lab1/mux2t1_dataflow.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R3
+R4
+DEx4 work 15 mux2t1_dataflow 0 22 lJQD;0eC<WRX>51[iBOoX2
+!i122 31
+l21
+L17 11
+VC4D5a?_lcGA;EjfGKWW1g1
+!s100 JX@X0kjdX;ib8=IkTN[P30
+R8
+32
+R9
+!i10b 1
+R34
+R58
+R59
+!i113 0
+R13
+R14
+Emux2t1_n
+Z60 w1661819560
+R3
+R4
+!i122 32
+R1
+Z61 8/home/vsadvani/CprE381/Lab1/mux2t1_N.vhd
+Z62 F/home/vsadvani/CprE381/Lab1/mux2t1_N.vhd
+l0
+L21 1
+V<1n^W;[[j0;=7Hz]ZI@672
+!s100 j>l_KfFVW7Sf]CiZLVOg=2
+R8
+32
+R9
+!i10b 1
+R34
+Z63 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/mux2t1_N.vhd|
+Z64 !s107 /home/vsadvani/CprE381/Lab1/mux2t1_N.vhd|
+!i113 0
+R13
+R14
+Astructural
+R3
+R4
+DEx4 work 8 mux2t1_n 0 22 <1n^W;[[j0;=7Hz]ZI@672
+!i122 32
+l39
+L30 22
+VUGbOo5<5VNJCn4Coje6UY1
+!s100 P;?l6Oo0ddKgDgoQHf=B`2
+R8
+32
+R9
+!i10b 1
+R34
+R63
+R64
+!i113 0
+R13
+R14
+Emux2t1_n_dataflow
+Z65 w1661729073
+R3
+R4
+!i122 33
+R1
+Z66 8/home/vsadvani/CprE381/Lab1/mux2t1_N_dataflow.vhd
+Z67 F/home/vsadvani/CprE381/Lab1/mux2t1_N_dataflow.vhd
+l0
+L4 1
+V3a?OGXb<dd[F>NL69J@n_3
+!s100 :UJV9^MPINYXG4zFS<;I`0
+R8
+32
+R9
+!i10b 1
+R34
+Z68 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/mux2t1_N_dataflow.vhd|
+Z69 !s107 /home/vsadvani/CprE381/Lab1/mux2t1_N_dataflow.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R3
+R4
+DEx4 work 17 mux2t1_n_dataflow 0 22 3a?OGXb<dd[F>NL69J@n_3
+!i122 33
+l21
+L13 22
+V3VTONFRbRO@EbV925VakQ2
+!s100 God2efV<;[06EZQ<J;oUW0
+R8
+32
+R9
+!i10b 1
+R34
+R68
+R69
+!i113 0
+R13
+R14
+Eones_comp
+Z70 w1661819610
+R3
+R4
+!i122 36
+R1
+Z71 8/home/vsadvani/CprE381/Lab1/ones_comp.vhd
+Z72 F/home/vsadvani/CprE381/Lab1/ones_comp.vhd
+l0
+L4 1
+VSn5`>S?R07kmhLie:zD>e3
+!s100 gFJRlWO=NAoE^H^E=KRU_0
+R8
+32
+R9
+!i10b 1
+R34
+Z73 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/ones_comp.vhd|
+Z74 !s107 /home/vsadvani/CprE381/Lab1/ones_comp.vhd|
+!i113 0
+R13
+R14
+Astructural
+R3
+R4
+DEx4 work 9 ones_comp 0 22 Sn5`>S?R07kmhLie:zD>e3
+!i122 36
+l18
+L11 14
+VDXMP9RTFUM9ZX;X7XWlkF2
+!s100 TN=W?aA=5cd>U<maY=A230
+R8
+32
+R9
+!i10b 1
+R34
+R73
+R74
+!i113 0
+R13
+R14
+Eorg2
+R22
+R3
+R4
+!i122 37
+R1
+Z75 8/home/vsadvani/CprE381/Lab1/org2.vhd
+Z76 F/home/vsadvani/CprE381/Lab1/org2.vhd
+l0
+R25
+VhOiEZ0HVFKUfoceE;g4CN1
+!s100 hJAZ>EB8bm_e<^5IFaP9e1
+R8
+32
+R26
+!i10b 1
+R27
+Z77 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/org2.vhd|
+Z78 !s107 /home/vsadvani/CprE381/Lab1/org2.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R3
+R4
+DEx4 work 4 org2 0 22 hOiEZ0HVFKUfoceE;g4CN1
+!i122 37
+l32
+R30
+VeLGLG944lJMT]Df59N0F92
+!s100 nma>Pa=mMW`KzzjeW=1[d1
+R8
+32
+R26
+!i10b 1
+R27
+R77
+R78
+!i113 0
+R13
+R14
+Ereg
+Z79 w1578332352
+R3
+R4
+!i122 38
+R1
+Z80 8/home/vsadvani/CprE381/Lab1/Reg.vhd
+Z81 F/home/vsadvani/CprE381/Lab1/Reg.vhd
+l0
+R7
+V8SQ3_TiTDdzQJkDia`@C^3
+!s100 OLG=@][K`W9Z>>aJfi]9R2
+R8
+32
+R26
+!i10b 1
+R27
+Z82 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/Reg.vhd|
+Z83 !s107 /home/vsadvani/CprE381/Lab1/Reg.vhd|
+!i113 0
+R13
+R14
+Abehavior
+R3
+R4
+DEx4 work 3 reg 0 22 8SQ3_TiTDdzQJkDia`@C^3
+!i122 38
+l35
+L34 11
+Vjh`XbmM;?::Ul1Y:o5bU13
+!s100 J>nUWfOeZgKKLWTSaQCEn3
+R8
+32
+R26
+!i10b 1
+R27
+R82
+R83
+!i113 0
+R13
+R14
+Eregld
+R79
+R3
+R4
+!i122 39
+R1
+Z84 8/home/vsadvani/CprE381/Lab1/RegLd.vhd
+Z85 F/home/vsadvani/CprE381/Lab1/RegLd.vhd
+l0
+R7
+V_K<`3XdKi_a3^F3Yo?@Q81
+!s100 dCT2D:kROm4=DDgOi`8DI2
+R8
+32
+R26
+!i10b 1
+R27
+Z86 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/RegLd.vhd|
+Z87 !s107 /home/vsadvani/CprE381/Lab1/RegLd.vhd|
+!i113 0
+R13
+R14
+Abehavior
+R3
+R4
+DEx4 work 5 regld 0 22 _K<`3XdKi_a3^F3Yo?@Q81
+!i122 39
+l38
+L35 19
+V]XL0SQaKCR22`M^KnmK[G2
+!s100 9DnT7RXBkJRIC]1FHL?;^1
+R8
+32
+R26
+!i10b 1
+R27
+R86
+R87
+!i113 0
+R13
+R14
+Etb_adder_subtractor
+Z88 w1662654387
+R3
+R4
+!i122 26
+R1
+Z89 8/home/vsadvani/CprE381/Lab1/tb_Adder_Subtractor.vhd
+Z90 F/home/vsadvani/CprE381/Lab1/tb_Adder_Subtractor.vhd
+l0
+L5 1
+V@X=9=Kjh;i`@I]P5QLR@L2
+!s100 ^@Vj_dom1d1SU3j1IF96;3
+R8
+32
+R19
+!i10b 1
+R10
+Z91 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/tb_Adder_Subtractor.vhd|
+Z92 !s107 /home/vsadvani/CprE381/Lab1/tb_Adder_Subtractor.vhd|
+!i113 0
+R13
+R14
+Astructure
+R3
+R4
+DEx4 work 19 tb_adder_subtractor 0 22 @X=9=Kjh;i`@I]P5QLR@L2
+!i122 26
+l27
+L12 62
+VLE?@ZFUBB97GWnX?BHTYA3
+!s100 TjmD`X?M4ciJj0MY[<jl31
+R8
+32
+R19
+!i10b 1
+R10
+R91
+R92
+!i113 0
+R13
+R14
+Etb_full_adder
+Z93 w1661819563
+Z94 DPx3 std 3 env 0 22 QPZJVBPkV?55nUWhDzFik0
+Z95 DPx4 ieee 16 std_logic_textio 0 22 C8j>g0lzF^EAA]5<S6PY32
+R3
+R4
+!i122 16
+R1
+Z96 8/home/vsadvani/CprE381/Lab1/tb_Full_Adder.vhd
+Z97 F/home/vsadvani/CprE381/Lab1/tb_Full_Adder.vhd
+l0
+Z98 L17 1
+VKA]D23K7fg^;Ll1OC5Rm^3
+!s100 LdQQjT:jGzk5IL[=P_>Y<2
+R8
+32
+Z99 !s110 1662656390
+!i10b 1
+Z100 !s108 1662656390.000000
+Z101 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/tb_Full_Adder.vhd|
+Z102 !s107 /home/vsadvani/CprE381/Lab1/tb_Full_Adder.vhd|
+!i113 0
+R13
+R14
+Amixed
+R94
+R95
+R3
+R4
+DEx4 work 13 tb_full_adder 0 22 KA]D23K7fg^;Ll1OC5Rm^3
+!i122 16
+l42
+L21 82
+V5:Mea9DSm`GjaeVIPVe;82
+!s100 omYYoj^SP6QM@nnj6XLD32
+R8
+32
+R99
+!i10b 1
+R100
+R101
+R102
+!i113 0
+R13
+R14
+Etb_full_adder_n
+R37
+R3
+R4
+!i122 17
+R1
+Z103 8/home/vsadvani/CprE381/Lab1/tb_Full_Adder_N.vhd
+Z104 F/home/vsadvani/CprE381/Lab1/tb_Full_Adder_N.vhd
+l0
+L6 1
+VQzm8DNY?nWZ>`BkafU<C52
+!s100 La<a`:;kiOGVoV>SKjaFI0
+R8
+32
+R99
+!i10b 1
+R100
+Z105 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/tb_Full_Adder_N.vhd|
+Z106 !s107 /home/vsadvani/CprE381/Lab1/tb_Full_Adder_N.vhd|
+!i113 0
+R13
+R14
+Astructural
+R3
+R4
+DEx4 work 15 tb_full_adder_n 0 22 Qzm8DNY?nWZ>`BkafU<C52
+!i122 17
+l32
+L14 55
+V39<59daCS?8HGVOK`RdY:0
+!s100 M];R@]2AMM63f;z^T`d^c2
+R8
+32
+R99
+!i10b 1
+R100
+R105
+R106
+!i113 0
+R13
+R14
+Etb_mux2t1
+Z107 w1661652348
+R94
+R95
+R3
+R4
+!i122 18
+R1
+Z108 8/home/vsadvani/CprE381/Lab1/tb_mux2t1.vhd
+Z109 F/home/vsadvani/CprE381/Lab1/tb_mux2t1.vhd
+l0
+R98
+VT:DcZFVKPCg8eG7XZ;2D;2
+!s100 4_z1iGI>8EA=^niobRDVU3
+R8
+32
+R19
+!i10b 1
+R100
+Z110 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/tb_mux2t1.vhd|
+Z111 !s107 /home/vsadvani/CprE381/Lab1/tb_mux2t1.vhd|
+!i113 0
+R13
+R14
+Amixed
+R94
+R95
+R3
+R4
+DEx4 work 9 tb_mux2t1 0 22 T:DcZFVKPCg8eG7XZ;2D;2
+!i122 18
+l40
+Z112 L21 74
+VnU2lOU?`6bmH2_9QV0`A73
+!s100 =:XczAzFP8?:]<hS<f?4T0
+R8
+32
+R19
+!i10b 1
+R100
+R110
+R111
+!i113 0
+R13
+R14
+Etb_mux2t1_dataflow
+Z113 w1661714757
+R94
+R95
+R3
+R4
+!i122 19
+R1
+Z114 8/home/vsadvani/CprE381/Lab1/tb_mux2t1_dataflow.vhd
+Z115 F/home/vsadvani/CprE381/Lab1/tb_mux2t1_dataflow.vhd
+l0
+R98
+V3^0zGIbPdE1cz45nI^5J40
+!s100 k>kQ;GJ4i?:KzOgEJ5@Lc0
+R8
+32
+R19
+!i10b 1
+R10
+Z116 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/tb_mux2t1_dataflow.vhd|
+Z117 !s107 /home/vsadvani/CprE381/Lab1/tb_mux2t1_dataflow.vhd|
+!i113 0
+R13
+R14
+Amixed
+R94
+R95
+R3
+R4
+DEx4 work 18 tb_mux2t1_dataflow 0 22 3^0zGIbPdE1cz45nI^5J40
+!i122 19
+l40
+R112
+Vi7e<Ro<Sz?@CGk4T[kK3H1
+!s100 6:3OCNNK[fOYI<VIUM]`Z2
+R8
+32
+R19
+!i10b 1
+R10
+R116
+R117
+!i113 0
+R13
+R14
+Etb_mux2t1_n
+w1661751846
+R94
+R95
+R3
+R4
+!i122 20
+R1
+8/home/vsadvani/CprE381/Lab1/tb_mux2t1_N.vhd
+F/home/vsadvani/CprE381/Lab1/tb_mux2t1_N.vhd
+l0
+L9 1
+VCR73KeLfm=Oo6Wok@HQHI1
+!s100 MP3JAYJc?Ifg<7DC@Uf632
+R8
+32
+R19
+!i10b 1
+R10
+!s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/tb_mux2t1_N.vhd|
+!s107 /home/vsadvani/CprE381/Lab1/tb_mux2t1_N.vhd|
+!i113 0
+R13
+R14
+Etb_ones_comp
+Z118 w1661734351
+R3
+R4
+!i122 21
+R1
+Z119 8/home/vsadvani/CprE381/Lab1/tb_ones_comp.vhd
+Z120 F/home/vsadvani/CprE381/Lab1/tb_ones_comp.vhd
+l0
+L4 1
+VX8<E:YBAF_Q6N8Z[VMl@W0
+!s100 Z>2]Z=QYbUaQ4khec1Be>1
+R8
+32
+R19
+!i10b 1
+R10
+Z121 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/tb_ones_comp.vhd|
+Z122 !s107 /home/vsadvani/CprE381/Lab1/tb_ones_comp.vhd|
+!i113 0
+R13
+R14
+Abehavioral
+R3
+R4
+DEx4 work 12 tb_ones_comp 0 22 X8<E:YBAF_Q6N8Z[VMl@W0
+!i122 21
+l20
+L11 31
+V9J``]h_Yc86=V8SUlTn]42
+!s100 Z?GGP>:YA1SVQk>?6`IBD1
+R8
+32
+R19
+!i10b 1
+R10
+R121
+R122
+!i113 0
+R13
+R14
+Etb_tpu_mv_element
+Z123 w1661639843
+R94
+R95
+R3
+R4
+!i122 22
+R1
+Z124 8/home/vsadvani/CprE381/Lab1/tb_TPU_MV_Element.vhd
+Z125 F/home/vsadvani/CprE381/Lab1/tb_TPU_MV_Element.vhd
+l0
+L22 1
+V]YHI2E26<VnFl_=NOg>B10
+!s100 J8Fge6@0bh0V[k`C5=S`<2
+R8
+32
+R19
+!i10b 1
+R10
+Z126 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/tb_TPU_MV_Element.vhd|
+Z127 !s107 /home/vsadvani/CprE381/Lab1/tb_TPU_MV_Element.vhd|
+!i113 0
+R13
+R14
+Amixed
+R94
+R95
+R3
+R4
+DEx4 work 17 tb_tpu_mv_element 0 22 ]YHI2E26<VnFl_=NOg>B10
+!i122 22
+l56
+L26 149
+VP>:1[Sm]bJ0g[b@;EGE2]0
+!s100 _GnL[DioiMoglC25NcoP=3
+R8
+32
+R19
+!i10b 1
+R10
+R126
+R127
+!i113 0
+R13
+R14
+Etpu_mv_element
+Z128 w1661638474
+R3
+R4
+!i122 23
+R1
+Z129 8/home/vsadvani/CprE381/Lab1/TPU_MV_Element.vhd
+Z130 F/home/vsadvani/CprE381/Lab1/TPU_MV_Element.vhd
+l0
+R25
+VD2K2[:^KDjAT^KO;fn]Oi1
+!s100 fV9ZK_Rb9UnHKb12^mFL70
+R8
+32
+R19
+!i10b 1
+R10
+Z131 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/TPU_MV_Element.vhd|
+Z132 !s107 /home/vsadvani/CprE381/Lab1/TPU_MV_Element.vhd|
+!i113 0
+R13
+R14
+Astructure
+R3
+R4
+DEx4 work 14 tpu_mv_element 0 22 D2K2[:^KDjAT^KO;fn]Oi1
+!i122 23
+l76
+L35 90
+Vi4diME?ee6bGj_XB1>]LB0
+!s100 9;3jJHQ_6ck3=BmTGn7WY2
+R8
+32
+R19
+!i10b 1
+R10
+R131
+R132
+!i113 0
+R13
+R14
+Exorg2
+R22
+R3
+R4
+!i122 40
+R1
+Z133 8/home/vsadvani/CprE381/Lab1/xorg2.vhd
+Z134 F/home/vsadvani/CprE381/Lab1/xorg2.vhd
+l0
+R25
+VA]ncWhoC:fhLS`F>c9^ag2
+!s100 zGkHVGJ]HQ5RboN2N>KzN1
+R8
+32
+R26
+!i10b 1
+R27
+Z135 !s90 -reportprogress|300|-work|work|/home/vsadvani/CprE381/Lab1/xorg2.vhd|
+Z136 !s107 /home/vsadvani/CprE381/Lab1/xorg2.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R3
+R4
+DEx4 work 5 xorg2 0 22 A]ncWhoC:fhLS`F>c9^ag2
+!i122 40
+l32
+R30
+VV`;B_39=:h3bCoQNhV;bn0
+!s100 2<f]d3XziROLh_[:_6mNg2
+R8
+32
+R26
+!i10b 1
+R27
+R135
+R136
+!i113 0
+R13
+R14

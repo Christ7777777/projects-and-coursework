@@ -1,0 +1,210 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > BookingController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">drivewayparking.app.controller</a>
+</div>
+
+<h1>Coverage Summary for Class: BookingController (drivewayparking.app.controller)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">BookingController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    88.9%
+  </span>
+  <span class="absValue">
+    (8/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95%
+  </span>
+  <span class="absValue">
+    (19/20)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package drivewayparking.app.controller;
+&nbsp;
+&nbsp;import drivewayparking.app.dto.BookingRequest;
+&nbsp;import drivewayparking.app.dto.BookingResponse;
+&nbsp;import drivewayparking.app.entity.Booking;
+&nbsp;import drivewayparking.app.service.BookingService;
+&nbsp;import io.swagger.annotations.Api;
+&nbsp;import io.swagger.annotations.ApiOperation;
+&nbsp;import io.swagger.annotations.ApiResponse;
+&nbsp;import io.swagger.annotations.ApiResponses;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.Collections;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@Api(value = &quot;BookingController&quot;, description = &quot;REST APIs for the Booking Entity&quot;)
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/bookings&quot;)
+<b class="fc">&nbsp;public class BookingController {</b>
+&nbsp;    @Autowired
+&nbsp;    BookingService service;
+&nbsp;
+&nbsp;    @ApiOperation(value = &quot;Add a booking&quot;, notes = &quot;Save a booking to the database; property &quot; +
+&nbsp;            &quot;becomes unavailable during time of booking&quot;, response = Integer.class)
+&nbsp;    @ApiResponses(value = {
+&nbsp;            @ApiResponse(code = 0, message = &quot;OK&quot;),
+&nbsp;            @ApiResponse(code = 1, message = &quot;Error&quot;),
+&nbsp;            @ApiResponse(code = 2, message = &quot;Property Not Found&quot;),
+&nbsp;            @ApiResponse(code = 3, message = &quot;Conflicting Booking&quot;),
+&nbsp;            @ApiResponse(code = 4, message = &quot;Invalid Time Request&quot;)})
+&nbsp;    @PostMapping(&quot;/&quot;)
+&nbsp;    public Integer addBooking(@RequestBody BookingRequest booking) {
+<b class="fc">&nbsp;        return service.saveBooking(booking);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @ApiOperation(value = &quot;&quot;, hidden = true)
+&nbsp;    @PutMapping(&quot;/request&quot;)
+&nbsp;    public BookingResponse bookingRequest(@RequestBody BookingRequest request) {
+<b class="fc">&nbsp;        return service.bookingRequest(request);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @ApiOperation(value = &quot;Get information regarding a booking&quot;, notes = &quot;Request booking information based on unique &quot; +
+&nbsp;            &quot;booking id&quot;, response = BookingResponse.class)
+&nbsp;    @GetMapping(&quot;/{id}&quot;)
+&nbsp;    public BookingResponse getBooking(@PathVariable Long id) {
+<b class="fc">&nbsp;        Booking b = service.getBookingById(id);</b>
+<b class="fc">&nbsp;        return service.bookingToResponse(b);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @ApiOperation(value = &quot;Get all bookings for a user&quot;, notes = &quot;Get a list of all bookings for a user based &quot; +
+&nbsp;            &quot;on unique user id&quot;, response = Iterable.class)
+&nbsp;    @GetMapping(&quot;/user/{id}&quot;)
+&nbsp;    public List&lt;BookingResponse&gt; getBookingsByUser(@PathVariable Long id) {
+<b class="fc">&nbsp;        List&lt;Booking&gt; bookings = service.getBookingsByUser(id);</b>
+<b class="fc">&nbsp;        List&lt;BookingResponse&gt; result = service.bookingsToResponse(bookings);</b>
+&nbsp;
+<b class="fc">&nbsp;        Collections.sort(result);</b>
+&nbsp;
+<b class="fc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @ApiOperation(value = &quot;Get all bookings for a property&quot;, notes = &quot;Get a list of all bookings for a property based &quot; +
+&nbsp;            &quot;on unique property id&quot;, response = Iterable.class)
+&nbsp;    @GetMapping(&quot;/property/{id}&quot;)
+&nbsp;    public List&lt;BookingResponse&gt; getBookingsByProperty(@PathVariable Long id) {
+<b class="fc">&nbsp;        List&lt;Booking&gt; bookings = service.getBookingsByProperty(id);</b>
+<b class="fc">&nbsp;        List&lt;BookingResponse&gt; result = service.bookingsToResponse(bookings);</b>
+&nbsp;
+<b class="fc">&nbsp;        Collections.sort(result);</b>
+&nbsp;
+<b class="fc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @ApiOperation(value = &quot;Get all bookings&quot;, notes = &quot;Get all bookings stored in the database&quot;, response = Iterable.class)
+&nbsp;    @GetMapping(&quot;/&quot;)
+&nbsp;    public List&lt;BookingResponse&gt; getAllBookings() {
+<b class="fc">&nbsp;        List&lt;Booking&gt; bookings = service.getAllBookings();</b>
+<b class="fc">&nbsp;        List&lt;BookingResponse&gt; result = new ArrayList&lt;&gt;();</b>
+&nbsp;
+<b class="fc">&nbsp;        if (bookings.size() &gt; 0) {</b>
+<b class="fc">&nbsp;            result = service.bookingsToResponse(bookings);</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @ApiOperation(value = &quot;Delete booking&quot;, notes = &quot;Delete booking by the given id from the database&quot;, response = Integer.class)
+&nbsp;    @ApiResponses(value = {
+&nbsp;            @ApiResponse(code = 0, message = &quot;OK&quot;),
+&nbsp;            @ApiResponse(code = 5, message = &quot;Booking Not Found&quot;) })
+&nbsp;    @DeleteMapping(&quot;/{bid}&quot;)
+&nbsp;    public int deleteBooking(@PathVariable Long bid) {
+<b class="fc">&nbsp;        return service.deleteBooking(bid);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @ApiOperation(value = &quot;Update booking&quot;, notes = &quot;Update a booking by the given id, provided &quot; +
+&nbsp;            &quot;there is not a conflicting booking&quot;, response = Integer.class)
+&nbsp;    @ApiResponses(value = {
+&nbsp;            @ApiResponse(code = 0, message = &quot;OK&quot;),
+&nbsp;            @ApiResponse(code = 3, message = &quot;Conflicting Booking Exists&quot;) })
+&nbsp;    @PutMapping(&quot;/&quot;)
+&nbsp;    public Integer updateBooking(@RequestBody Booking booking) {
+<b class="nc">&nbsp;        return service.updateBooking(booking);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-07 11:03</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,275 @@
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+    Info: Copyright (C) 2022  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Sun Nov  6 19:17:45 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off toolflow -c toolflow
+Info (125068): Revision "toolflow" was previously opened in Quartus II software version 18.0.0 Standard Edition. Created Quartus Prime Default Settings File /home/vsadvani/CprE381/cpre381-toolflow/internal/QuartusWork/toolflow_assignment_defaults.qdf, which contains the default assignment setting information from Quartus II software version 18.0.0 Standard Edition.
+Info (125069): Default assignment values were changed in the current version of the Quartus Prime software -- changes to default assignments values are contained in file /usr/local/quartus/21.1/quartus/linux64/assignment_defaults.qdf
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_pc.vhd
+    Info (12022): Found design unit 1: MIPS_pc-structural File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_pc.vhd Line: 16
+    Info (12023): Found entity 1: MIPS_pc File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_pc.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_pc_dffg.vhd
+    Info (12022): Found design unit 1: MIPS_pc_dffg-mixed File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_pc_dffg.vhd Line: 16
+    Info (12023): Found entity 1: MIPS_pc_dffg File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_pc_dffg.vhd Line: 6
+Info (12021): Found 2 design units, including 0 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_types.vhd
+    Info (12022): Found design unit 1: MIPS_types File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_types.vhd Line: 15
+    Info (12022): Found design unit 2: MIPS_types-body File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_types.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd
+    Info (12022): Found design unit 1: MIPS_processor-structure File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 33
+    Info (12023): Found entity 1: MIPS_processor File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 22
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/mem.vhd
+    Info (12022): Found design unit 1: mem-rtl File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/mem.vhd Line: 27
+    Info (12023): Found entity 1: mem File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/mem.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/addersubtractor.vhd
+    Info (12022): Found design unit 1: addersubtractor-structural File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/addersubtractor.vhd Line: 16
+    Info (12023): Found entity 1: addersubtractor File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/addersubtractor.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/alu.vhd
+    Info (12022): Found design unit 1: alu-mixed File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/alu.vhd Line: 15
+    Info (12023): Found entity 1: alu File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/alu.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/alu_addersubtractor.vhd
+    Info (12022): Found design unit 1: alu_addersubtractor-structural File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/alu_addersubtractor.vhd Line: 17
+    Info (12023): Found entity 1: alu_addersubtractor File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/alu_addersubtractor.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/andg2.vhd
+    Info (12022): Found design unit 1: andg2-dataflow File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/andg2.vhd Line: 31
+    Info (12023): Found entity 1: andg2 File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/andg2.vhd Line: 23
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/barrel_shifter.vhd
+    Info (12022): Found design unit 1: barrel_shifter-structural File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/barrel_shifter.vhd Line: 13
+    Info (12023): Found entity 1: barrel_shifter File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/barrel_shifter.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/beq_bne.vhd
+    Info (12022): Found design unit 1: beq_bne-structural File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/beq_bne.vhd Line: 12
+    Info (12023): Found entity 1: beq_bne File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/beq_bne.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/control_unit.vhd
+    Info (12022): Found design unit 1: control_unit-dataflow File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/control_unit.vhd Line: 12
+    Info (12023): Found entity 1: control_unit File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/control_unit.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/decoder5t32.vhd
+    Info (12022): Found design unit 1: decoder5t32-behavior File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/decoder5t32.vhd Line: 12
+    Info (12023): Found entity 1: decoder5t32 File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/decoder5t32.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/dffg.vhd
+    Info (12022): Found design unit 1: dffg-mixed File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/dffg.vhd Line: 33
+    Info (12023): Found entity 1: dffg File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/dffg.vhd Line: 23
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/dffg_N.vhd
+    Info (12022): Found design unit 1: dffg_N-structural File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/dffg_N.vhd Line: 16
+    Info (12023): Found entity 1: dffg_N File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/dffg_N.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/extender.vhd
+    Info (12022): Found design unit 1: extender-behavior File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/extender.vhd Line: 14
+    Info (12023): Found entity 1: extender File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/extender.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/fullAdder.vhd
+    Info (12022): Found design unit 1: fullAdder-structural File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/fullAdder.vhd Line: 16
+    Info (12023): Found entity 1: fullAdder File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/fullAdder.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/invg.vhd
+    Info (12022): Found design unit 1: invg-dataflow File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/invg.vhd Line: 30
+    Info (12023): Found entity 1: invg File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/invg.vhd Line: 23
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux2t1.vhd
+    Info (12022): Found design unit 1: mux2t1-structural File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux2t1.vhd Line: 13
+    Info (12023): Found entity 1: mux2t1 File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux2t1.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux2t1_N.vhd
+    Info (12022): Found design unit 1: mux2t1_N-structural File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux2t1_N.vhd Line: 30
+    Info (12023): Found entity 1: mux2t1_N File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux2t1_N.vhd Line: 21
+Info (12021): Found 3 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux32t1.vhd
+    Info (12022): Found design unit 1: mypack File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux32t1.vhd Line: 6
+    Info (12022): Found design unit 2: mux32t1-behavior File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux32t1.vhd Line: 23
+    Info (12023): Found entity 1: mux32t1 File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux32t1.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/onesComp.vhd
+    Info (12022): Found design unit 1: onesComp-structural File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/onesComp.vhd Line: 12
+    Info (12023): Found entity 1: onesComp File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/onesComp.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/org2.vhd
+    Info (12022): Found design unit 1: org2-dataflow File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/org2.vhd Line: 31
+    Info (12023): Found entity 1: org2 File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/org2.vhd Line: 23
+Info (12021): Found 3 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/regfile.vhd
+    Info (12022): Found design unit 1: mymatrix File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/regfile.vhd Line: 5
+    Info (12022): Found design unit 2: regfile-structural File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/regfile.vhd Line: 29
+    Info (12023): Found entity 1: regfile File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/regfile.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file /home/vsadvani/CprE381/cpre381-toolflow/proj/src/xorg2.vhd
+    Info (12022): Found design unit 1: xorg2-dataflow File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/xorg2.vhd Line: 31
+    Info (12023): Found entity 1: xorg2 File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/xorg2.vhd Line: 23
+Info (12127): Elaborating entity "MIPS_Processor" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at MIPS_Processor.vhd(52): object "s_Halt" assigned a value but never read File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 52
+Warning (10036): Verilog HDL or VHDL warning at MIPS_Processor.vhd(55): object "s_Ovfl" assigned a value but never read File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 55
+Warning (10036): Verilog HDL or VHDL warning at MIPS_Processor.vhd(106): object "s1" assigned a value but never read File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 106
+Warning (10036): Verilog HDL or VHDL warning at MIPS_Processor.vhd(106): object "s2" assigned a value but never read File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 106
+Info (12128): Elaborating entity "mem" for hierarchy "mem:IMem" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 190
+Info (12128): Elaborating entity "control_unit" for hierarchy "control_unit:control" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 226
+Info (12128): Elaborating entity "addersubtractor" for hierarchy "addersubtractor:addFour" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 249
+Info (12128): Elaborating entity "onesComp" for hierarchy "addersubtractor:addFour|onesComp:inverter" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/addersubtractor.vhd Line: 43
+Info (12128): Elaborating entity "invg" for hierarchy "addersubtractor:addFour|onesComp:inverter|invg:\G_OnesComp:0:idk" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/onesComp.vhd Line: 22
+Info (12128): Elaborating entity "mux2t1_N" for hierarchy "addersubtractor:addFour|mux2t1_N:addsubctrl" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/addersubtractor.vhd Line: 47
+Info (12128): Elaborating entity "mux2t1" for hierarchy "addersubtractor:addFour|mux2t1_N:addsubctrl|mux2t1:\G_NBit_MUX:0:MUXI" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux2t1_N.vhd Line: 43
+Info (12128): Elaborating entity "andg2" for hierarchy "addersubtractor:addFour|mux2t1_N:addsubctrl|mux2t1:\G_NBit_MUX:0:MUXI|andg2:x2" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux2t1.vhd Line: 41
+Info (12128): Elaborating entity "org2" for hierarchy "addersubtractor:addFour|mux2t1_N:addsubctrl|mux2t1:\G_NBit_MUX:0:MUXI|org2:x4" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/mux2t1.vhd Line: 51
+Info (12128): Elaborating entity "fullAdder" for hierarchy "addersubtractor:addFour|fullAdder:\G_fullAdder:0:fullAdderlist" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/addersubtractor.vhd Line: 55
+Info (12128): Elaborating entity "xorg2" for hierarchy "addersubtractor:addFour|fullAdder:\G_fullAdder:0:fullAdderlist|xorg2:xor1" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/fullAdder.vhd Line: 39
+Info (12128): Elaborating entity "extender" for hierarchy "extender:signExtender" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 257
+Info (12128): Elaborating entity "MIPS_pc" for hierarchy "MIPS_pc:pcReg" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 273
+Warning (10540): VHDL Signal Declaration warning at MIPS_pc.vhd(26): used explicit default value for signal "s_RST_data" because signal was never assigned a value File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_pc.vhd Line: 26
+Info (12128): Elaborating entity "MIPS_pc_dffg" for hierarchy "MIPS_pc:pcReg|MIPS_pc_dffg:\G_NBit_DFFG:0:ONESCOMPI" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_pc.vhd Line: 32
+Warning (10492): VHDL Process Statement warning at MIPS_pc_dffg.vhd(34): signal "i_RST_data" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_pc_dffg.vhd Line: 34
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:registers" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 281
+Info (12128): Elaborating entity "decoder5t32" for hierarchy "regfile:registers|decoder5t32:writeDecoder" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/regfile.vhd Line: 55
+Info (12128): Elaborating entity "dffg_N" for hierarchy "regfile:registers|dffg_N:REG0" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/regfile.vhd Line: 58
+Info (12128): Elaborating entity "dffg" for hierarchy "regfile:registers|dffg_N:REG0|dffg:\G_NBit_DFFG:0:ONESCOMPI" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/dffg_N.vhd Line: 30
+Info (12128): Elaborating entity "mux32t1" for hierarchy "regfile:registers|mux32t1:Read1" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/regfile.vhd Line: 81
+Info (12128): Elaborating entity "alu" for hierarchy "alu:mainALU" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 301
+Info (12128): Elaborating entity "barrel_shifter" for hierarchy "alu:mainALU|barrel_shifter:shifter" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/alu.vhd Line: 58
+Info (12128): Elaborating entity "beq_bne" for hierarchy "alu:mainALU|beq_bne:beq_bne_block" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/alu.vhd Line: 65
+Info (12128): Elaborating entity "alu_addersubtractor" for hierarchy "alu:mainALU|alu_addersubtractor:addsub" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/alu.vhd Line: 70
+Info (12128): Elaborating entity "mux2t1_N" for hierarchy "mux2t1_N:jalAddr" File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 332
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276007): RAM logic "mem:IMem|ram" is uninferred due to asynchronous read logic File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/mem.vhd Line: 35
+    Info (276007): RAM logic "mem:DMem|ram" is uninferred due to asynchronous read logic File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/mem.vhd Line: 35
+Warning (276002): Cannot convert all sets of registers into RAM megafunctions when creating nodes; therefore, the resulting number of registers remaining in design can cause longer compilation time or result in insufficient memory to complete Analysis and Synthesis
+Info (13000): Registers with preset signals will power-up high File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/MIPS_pc_dffg.vhd Line: 33
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 114648 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 67 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 114549 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 1147 megabytes
+    Info: Processing ended: Sun Nov  6 19:21:31 2022
+    Info: Elapsed time: 00:03:46
+    Info: Total CPU time (on all processors): 00:03:46
+Info (125069): Default assignment values were changed in the current version of the Quartus Prime software -- changes to default assignments values are contained in file /usr/local/quartus/21.1/quartus/linux64/assignment_defaults.qdf
+Info: *******************************************************************
+Info: Running Quartus Prime Fitter
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+    Info: Copyright (C) 2022  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Sun Nov  6 19:21:32 2022
+Info: Command: quartus_fit --read_settings_files=on --write_settings_files=off toolflow -c toolflow
+Info: qfit2_default_script.tcl version: #1
+Info: Project  = toolflow
+Info: Revision = toolflow
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (119006): Selected device EP4CE115F29C7 for design "toolflow"
+Info (21076): High junction temperature operating condition is not set. Assuming a default value of '85'.
+Info (21076): Low junction temperature operating condition is not set. Assuming a default value of '0'.
+Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
+    Info (176445): Device EP4CE40F29C7 is compatible
+    Info (176445): Device EP4CE40F29I7 is compatible
+    Info (176445): Device EP4CE30F29C7 is compatible
+    Info (176445): Device EP4CE30F29I7 is compatible
+    Info (176445): Device EP4CE55F29C7 is compatible
+    Info (176445): Device EP4CE55F29I7 is compatible
+    Info (176445): Device EP4CE75F29C7 is compatible
+    Info (176445): Device EP4CE75F29I7 is compatible
+    Info (176445): Device EP4CE115F29I7 is compatible
+Info (169124): Fitter converted 5 user pins into dedicated programming pins
+    Info (169125): Pin ~ALTERA_ASDO_DATA1~ is reserved at location F4
+    Info (169125): Pin ~ALTERA_FLASH_nCE_nCSO~ is reserved at location E2
+    Info (169125): Pin ~ALTERA_DCLK~ is reserved at location P3
+    Info (169125): Pin ~ALTERA_DATA0~ is reserved at location N7
+    Info (169125): Pin ~ALTERA_nCEO~ is reserved at location P28
+Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
+Critical Warning (169085): No exact pin location assignment(s) for 99 pins of 99 total pins. For the list of pins please refer to the I/O Assignment Warnings table in the fitter report.
+Info (332104): Reading SDC File: 'toolflow.sdc'
+Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
+Info (332111): Found 1 clocks
+    Info (332111):   Period   Clock Name
+    Info (332111): ======== ============
+    Info (332111):   20.000         iCLK
+Info (176353): Automatically promoted node iCLK~input (placed in PIN J1 (CLK1, DIFFCLK_0n)) File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 24
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
+Info (176353): Automatically promoted node iRST~input (placed in PIN Y2 (CLK2, DIFFCLK_1p)) File: /home/vsadvani/CprE381/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd Line: 25
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
+Info (176233): Starting register packing
+Info (176235): Finished register packing
+    Extra Info (176219): No registers were packed into other blocks
+Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
+    Info (176211): Number of I/O pins in group: 97 (unused VREF, 2.5V VCCIO, 65 input, 32 output, 0 bidirectional)
+        Info (176212): I/O standards used: 2.5 V.
+Info (176215): I/O bank details before I/O pin placement
+    Info (176214): Statistics of I/O banks
+        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 5 total pin(s) used --  51 pins available
+        Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  62 pins available
+        Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  73 pins available
+        Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  71 pins available
+        Info (176213): I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  65 pins available
+        Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  57 pins available
+        Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  72 pins available
+        Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  71 pins available
+Info (171121): Fitter preparation operations ending: elapsed time is 00:01:14
+Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
+Info (170189): Fitter placement preparation operations beginning
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:13
+Info (170191): Fitter placement operations beginning
+Info (170137): Fitter placement was successful
+Info (170192): Fitter placement operations ending: elapsed time is 00:01:55
+Info (170193): Fitter routing operations beginning
+Info (170195): Router estimated average interconnect usage is 33% of the available device resources
+    Info (170196): Router estimated peak interconnect usage is 61% of the available device resources in the region that extends from location X69_Y37 to location X80_Y48
+Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
+    Info (170201): Optimizations that may affect the design's routability were skipped
+Info (170194): Fitter routing operations ending: elapsed time is 00:22:11
+Info (11888): Total time spent on timing analysis during the Fitter is 614.79 seconds.
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:17
+Info (144001): Generated suppressed messages file /home/vsadvani/CprE381/cpre381-toolflow/internal/QuartusWork/output_files/toolflow.fit.smsg
+Info: Quartus Prime Fitter was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 3391 megabytes
+    Info: Processing ended: Sun Nov  6 19:48:01 2022
+    Info: Elapsed time: 00:26:29
+    Info: Total CPU time (on all processors): 01:13:42
+Info: *******************************************************************
+Info: Running Quartus Prime Assembler
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+    Info: Copyright (C) 2022  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Sun Nov  6 19:48:02 2022
+Info: Command: quartus_asm --read_settings_files=on --write_settings_files=off toolflow -c toolflow
+Info (125069): Default assignment values were changed in the current version of the Quartus Prime software -- changes to default assignments values are contained in file /usr/local/quartus/21.1/quartus/linux64/assignment_defaults.qdf
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (115031): Writing out detailed assembly data for power analysis
+Info (115030): Assembler is generating device programming files
+Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 768 megabytes
+    Info: Processing ended: Sun Nov  6 19:48:09 2022
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07

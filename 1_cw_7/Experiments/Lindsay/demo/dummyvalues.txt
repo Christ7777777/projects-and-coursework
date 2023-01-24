@@ -1,0 +1,39 @@
+{   
+    "id" : 432839540,
+    "firstName" : "alex",
+    "lastName" : "volkov",
+    "age" : 28,
+    "email" : "alex@iastate.com"
+}
+
+{   
+    "id" : 2348290,
+    "firstName" : "varun",
+    "lastName" : "advani",
+    "age" : 20,
+    "email" : "varun@iastate.com"
+}
+
+{   
+    "id" : 234289302,
+    "firstName" : "molly",
+    "lastName" : "clark",
+    "age" : 32,
+    "email" : "mollyc@iastate.com"
+}
+
+{   
+    "id" : 5432849208,
+    "firstName" : "daryl",
+    "lastName" : "damman",
+    "age" : 22,
+    "email" : "bdddamman@iastate.com"
+}
+
+{   
+    "id" : 432839540,
+    "firstName" : "alex",
+    "lastName" : "volkov",
+    "age" : 28,
+    "email" : "av@iastate.com"
+}

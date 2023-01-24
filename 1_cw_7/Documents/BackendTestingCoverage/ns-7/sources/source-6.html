@@ -1,0 +1,449 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > PropertyService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">drivewayparking.app.service</a>
+</div>
+
+<h1>Coverage Summary for Class: PropertyService (drivewayparking.app.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PropertyService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    30%
+  </span>
+  <span class="absValue">
+    (6/20)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    25.7%
+  </span>
+  <span class="absValue">
+    (44/171)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package drivewayparking.app.service;
+&nbsp;
+&nbsp;import drivewayparking.app.dto.PropertyRequest;
+&nbsp;import drivewayparking.app.entity.Booking;
+&nbsp;import drivewayparking.app.entity.Property;
+&nbsp;import drivewayparking.app.entity.Rating;
+&nbsp;import drivewayparking.app.entity.User;
+&nbsp;import drivewayparking.app.enums.Status;
+&nbsp;import drivewayparking.app.repository.PropertyRepository;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.sql.Timestamp;
+&nbsp;import java.util.*;
+&nbsp;
+&nbsp;@Service
+<b class="fc">&nbsp;public class PropertyService {</b>
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private PropertyRepository repository;
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private UserService userService;
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private BookingService bookingService;
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private RatingService ratingService;
+&nbsp;
+<b class="nc">&nbsp;    public Property getPropertyById(Long id) { return repository.findById(id).orElse(null); }</b>
+&nbsp;
+<b class="fc">&nbsp;    public Property getPropertyByTitle(String title) { return repository.findByTitle(title); }</b>
+&nbsp;
+<b class="fc">&nbsp;    public List&lt;Property&gt; getProperties() { return repository.findAll(); }</b>
+&nbsp;
+&nbsp;    public List&lt;Property&gt; getPropertiesByUserId(Long id) {
+&nbsp;
+<b class="nc">&nbsp;        User existingUser = userService.getUserById(id);</b>
+<b class="nc">&nbsp;        if (existingUser != null) return repository.findByUser(id);</b>
+<b class="nc">&nbsp;        else return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Property&gt; getPropertiesByLocation(Double latitude, Double longitude, Double range) {
+&nbsp;
+<b class="nc">&nbsp;        List&lt;Property&gt; result = new ArrayList&lt;&gt;();</b>
+<b class="nc">&nbsp;        LinkedHashMap&lt;Property, Double&gt; distanceMap = new LinkedHashMap&lt;&gt;();</b>
+&nbsp;
+&nbsp;        // find property closest to the given latitude and longitude
+&nbsp;        // within a minute accuracy (~1.15 miles) to narrow down the search to state and city
+<b class="nc">&nbsp;        Property closestProperty = repository.findByMinuteLatitudeAndLongitude(latitude, longitude);</b>
+&nbsp;
+<b class="nc">&nbsp;        if (closestProperty != null) {</b>
+&nbsp;
+<b class="nc">&nbsp;            List&lt;Property&gt; properties = repository.findAllByCityState(closestProperty.getCity(), closestProperty.getState());</b>
+<b class="nc">&nbsp;            for (Property property : properties) {</b>
+&nbsp;
+<b class="nc">&nbsp;                Double propertyLatitude = property.getLatitude();</b>
+<b class="nc">&nbsp;                Double propertyLongitude = property.getLongitude();</b>
+&nbsp;
+<b class="nc">&nbsp;                Double distance = getDistance(latitude, propertyLatitude, longitude, propertyLongitude);</b>
+&nbsp;
+<b class="nc">&nbsp;                if (Double.compare(distance, range) &lt;= 0 &amp;&amp; property.getApproved()) distanceMap.put(property, distance);</b>
+<b class="nc">&nbsp;            }</b>
+&nbsp;
+&nbsp;            // sort properties by closest to the requested location
+<b class="nc">&nbsp;            distanceMap = sortLinkedHashMapByValues(distanceMap);</b>
+<b class="nc">&nbsp;            List&lt;Map.Entry&lt;Property, Double&gt; &gt; sortedDistanceMapList = new LinkedList&lt;Map.Entry&lt;Property, Double&gt; &gt;(distanceMap.entrySet());</b>
+<b class="nc">&nbsp;            for (Map.Entry&lt;Property, Double&gt; pair : sortedDistanceMapList) {</b>
+<b class="nc">&nbsp;                result.add(pair.getKey());</b>
+<b class="nc">&nbsp;            }</b>
+&nbsp;
+&nbsp;        }
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    public List&lt;Property&gt; filterPropertiesByAvailability(List&lt;Property&gt; properties, Timestamp check_in, Timestamp check_out) {
+&nbsp;
+<b class="nc">&nbsp;        List&lt;Property&gt; result = new ArrayList&lt;&gt;();</b>
+&nbsp;
+&nbsp;        // we must iterate through each property in the table
+<b class="nc">&nbsp;        for (Property p : properties) {</b>
+&nbsp;
+<b class="nc">&nbsp;            Property existingProperty = repository.findById(p.getId()).orElse(null);</b>
+<b class="nc">&nbsp;            if (existingProperty != null) {</b>
+&nbsp;
+&nbsp;                // make a fake booking for this property with the desired check-in and check-out times
+<b class="nc">&nbsp;                Booking b = new Booking();</b>
+<b class="nc">&nbsp;                b.setProperty(existingProperty);</b>
+<b class="nc">&nbsp;                b.setCheck_in(check_in);</b>
+<b class="nc">&nbsp;                b.setCheck_out(check_out);</b>
+&nbsp;
+&nbsp;                // if there&#39;s no conflict with this booking, add it to the result array
+<b class="nc">&nbsp;                if (!bookingService.conflictingBooking(b)) {</b>
+<b class="nc">&nbsp;                    result.add(existingProperty);</b>
+&nbsp;                }
+&nbsp;            }
+<b class="nc">&nbsp;        }</b>
+&nbsp;
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Property&gt; filterPropertiesByParkingType(List&lt;Property&gt; properties, Boolean driveway, Boolean garage, Boolean parkingLot, Boolean handicapped) {
+&nbsp;
+<b class="nc">&nbsp;        List&lt;Property&gt; result = new ArrayList&lt;&gt;();</b>
+&nbsp;
+<b class="nc">&nbsp;        for (Property property : properties) {</b>
+<b class="nc">&nbsp;            if ((driveway == false || property.getDriveway()) &amp;&amp;</b>
+<b class="nc">&nbsp;                    (garage == false || property.getGarage()) &amp;&amp;</b>
+<b class="nc">&nbsp;                    (parkingLot == false || property.getParkingLot()) &amp;&amp;</b>
+<b class="nc">&nbsp;                    (handicapped == false || property.getHandicapped()))</b>
+&nbsp;
+<b class="nc">&nbsp;                result.add(property);</b>
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Property&gt; filterPropertiesByVehicleType(List&lt;Property&gt; properties, Boolean car, Boolean truck, Boolean motorcycle, Boolean oversized) {
+&nbsp;
+<b class="nc">&nbsp;        List&lt;Property&gt; result = new ArrayList&lt;&gt;();</b>
+&nbsp;
+<b class="nc">&nbsp;        for (Property property: properties) {</b>
+<b class="nc">&nbsp;            if ((car == false || property.getCar()) &amp;&amp;</b>
+<b class="nc">&nbsp;                    (truck == false || property.getTruck()) &amp;&amp;</b>
+<b class="nc">&nbsp;                    (motorcycle == false || property.getMotorcycle()) &amp;&amp;</b>
+<b class="nc">&nbsp;                    (oversized == false || property.getOversized()))</b>
+&nbsp;
+<b class="nc">&nbsp;                result.add(property);</b>
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Property&gt; filterPropertiesByAmenities(List&lt;Property&gt; properties, Boolean EVcharging, Boolean inOut, Boolean tailgating, Boolean shuttle) {
+&nbsp;
+<b class="nc">&nbsp;        List&lt;Property&gt; result = new ArrayList&lt;&gt;();</b>
+&nbsp;
+<b class="nc">&nbsp;        for (Property property: properties) {</b>
+<b class="nc">&nbsp;            if ((EVcharging == false || property.getEVcharging()) &amp;&amp;</b>
+<b class="nc">&nbsp;                    (inOut == false || property.getInOut()) &amp;&amp;</b>
+<b class="nc">&nbsp;                    (tailgating == false || property.getTailgating()) &amp;&amp;</b>
+<b class="nc">&nbsp;                    (shuttle == false ||  property.getShuttle()))</b>
+&nbsp;
+<b class="nc">&nbsp;                result.add(property);</b>
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Property&gt; sortPropertiesByRating(List&lt;Property&gt; properties) {
+&nbsp;
+<b class="nc">&nbsp;        List&lt;Property&gt; result = new LinkedList&lt;&gt;();</b>
+<b class="nc">&nbsp;        LinkedHashMap&lt;Property, Float&gt; ratingMap = new LinkedHashMap&lt;&gt;();</b>
+&nbsp;
+<b class="nc">&nbsp;        for (Property property : properties) {</b>
+&nbsp;
+<b class="nc">&nbsp;            Property existingProperty = repository.findById(property.getId()).orElse(null);</b>
+<b class="nc">&nbsp;            if (existingProperty != null) {</b>
+&nbsp;
+<b class="nc">&nbsp;                float averageRating = 0;</b>
+<b class="nc">&nbsp;                float weightedRating = 0;</b>
+&nbsp;
+<b class="nc">&nbsp;                List&lt;Rating&gt; ratings = ratingService.getRatingsByProperty(existingProperty.getId());</b>
+<b class="nc">&nbsp;                for (Rating rating : ratings) {</b>
+<b class="nc">&nbsp;                    averageRating += (rating.getAccommodation() + rating.getSafety() + rating.getResponsiveness())/3.0;</b>
+<b class="nc">&nbsp;                    weightedRating = averageRating / ratings.size();</b>
+<b class="nc">&nbsp;                }</b>
+<b class="nc">&nbsp;                ratingMap.put(existingProperty, weightedRating);</b>
+&nbsp;            }
+<b class="nc">&nbsp;        }</b>
+&nbsp;
+&nbsp;        // sort properties by rating
+<b class="nc">&nbsp;        ratingMap = sortLinkedHashMapByValues(ratingMap);</b>
+&nbsp;
+&nbsp;        // create a sorted list of properties and populate it from the sorted hashmap
+<b class="nc">&nbsp;        List&lt;Map.Entry&lt;Property, Float&gt; &gt; sortedRatingMapList = new LinkedList&lt;Map.Entry&lt;Property, Float&gt; &gt;(ratingMap.entrySet());</b>
+<b class="nc">&nbsp;        for (Map.Entry&lt;Property, Float&gt; pair : sortedRatingMapList) {</b>
+<b class="nc">&nbsp;            result.add(pair.getKey());</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;        // arrange properties in descending order
+<b class="nc">&nbsp;        Collections.reverse(result);</b>
+&nbsp;
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Property&gt; sortPropertiesByCreationDate(List&lt;Property&gt; properties) {
+&nbsp;
+<b class="nc">&nbsp;        List&lt;Property&gt; result = new ArrayList&lt;&gt;();</b>
+<b class="nc">&nbsp;        for (Property property : properties) {</b>
+<b class="nc">&nbsp;            Property existingProperty = repository.findById(property.getId()).orElse(null);</b>
+<b class="nc">&nbsp;            if (existingProperty != null) result.add(existingProperty);</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;
+<b class="nc">&nbsp;        Collections.sort(result, Comparator.comparing(Property::getCreated));</b>
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Property&gt; sortPropertiesByRate(List&lt;Property&gt; properties) {
+&nbsp;
+<b class="nc">&nbsp;        List&lt;Property&gt; result = new ArrayList&lt;&gt;();</b>
+<b class="nc">&nbsp;        for (Property property : properties) {</b>
+<b class="nc">&nbsp;            Property existingProperty = repository.findById(property.getId()).orElse(null);</b>
+<b class="nc">&nbsp;            if (existingProperty != null) result.add(existingProperty);</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;
+<b class="nc">&nbsp;        Collections.sort(result, Comparator.comparing(Property::getRatePerHour));</b>
+<b class="nc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Integer saveProperty(PropertyRequest request) {
+&nbsp;
+<b class="fc">&nbsp;        if (request.getTitle() != null &amp;&amp; request.getUserId() != null &amp;&amp; request.getStreet() != null &amp;&amp; request.getCity() != null &amp;&amp;</b>
+<b class="fc">&nbsp;            request.getState() != null &amp;&amp; request.getZipcode() != null &amp;&amp; request.getCountry() != null &amp;&amp; request.getLatitude() != null &amp;&amp;</b>
+<b class="fc">&nbsp;            request.getLongitude() != null &amp;&amp; request.getDescription() != null &amp;&amp; request.getRatePerHour() != null) {</b>
+&nbsp;
+&nbsp;            // checking if the property already exists
+<b class="fc">&nbsp;            Property existingProperty = repository.findByTitle(request.getTitle());</b>
+&nbsp;
+&nbsp;            // checking if the user for the new property exists
+<b class="fc">&nbsp;            User existingUser = userService.getUserById(request.getUserId());</b>
+&nbsp;
+<b class="fc">&nbsp;            if (existingProperty == null &amp;&amp; existingUser != null) {</b>
+&nbsp;
+<b class="fc">&nbsp;                Property property = new Property();</b>
+<b class="fc">&nbsp;                property.setUser(existingUser); // setting many-to-one relationship between property and user</b>
+<b class="fc">&nbsp;                repository.save(property);</b>
+&nbsp;
+<b class="fc">&nbsp;                request.setPropertyId(property.getId());</b>
+&nbsp;
+<b class="fc">&nbsp;                return updateProperty(request);</b>
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        return Status.Error.getValue();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Integer saveProperties(List&lt;PropertyRequest&gt; requests) {
+&nbsp;
+<b class="nc">&nbsp;        int status = Status.OK.getValue();</b>
+<b class="nc">&nbsp;        for (PropertyRequest request : requests) {</b>
+<b class="nc">&nbsp;            status += saveProperty(request);</b>
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;        if (status == Status.OK.getValue()) return Status.OK.getValue();</b>
+<b class="nc">&nbsp;        else return Status.Error.getValue();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Integer updateProperty(PropertyRequest request) {
+&nbsp;
+<b class="fc">&nbsp;        Property existingProperty = repository.findById(request.getPropertyId()).orElse(null);</b>
+<b class="fc">&nbsp;        if (existingProperty != null) {</b>
+&nbsp;
+&nbsp;            // updating key attributes
+<b class="fc">&nbsp;            if (request.getTitle() != null) existingProperty.setTitle(request.getTitle());</b>
+<b class="fc">&nbsp;            if (request.getStreet() != null) existingProperty.setStreet(request.getStreet());</b>
+<b class="fc">&nbsp;            if (request.getCity() != null) existingProperty.setCity(request.getCity());</b>
+<b class="fc">&nbsp;            if (request.getState() != null) existingProperty.setState(request.getState());</b>
+<b class="fc">&nbsp;            if (request.getZipcode() != null) existingProperty.setZipcode(request.getZipcode());</b>
+<b class="fc">&nbsp;            if (request.getCountry() != null) existingProperty.setCountry(request.getCountry());</b>
+<b class="fc">&nbsp;            if (request.getLatitude() != null) existingProperty.setLatitude(request.getLatitude());</b>
+<b class="fc">&nbsp;            if (request.getLongitude() != null) existingProperty.setLongitude(request.getLongitude());</b>
+<b class="fc">&nbsp;            if (request.getDescription() != null) existingProperty.setDescription(request.getDescription());</b>
+<b class="fc">&nbsp;            if (request.getRatePerHour() != null) existingProperty.setRatePerHour(request.getRatePerHour());</b>
+&nbsp;
+&nbsp;            // updating type of parking
+<b class="fc">&nbsp;            if (request.getDriveway() != null) existingProperty.setDriveway(request.getDriveway());</b>
+<b class="fc">&nbsp;            if (request.getGarage() != null) existingProperty.setGarage(request.getGarage());</b>
+<b class="fc">&nbsp;            if (request.getParkingLot() != null) existingProperty.setParkingLot(request.getParkingLot());</b>
+<b class="fc">&nbsp;            if (request.getHandicapped() != null) existingProperty.setHandicapped(request.getHandicapped());</b>
+&nbsp;
+&nbsp;            // updating vehicle type
+<b class="fc">&nbsp;            if (request.getCar() != null) existingProperty.setCar(request.getCar());</b>
+<b class="fc">&nbsp;            if (request.getTruck() != null) existingProperty.setTruck(request.getTruck());</b>
+<b class="fc">&nbsp;            if (request.getMotorcycle() != null) existingProperty.setMotorcycle(request.getMotorcycle());</b>
+<b class="fc">&nbsp;            if (request.getOversized() != null) existingProperty.setOversized(request.getOversized());</b>
+&nbsp;
+&nbsp;            // updating amenities
+<b class="fc">&nbsp;            if (request.getEVcharging() != null) existingProperty.setEVcharging(request.getEVcharging());</b>
+<b class="fc">&nbsp;            if (request.getInOut() != null) existingProperty.setInOut(request.getInOut());</b>
+<b class="fc">&nbsp;            if (request.getTailgating() != null) existingProperty.setTailgating(request.getTailgating());</b>
+<b class="fc">&nbsp;            if (request.getShuttle() != null) existingProperty.setShuttle(request.getShuttle());</b>
+&nbsp;
+<b class="fc">&nbsp;            repository.save(existingProperty);</b>
+<b class="fc">&nbsp;            return Status.OK.getValue();</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return Status.Not_Found.getValue();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Integer approveProperty(PropertyRequest request) {
+&nbsp;
+<b class="nc">&nbsp;        Property existingProperty = repository.findById(request.getPropertyId()).orElse(null);</b>
+<b class="nc">&nbsp;        if (existingProperty != null) {</b>
+<b class="nc">&nbsp;            existingProperty.setApproved(request.getApproved());</b>
+<b class="nc">&nbsp;            repository.save(existingProperty);</b>
+<b class="nc">&nbsp;            return Status.OK.getValue();</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return Status.Not_Found.getValue();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Integer deleteProperty(Long id) {
+&nbsp;
+<b class="fc">&nbsp;        Property existingProperty = repository.findById(id).orElse(null);</b>
+<b class="fc">&nbsp;        if (existingProperty != null) {</b>
+<b class="fc">&nbsp;            repository.deleteById(id);</b>
+<b class="fc">&nbsp;            return Status.OK.getValue();</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return Status.Not_Found.getValue();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Helper method to calculate distance between two points given latitude and longitude
+&nbsp;    public static double getDistance(double lat1, double lat2, double lon1, double lon2) {
+&nbsp;
+&nbsp;        // convert from degrees to radians
+<b class="nc">&nbsp;        lon1 = Math.toRadians(lon1);</b>
+<b class="nc">&nbsp;        lon2 = Math.toRadians(lon2);</b>
+<b class="nc">&nbsp;        lat1 = Math.toRadians(lat1);</b>
+<b class="nc">&nbsp;        lat2 = Math.toRadians(lat2);</b>
+&nbsp;
+&nbsp;        // Haversine formula
+<b class="nc">&nbsp;        double dlat = lat2 - lat1;</b>
+<b class="nc">&nbsp;        double dlon = lon2 - lon1;</b>
+<b class="nc">&nbsp;        double a = Math.pow(Math.sin(dlat / 2), 2) + Math.cos(lat1) * Math.cos(lat2) * Math.pow(Math.sin(dlon / 2),2);</b>
+&nbsp;
+<b class="nc">&nbsp;        double c = 2 * Math.asin(Math.sqrt(a));</b>
+&nbsp;
+&nbsp;        // radius of Earth in miles
+<b class="nc">&nbsp;        double r = 3956;</b>
+&nbsp;
+<b class="nc">&nbsp;        return c * r;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Helper method to sort a given hashmap by values in ascending order
+&nbsp;    public static &lt;K, V extends Comparable&lt;V&gt;&gt; LinkedHashMap&lt;K, V&gt; sortLinkedHashMapByValues(LinkedHashMap&lt;K, V&gt; linkedHashMap)
+&nbsp;    {
+&nbsp;        // create a list from elements of HashMap
+<b class="nc">&nbsp;        List&lt;Map.Entry&lt;K, V&gt;&gt; list = new LinkedList&lt;&gt;(linkedHashMap.entrySet());</b>
+&nbsp;
+&nbsp;        // sort the list
+<b class="nc">&nbsp;        Collections.sort(list, Map.Entry.comparingByValue());</b>
+&nbsp;
+&nbsp;        // put data from sorted list to hashmap
+<b class="nc">&nbsp;        LinkedHashMap&lt;K, V&gt; sortedLinkedHashMap = new LinkedHashMap&lt;&gt;();</b>
+<b class="nc">&nbsp;        for (Map.Entry&lt;K, V&gt; pair : list) {</b>
+<b class="nc">&nbsp;            sortedLinkedHashMap.put(pair.getKey(), pair.getValue());</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;
+<b class="nc">&nbsp;        return sortedLinkedHashMap;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-07 11:03</div>
+</div>
+</body>
+</html>

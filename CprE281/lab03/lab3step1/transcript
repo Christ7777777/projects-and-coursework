@@ -1,0 +1,18 @@
+# Compile of lab3step2.v failed with 4 errors.
+# Compile of lab3step2.v failed with 4 errors.
+# Compile of lab3step2.v failed with 4 errors.
+# Compile of lab3step2.v failed with 4 errors.
+# Compile of lab3step2.v was successful.
+vsim -gui work.lab3step2
+# vsim -gui work.lab3step2 
+# Start time: 13:29:21 on Feb 11,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.lab3step2(fast)
+add wave -position insertpoint  \
+sim:/lab3step2/cabbage \
+sim:/lab3step2/goat \
+sim:/lab3step2/wolf \
+sim:/lab3step2/alarm
+do basic-alarm.do
+# End time: 13:30:54 on Feb 11,2022, Elapsed time: 0:01:33
+# Errors: 0, Warnings: 9

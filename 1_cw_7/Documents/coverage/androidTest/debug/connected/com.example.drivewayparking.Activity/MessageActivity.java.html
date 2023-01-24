@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MessageActivity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Activity</a> &gt; <span class="el_source">MessageActivity.java</span></div><h1>MessageActivity.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Activity;
+
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.text.method.PasswordTransformationMethod;
+import android.util.Base64;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Adapter.MessageAdapter;
+import com.example.drivewayparking.Model.MessageRequest;
+import com.example.drivewayparking.Model.MessageResponse;
+import com.example.drivewayparking.Model.User;
+import com.example.drivewayparking.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.WebSocket;
+import okhttp3.WebSocketListener;
+import retrofit2.Call;
+import retrofit2.Callback;
+
+<span class="fc" id="L49">public class MessageActivity extends AppCompatActivity implements TextWatcher {</span>
+
+    private String email, username, date, time, receiver_email, receiver_name;
+    private Long receiver_id, sender_id;;
+    private WebSocket webSocket;
+<span class="fc" id="L54">    private String SERVER_PATH = &quot;&quot;;</span>
+    private EditText messageEdit;
+    private Button sendBtn;
+    private ImageView pickImgBtn;
+    private RecyclerView recyclerView;
+<span class="fc" id="L59">    private int IMAGE_REQUEST_ID = 1;</span>
+    private MessageAdapter messageAdapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+<span class="fc" id="L64">        super.onCreate(savedInstanceState);</span>
+<span class="fc" id="L65">        setContentView(R.layout.activity_message);</span>
+<span class="fc" id="L66">        email = getIntent().getExtras().getString(&quot;sender_email&quot;);</span>
+<span class="fc" id="L67">        receiver_email = getIntent().getExtras().getString(&quot;r_email&quot;);</span>
+<span class="fc" id="L68">        System.out.println(&quot;Receiver email: &quot; + receiver_email);</span>
+<span class="fc" id="L69">        sender_id = getIntent().getExtras().getLong(&quot;sender_id&quot;);</span>
+<span class="fc" id="L70">        receiver_id = getIntent().getExtras().getLong(&quot;receiver_id&quot;);</span>
+<span class="fc" id="L71">        System.out.println(email);</span>
+<span class="fc" id="L72">        System.out.println(sender_id);</span>
+<span class="fc" id="L73">        System.out.println(receiver_id);</span>
+<span class="fc" id="L74">        initiateSocketConnection();</span>
+
+<span class="fc" id="L76">    }</span>
+
+    private void initiateSocketConnection() {
+
+<span class="fc" id="L80">        OkHttpClient client = new OkHttpClient();</span>
+<span class="fc" id="L81">        SERVER_PATH = &quot;ws://coms-309-015.class.las.iastate.edu:8080/message/&quot; + sender_id;</span>
+<span class="fc" id="L82">        Request request = new Request.Builder().url(SERVER_PATH).build();</span>
+<span class="fc" id="L83">        webSocket = client.newWebSocket(request, new SocketListener());</span>
+
+<span class="fc" id="L85">    }</span>
+
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+<span class="fc" id="L90">    }</span>
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+<span class="fc" id="L95">    }</span>
+
+    @Override
+    public void afterTextChanged(Editable s) {
+
+<span class="fc" id="L100">        String string = s.toString().trim();</span>
+
+<span class="pc bpc" id="L102" title="1 of 2 branches missed.">        if (string.isEmpty()) {</span>
+<span class="nc" id="L103">            resetMessageEdit();</span>
+        } else {
+
+<span class="fc" id="L106">            sendBtn.setVisibility(View.VISIBLE);</span>
+<span class="fc" id="L107">            pickImgBtn.setVisibility(View.INVISIBLE);</span>
+        }
+
+<span class="fc" id="L110">    }</span>
+
+    private void resetMessageEdit() {
+
+<span class="fc" id="L114">        messageEdit.removeTextChangedListener(this);</span>
+
+<span class="fc" id="L116">        messageEdit.setText(&quot;&quot;);</span>
+<span class="fc" id="L117">        sendBtn.setVisibility(View.INVISIBLE);</span>
+<span class="fc" id="L118">        pickImgBtn.setVisibility(View.VISIBLE);</span>
+
+<span class="fc" id="L120">        messageEdit.addTextChangedListener(this);</span>
+
+<span class="fc" id="L122">    }</span>
+
+<span class="fc" id="L124">    private class SocketListener extends WebSocketListener {</span>
+
+        @Override
+        public void onOpen(WebSocket webSocket, Response response) {
+<span class="fc" id="L128">            super.onOpen(webSocket, response);</span>
+
+<span class="fc" id="L130">            runOnUiThread(() -&gt; {</span>
+<span class="fc" id="L131">                Toast.makeText(MessageActivity.this,</span>
+                        &quot;Socket Connection Successful!&quot;,
+<span class="fc" id="L133">                        Toast.LENGTH_SHORT).show();</span>
+
+<span class="fc" id="L135">                initializeView();</span>
+<span class="fc" id="L136">            });</span>
+<span class="fc" id="L137">        }</span>
+
+        @Override
+        public void onMessage(WebSocket webSocket, String text) {
+<span class="fc" id="L141">            super.onMessage(webSocket, text);</span>
+
+<span class="fc" id="L143">            runOnUiThread(() -&gt; {</span>
+
+               // webSocket.send( receiver_id + &quot;\n&quot; + text);
+<span class="fc" id="L146">                MessageResponse message = new MessageResponse();</span>
+<span class="pc bpc" id="L147" title="1 of 2 branches missed.">                if(text != null) {</span>
+<span class="fc" id="L148">                    String[] data = text.split(&quot;\n&quot;, 4);</span>
+<span class="pc bpc" id="L149" title="1 of 2 branches missed.">                    if(data.length == 4) {</span>
+<span class="fc" id="L150">                    message.setMessage(data[3]);</span>
+<span class="fc" id="L151">                    message.setOtherId(receiver_id);</span>
+<span class="fc" id="L152">                    message.setSent(Boolean.parseBoolean(data[2]));</span>
+<span class="fc" id="L153">                    message.setName(data[0]);</span>
+<span class="fc" id="L154">                    message.setSent(Timestamp.valueOf(data[1]));</span>
+<span class="fc" id="L155">                    Call&lt;User&gt; call = ApiClient.getUserApiService().getUserByEmail(receiver_email);</span>
+<span class="fc" id="L156">                    call.enqueue(new Callback&lt;User&gt;() {</span>
+                        @Override
+                        public void onResponse(Call&lt;User&gt; call, retrofit2.Response&lt;User&gt; response) {
+<span class="pc bpc" id="L159" title="1 of 2 branches missed.">                            if (response.isSuccessful()) {</span>
+<span class="fc" id="L160">                                String name = response.body().getFirstName() + &quot; &quot; + response.body().getLastName();</span>
+<span class="fc" id="L161">                                System.out.println(&quot;Receiver Name; &quot; + name);</span>
+<span class="fc bfc" id="L162" title="All 2 branches covered.">                                if (name.equals(data[0])) {</span>
+<span class="fc" id="L163">                                    messageAdapter.addItem(message);</span>
+<span class="fc" id="L164">                                    recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);</span>
+                                }
+                            }
+<span class="fc" id="L167">                        }</span>
+
+                        @Override
+                        public void onFailure(Call&lt;User&gt; call, Throwable t) {
+
+<span class="nc" id="L172">                        }</span>
+                    });
+                }
+
+//                        messageAdapter.addItem(message);
+//                        recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);
+
+                }
+//                   MessageRequest messageRequest = new MessageRequest();
+//                   messageRequest.setMessage(text);
+//                   messageRequest.setSender_id(sender_id);
+//                   messageRequest.setReceiver_id(receiver_id);
+                  // messageRequest.setSent(false);
+//                    jsonObject.put(&quot;isSent&quot;, false);
+//                    jsonObject.put(&quot;sender_id&quot;, sender_id);
+//                    jsonObject.put(&quot;receiver_id&quot;, receiver_id);
+
+
+                   // messageAdapter.addItem(messageRequest);
+
+
+<span class="fc" id="L193">            });</span>
+
+<span class="fc" id="L195">        }</span>
+    }
+
+    private void initializeView() {
+
+<span class="fc" id="L200">        messageEdit = findViewById(R.id.messageEdit);</span>
+<span class="fc" id="L201">        sendBtn = findViewById(R.id.sendBtn);</span>
+<span class="fc" id="L202">        pickImgBtn = findViewById(R.id.pickImgBtn);</span>
+<span class="fc" id="L203">        recyclerView = findViewById(R.id.recyclerView);</span>
+<span class="fc" id="L204">        messageAdapter = new MessageAdapter(getLayoutInflater(), date, time);</span>
+<span class="fc" id="L205">        recyclerView.setAdapter(messageAdapter);</span>
+<span class="fc" id="L206">        recyclerView.setLayoutManager(new LinearLayoutManager(this));</span>
+<span class="fc" id="L207">        Calendar calendar = Calendar.getInstance();</span>
+<span class="fc" id="L208">        Date date = calendar.getTime();</span>
+<span class="fc" id="L209">        Timestamp timestamp = new Timestamp(date.getTime());</span>
+
+
+<span class="fc" id="L212">        messageEdit.addTextChangedListener(this);</span>
+
+<span class="fc" id="L214">        sendBtn.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="fc" id="L217">                Calendar calendar = Calendar.getInstance();</span>
+<span class="fc" id="L218">                Date date = calendar.getTime();</span>
+<span class="fc" id="L219">                Timestamp timestamp = new Timestamp(date.getTime());</span>
+<span class="fc" id="L220">                MessageResponse message = new MessageResponse();</span>
+<span class="fc" id="L221">                message.setMessage(messageEdit.getText().toString());</span>
+                //message.setTimestamp(timestamp);
+<span class="fc" id="L223">                message.setName(username);</span>
+<span class="fc" id="L224">                message.setSent(true);</span>
+//                    jsonObject.put(&quot;name&quot;, username);
+//                    jsonObject.put(&quot;message&quot;, messageEdit.getText().toString());
+                    //System.out.println(messageRequest.toString());
+
+<span class="fc" id="L229">                    webSocket.send(receiver_id + &quot;\n&quot; + messageEdit.getText().toString());</span>
+                    //System.out.println(messageRequest.toString() + &quot;Sender ID: &quot; + sender_id + &quot;Receiver ID: &quot; + receiver_id);
+                    //messageRequest.setSent(true);
+//                    jsonObject.put(&quot;isSent&quot;, true);
+<span class="fc" id="L233">                    messageAdapter.addItem(message);</span>
+
+<span class="fc" id="L235">                    recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);</span>
+
+<span class="fc" id="L237">                    resetMessageEdit();</span>
+
+<span class="fc" id="L239">            }</span>
+        });
+
+<span class="fc" id="L242">        pickImgBtn.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+
+<span class="nc" id="L246">                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);</span>
+<span class="nc" id="L247">                intent.setType(&quot;image/*&quot;);</span>
+
+<span class="nc" id="L249">                startActivityForResult(Intent.createChooser(intent, &quot;Pick image&quot;),</span>
+<span class="nc" id="L250">                        IMAGE_REQUEST_ID);</span>
+<span class="nc" id="L251">            }</span>
+        });
+
+<span class="fc" id="L254">    }</span>
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+<span class="nc" id="L258">        super.onActivityResult(requestCode, resultCode, data);</span>
+
+<span class="nc bnc" id="L260" title="All 4 branches missed.">        if (requestCode == IMAGE_REQUEST_ID &amp;&amp; resultCode == RESULT_OK) {</span>
+
+            try {
+<span class="nc" id="L263">                InputStream is = getContentResolver().openInputStream(data.getData());</span>
+<span class="nc" id="L264">                Bitmap image = BitmapFactory.decodeStream(is);</span>
+
+<span class="nc" id="L266">                sendImage(image);</span>
+
+<span class="nc" id="L268">            } catch (FileNotFoundException e) {</span>
+<span class="nc" id="L269">                e.printStackTrace();</span>
+<span class="nc" id="L270">            }</span>
+
+        }
+
+<span class="nc" id="L274">    }</span>
+
+    private void sendImage(Bitmap image) {
+
+<span class="nc" id="L278">        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();</span>
+<span class="nc" id="L279">        image.compress(Bitmap.CompressFormat.JPEG, 50, outputStream);</span>
+
+<span class="nc" id="L281">        String base64String = Base64.encodeToString(outputStream.toByteArray(),</span>
+                Base64.DEFAULT);
+
+<span class="nc" id="L284">        JSONObject jsonObject = new JSONObject();</span>
+
+        try {
+<span class="nc" id="L287">            jsonObject.put(&quot;name&quot;, username);</span>
+<span class="nc" id="L288">            jsonObject.put(&quot;image&quot;, base64String);</span>
+
+<span class="nc" id="L290">            webSocket.send(jsonObject.toString());</span>
+
+<span class="nc" id="L292">            jsonObject.put(&quot;isSent&quot;, true);</span>
+
+            //messageAdapter.addItem(jsonObject);
+
+<span class="nc" id="L296">            recyclerView.smoothScrollToPosition(messageAdapter.getItemCount() - 1);</span>
+
+<span class="nc" id="L298">        } catch (JSONException e) {</span>
+<span class="nc" id="L299">            e.printStackTrace();</span>
+<span class="nc" id="L300">        }</span>
+
+<span class="nc" id="L302">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

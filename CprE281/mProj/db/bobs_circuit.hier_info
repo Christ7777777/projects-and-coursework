@@ -1,0 +1,14 @@
+|bobs_circuit
+w => b.IN0
+w => b.IN0
+x => b.IN0
+x => b.IN1
+y => b.IN1
+y => b.IN1
+y => b.IN1
+z => b.IN1
+z => b.IN1
+z => b.IN1
+b << b.DB_MAX_OUTPUT_PORT_TYPE
+
+

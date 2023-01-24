@@ -1,0 +1,166 @@
+|lab11step3
+A1 <= lab11step2:inst1.S0
+w => lab11step2:inst1.w
+w => lab11step2:inst2.w
+Manual_Clock => lab11step2:inst1.C1
+Manual_Clock => Debouncer:inst.Manual
+B1 <= lab11step2:inst1.S1
+C1 <= lab11step2:inst1.S2
+D1 <= lab11step2:inst1.S3
+E1 <= lab11step2:inst1.S4
+F1 <= lab11step2:inst1.S5
+G1 <= lab11step2:inst1.S6
+A2 <= lab11step2:inst2.S0
+SOMHz_Clock => Debouncer:inst.Board
+B2 <= lab11step2:inst2.S1
+C2 <= lab11step2:inst2.S2
+D2 <= lab11step2:inst2.S3
+E2 <= lab11step2:inst2.S4
+F2 <= lab11step2:inst2.S5
+G2 <= lab11step2:inst2.S6
+
+
+|lab11step3|lab11step2:inst1
+S0 <= seven_seg_decoder:inst2.a
+C1 => inst.CLK
+C1 => inst1.CLK
+w => circuit_nsl:inst4.w
+S1 <= seven_seg_decoder:inst2.b
+S2 <= seven_seg_decoder:inst2.c
+S3 <= seven_seg_decoder:inst2.d
+S4 <= seven_seg_decoder:inst2.e
+S5 <= seven_seg_decoder:inst2.f
+S6 <= seven_seg_decoder:inst2.g
+
+
+|lab11step3|lab11step2:inst1|seven_seg_decoder:inst2
+A <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+B <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+C <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+D <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+E <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+F <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+G <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+x3 => Decoder0.IN0
+x2 => Decoder0.IN1
+x1 => Decoder0.IN2
+x0 => Decoder0.IN3
+
+
+|lab11step3|lab11step2:inst1|circuit_ol:inst5
+Q1 => Z2.IN0
+Q1 => Z2.IN0
+Q1 => Z0.IN0
+Q1 => Z1.IN0
+Q0 => Z2.IN1
+Q0 => Z1.IN1
+Q0 => Z2.IN1
+Q0 => Z0.IN1
+Z2 <= Z2.DB_MAX_OUTPUT_PORT_TYPE
+Z1 <= Z1.DB_MAX_OUTPUT_PORT_TYPE
+Z0 <= Z0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab11step3|lab11step2:inst1|circuit_nsl:inst4
+w => Y1.IN1
+w => Y0.IN0
+w => Y1.IN0
+Q1 => Y1.IN1
+Q1 => Y1.IN0
+Q1 => Y1.IN0
+Q0 => Y1.IN1
+Q0 => Y0.IN1
+Q0 => Y1.IN1
+Y1 <= Y1.DB_MAX_OUTPUT_PORT_TYPE
+Y0 <= Y0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab11step3|lab11step2:inst2
+S0 <= seven_seg_decoder:inst2.a
+C1 => inst.CLK
+C1 => inst1.CLK
+w => circuit_nsl:inst4.w
+S1 <= seven_seg_decoder:inst2.b
+S2 <= seven_seg_decoder:inst2.c
+S3 <= seven_seg_decoder:inst2.d
+S4 <= seven_seg_decoder:inst2.e
+S5 <= seven_seg_decoder:inst2.f
+S6 <= seven_seg_decoder:inst2.g
+
+
+|lab11step3|lab11step2:inst2|seven_seg_decoder:inst2
+A <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+B <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+C <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+D <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+E <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+F <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+G <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+x3 => Decoder0.IN0
+x2 => Decoder0.IN1
+x1 => Decoder0.IN2
+x0 => Decoder0.IN3
+
+
+|lab11step3|lab11step2:inst2|circuit_ol:inst5
+Q1 => Z2.IN0
+Q1 => Z2.IN0
+Q1 => Z0.IN0
+Q1 => Z1.IN0
+Q0 => Z2.IN1
+Q0 => Z1.IN1
+Q0 => Z2.IN1
+Q0 => Z0.IN1
+Z2 <= Z2.DB_MAX_OUTPUT_PORT_TYPE
+Z1 <= Z1.DB_MAX_OUTPUT_PORT_TYPE
+Z0 <= Z0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab11step3|lab11step2:inst2|circuit_nsl:inst4
+w => Y1.IN1
+w => Y0.IN0
+w => Y1.IN0
+Q1 => Y1.IN1
+Q1 => Y1.IN0
+Q1 => Y1.IN0
+Q0 => Y1.IN1
+Q0 => Y0.IN1
+Q0 => Y1.IN1
+Y1 <= Y1.DB_MAX_OUTPUT_PORT_TYPE
+Y0 <= Y0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab11step3|Debouncer:inst
+Smooth <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Board => clock_divider_1024:inst3.CLK_IN
+Manual => inst.DATAIN
+
+
+|lab11step3|Debouncer:inst|clock_divider_1024:inst4
+CLK_OUT <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+CLK_IN => inst1.CLK
+CLK_IN => inst2.CLK
+CLK_IN => inst3.CLK
+CLK_IN => inst4.CLK
+CLK_IN => inst5.CLK
+CLK_IN => inst6.CLK
+CLK_IN => inst7.CLK
+CLK_IN => inst8.CLK
+CLK_IN => inst9.CLK
+CLK_IN => inst10.CLK
+
+
+|lab11step3|Debouncer:inst|clock_divider_1024:inst3
+CLK_OUT <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+CLK_IN => inst1.CLK
+CLK_IN => inst2.CLK
+CLK_IN => inst3.CLK
+CLK_IN => inst4.CLK
+CLK_IN => inst5.CLK
+CLK_IN => inst6.CLK
+CLK_IN => inst7.CLK
+CLK_IN => inst8.CLK
+CLK_IN => inst9.CLK
+CLK_IN => inst10.CLK
+
+

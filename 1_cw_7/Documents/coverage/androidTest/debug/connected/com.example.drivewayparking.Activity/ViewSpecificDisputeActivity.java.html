@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ViewSpecificDisputeActivity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Activity</a> &gt; <span class="el_source">ViewSpecificDisputeActivity.java</span></div><h1>ViewSpecificDisputeActivity.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Activity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Model.BookingResponse;
+import com.example.drivewayparking.Model.DisputeResponse;
+import com.example.drivewayparking.Model.Property;
+import com.example.drivewayparking.R;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+<span class="fc" id="L21">public class ViewSpecificDisputeActivity extends AppCompatActivity {</span>
+
+    private long did;
+    private long bid;
+    private long pid;
+
+    private DisputeResponse dispute;
+    private BookingResponse booking;
+    private Property property;
+
+    private TextView BookingID;
+    private TextView PropertyName;
+    private TextView StartTime;
+    private TextView EndTime;
+    private TextView Message;
+    private TextView DisputeID;
+
+    private Button Resolve;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+<span class="fc" id="L42">        super.onCreate(savedInstanceState);</span>
+<span class="fc" id="L43">        setContentView(R.layout.activity_view_specific_dispute);</span>
+
+<span class="fc" id="L45">        BookingID   = (TextView) findViewById(R.id.BookingID);</span>
+<span class="fc" id="L46">        PropertyName= (TextView) findViewById(R.id.PropertyName);</span>
+<span class="fc" id="L47">        StartTime   = (TextView) findViewById(R.id.StartTime);</span>
+<span class="fc" id="L48">        EndTime     = (TextView) findViewById(R.id.EndTime);</span>
+<span class="fc" id="L49">        Message     = (TextView) findViewById(R.id.Message);</span>
+<span class="fc" id="L50">        DisputeID   = (TextView) findViewById(R.id.DisputeID);</span>
+
+<span class="fc" id="L52">        Resolve = (Button) findViewById(R.id.Resolve);</span>
+
+<span class="fc" id="L54">        did = getIntent().getExtras().getLong(&quot;did&quot;);</span>
+<span class="fc" id="L55">        System.out.println(did + &quot; did&quot;);</span>
+<span class="fc" id="L56">        Call&lt;DisputeResponse&gt; disputeCall = ApiClient.getDisputeApiService().getDispute(did);</span>
+
+<span class="fc" id="L58">        disputeCall.enqueue(new Callback&lt;DisputeResponse&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;DisputeResponse&gt; call, Response&lt;DisputeResponse&gt; response) {
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">                if(response.isSuccessful()) {</span>
+<span class="fc" id="L62">                    dispute = response.body();</span>
+<span class="fc" id="L63">                    bid = response.body().getBookingId();</span>
+<span class="fc" id="L64">                    BookingID.setText(&quot;Booking ID: &quot; + dispute.getBookingId());</span>
+<span class="fc" id="L65">                    DisputeID.setText(&quot;Dispute ID: &quot; + dispute.getId());</span>
+<span class="fc" id="L66">                    Message.setText(dispute.getMessage());</span>
+<span class="fc" id="L67">                    System.out.println(response.body().toString());</span>
+<span class="fc" id="L68">                    Call&lt;BookingResponse&gt; bookingCall = ApiClient.getBookingApiService().getBooking(response.body().getBookingId());</span>
+
+<span class="fc" id="L70">                    bookingCall.enqueue(new Callback&lt;BookingResponse&gt;() {</span>
+                        @Override
+                        public void onResponse(Call&lt;BookingResponse&gt; call, Response&lt;BookingResponse&gt; response) {
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">                            if(response.isSuccessful()) {</span>
+<span class="fc" id="L74">                                booking = response.body();</span>
+<span class="fc" id="L75">                                pid = booking.getPid();</span>
+<span class="fc" id="L76">                                StartTime.setText(&quot;Start: &quot; + booking.getCheck_in().toString());</span>
+<span class="fc" id="L77">                                EndTime.setText(&quot;End: &quot; + booking.getCheck_out().toString());</span>
+<span class="fc" id="L78">                                Call&lt;Property&gt; propertyCall = ApiClient.getPropertyApiService().getPropertyById(response.body().getPid());</span>
+
+<span class="fc" id="L80">                                propertyCall.enqueue(new Callback&lt;Property&gt;() {</span>
+                                    @Override
+                                    public void onResponse(Call&lt;Property&gt; call, Response&lt;Property&gt; response) {
+<span class="pc bpc" id="L83" title="1 of 2 branches missed.">                                        if (response.isSuccessful()) {</span>
+<span class="fc" id="L84">                                            property = response.body();</span>
+<span class="fc" id="L85">                                            PropertyName.setText(&quot;Name: &quot; + property.getTitle());</span>
+                                        }
+                                        else{
+<span class="nc" id="L88">                                            Toast.makeText(ViewSpecificDisputeActivity.this, &quot;Property Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                                        }
+<span class="fc" id="L90">                                    }</span>
+
+                                    @Override
+                                    public void onFailure(Call&lt;Property&gt; call, Throwable t) {
+<span class="nc" id="L94">                                        Toast.makeText(getApplicationContext(), &quot;Property Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L95">                                    }</span>
+                                });
+<span class="fc" id="L97">                            }</span>
+                            else{
+<span class="nc" id="L99">                                Toast.makeText(ViewSpecificDisputeActivity.this, response.code() + &quot; &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                            }
+<span class="fc" id="L101">                        }</span>
+
+                        @Override
+                        public void onFailure(Call&lt;BookingResponse&gt; call, Throwable t) {
+<span class="nc" id="L105">                            Toast.makeText(getApplicationContext(), &quot;Booking Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L106">                        }</span>
+                    });
+<span class="fc" id="L108">                }</span>
+                else{
+<span class="nc" id="L110">                    Toast.makeText(getApplicationContext(), &quot;Error getting dispute: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                }
+<span class="fc" id="L112">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;DisputeResponse&gt; call, Throwable t) {
+<span class="nc" id="L116">                Toast.makeText(getApplicationContext(), &quot;Dispute Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L117">            }</span>
+        });
+
+<span class="fc" id="L120">        System.out.println(bid + &quot; bid&quot;);</span>
+//        Call&lt;BookingResponse&gt; bookingCall = ApiClient.getBookingApiService().getBooking(bid);
+//
+//        bookingCall.enqueue(new Callback&lt;BookingResponse&gt;() {
+//            @Override
+//            public void onResponse(Call&lt;BookingResponse&gt; call, Response&lt;BookingResponse&gt; response) {
+//                booking = response.body();
+//                pid = booking.getPid();
+//                StartTime.setText(&quot;Start: &quot; + booking.getCheck_in().toString());
+//                EndTime.setText(&quot;End: &quot; + booking.getCheck_out().toString());
+//            }
+//
+//            @Override
+//            public void onFailure(Call&lt;BookingResponse&gt; call, Throwable t) {
+//                Toast.makeText(getApplicationContext(), &quot;Booking Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+//        System.out.println(pid + &quot; pid&quot;);
+//        Call&lt;Property&gt; propertyCall = ApiClient.getPropertyApiService().getPropertyById(pid);
+//
+//        propertyCall.enqueue(new Callback&lt;Property&gt;() {
+//            @Override
+//            public void onResponse(Call&lt;Property&gt; call, Response&lt;Property&gt; response) {
+//                property = response.body();
+//                PropertyName.setText(&quot;Name: &quot; + property.getTitle());
+//            }
+//
+//            @Override
+//            public void onFailure(Call&lt;Property&gt; call, Throwable t) {
+//                Toast.makeText(getApplicationContext(), &quot;Property Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+<span class="fc" id="L154">        Resolve.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View v) {
+<span class="fc" id="L157">                Call&lt;Integer&gt; call = ApiClient.getDisputeApiService().resolveDispute(did);</span>
+<span class="fc" id="L158">                call.enqueue(new Callback&lt;Integer&gt;() {</span>
+                    @Override
+                    public void onResponse(Call&lt;Integer&gt; call, Response&lt;Integer&gt; response) {
+<span class="fc" id="L161">                        Toast.makeText(getApplicationContext(), &quot;Dispute Resolved Successfully &quot;, Toast.LENGTH_LONG).show();</span>
+<span class="fc" id="L162">                        finish();</span>
+<span class="fc" id="L163">                    }</span>
+
+                    @Override
+                    public void onFailure(Call&lt;Integer&gt; call, Throwable t) {
+<span class="nc" id="L167">                        Toast.makeText(getApplicationContext(), &quot;Dispute not Resolved: &quot; + t.getMessage(), Toast.LENGTH_LONG).show();</span>
+<span class="nc" id="L168">                    }</span>
+                });
+<span class="fc" id="L170">            }</span>
+        });
+<span class="fc" id="L172">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

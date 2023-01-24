@@ -1,0 +1,37 @@
+# Compile of lab1step3.v was successful.
+vsim -gui work.lab1step3
+# vsim -gui work.lab1step3 
+# Start time: 13:26:29 on Jan 25,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.lab1step3(fast)
+add wave -position insertpoint  \
+sim:/lab1step3/A \
+sim:/lab1step3/B \
+sim:/lab1step3/C \
+sim:/lab1step3/F
+force -freeze sim:/lab1step3/A 1'h0 0
+force -freeze sim:/lab1step3/B 1'h0 0
+force -freeze sim:/lab1step3/C 1'h0 0
+run
+force -freeze sim:/lab1step3/A 1'h0 0
+force -freeze sim:/lab1step3/C 1'h1 0
+run
+force -freeze sim:/lab1step3/C 1'h0 0
+force -freeze sim:/lab1step3/B 1'h1 0
+run
+force -freeze sim:/lab1step3/B 1'h0 0
+force -freeze sim:/lab1step3/A 1'h1 0
+run
+force -freeze sim:/lab1step3/B 1'h1 0
+run
+force -freeze sim:/lab1step3/B 1'h0 0
+force -freeze sim:/lab1step3/C 1'h1 0
+run
+force -freeze sim:/lab1step3/A 1'h0 0
+force -freeze sim:/lab1step3/B 1'h1 0
+run
+force -freeze sim:/lab1step3/A 1'h1 0
+run
+# Causality operation skipped due to absence of debug database file
+# End time: 13:55:25 on Jan 25,2022, Elapsed time: 0:28:56
+# Errors: 0, Warnings: 5

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="49c9c308-3df5-48ae-b4e9-70731eb002b5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../.idea/androidTestResultsUserPreferences.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/API/ApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/API/ApiClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/API/BookingAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/API/BookingAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/API/MockApiClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/API/MockApiClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/API/PropertyAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/API/PropertyAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/API/UserAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/API/UserAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/API/UserRatingAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/API/UserRatingAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/CreateBookingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/CreateBookingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/CreatePropertyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/CreatePropertyActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/LaunchScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/LaunchScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/MainActivityAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/MainActivityAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/MainActivityHost.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/MainActivityHost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/MainActivityRenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/MainActivityRenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/MessageListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/MessageListActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ProfileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/Signup.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/Signup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/UserRatingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/UserRatingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ViewAllBookingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ViewAllBookingsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ViewAllPropertiesActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ViewAllPropertiesActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ViewAllPropertiesByDateActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ViewAllPropertiesByDateActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ViewAllUserPropertyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ViewAllUserPropertyActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ViewAllUserRatingsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ViewAllUserRatingsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ViewSpecificPropertyActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Activity/ViewSpecificPropertyActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Adapter/BookingAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Adapter/BookingAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Adapter/BookingUpcomingAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Adapter/BookingUpcomingAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Adapter/HostPropertyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Adapter/HostPropertyAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Adapter/PropertyAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Adapter/PropertyAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Adapter/UserRatingAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Adapter/UserRatingAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/FindFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/FindFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/InboxFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/InboxFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/InboxMessagesFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/InboxMessagesFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/InboxNotificationsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/InboxNotificationsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/ProfileFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/ReservedCompletedFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/ReservedCompletedFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/ReservedFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/ReservedFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/ReservedUpcomingFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Fragment/ReservedUpcomingFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/BookingRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/BookingRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/BookingResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/BookingResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/FilterReponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/FilterReponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/LoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/Property.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/Property.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/PropertyRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/PropertyRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/RatingRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/RatingRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/RatingResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/RatingResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/UpdatePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/UpdatePassword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/UserRating.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/UserRating.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/UserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/UserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/UserViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/com/example/drivewayparking/Model/UserViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HKjEVvwTVwh0nzSTFLW3rmPa8F" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/vaiys/1_cw_7/Frontend/app/src/main&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="49c9c308-3df5-48ae-b4e9-70731eb002b5" name="Changes" comment="" />
+      <created>1668040558042</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668040558042</updated>
+      <workItem from="1668040559336" duration="94000" />
+      <workItem from="1668192624859" duration="4000" />
+      <workItem from="1668471499729" duration="8000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

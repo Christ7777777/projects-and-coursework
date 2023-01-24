@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ViewAllUserPropertyActivity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Activity</a> &gt; <span class="el_source">ViewAllUserPropertyActivity.java</span></div><h1>ViewAllUserPropertyActivity.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Activity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+
+import android.widget.Toast;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Adapter.HostPropertyAdapter;
+import com.example.drivewayparking.Adapter.PropertyAdapter;
+import com.example.drivewayparking.Model.Property;
+import com.example.drivewayparking.Model.PropertyRequest;
+import com.example.drivewayparking.R;
+import androidx.appcompat.widget.SearchView;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+/**
+ * The type View all user property activity.
+ * @author: Varun Advani
+ */
+<span class="fc" id="L42">public class ViewAllUserPropertyActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{</span>
+
+    private SearchView searchView;
+    private RecyclerView recyclerView;
+    private List&lt;Property&gt; propertyList;
+    private HostPropertyAdapter propertyAdapter;
+<span class="fc" id="L48">    private int IMAGE_REQUEST_ID = 1;</span>
+    private Bitmap bmp;
+    private Long pid;
+
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+<span class="nc" id="L56">        super.onActivityResult(requestCode, resultCode, data);</span>
+<span class="nc bnc" id="L57" title="All 4 branches missed.">        if (requestCode == IMAGE_REQUEST_ID &amp;&amp; resultCode == RESULT_OK) {</span>
+
+
+            try {
+<span class="nc" id="L61">                InputStream inputStream = getApplicationContext().getContentResolver().openInputStream(data.getData());</span>
+                byte[] bytes;
+<span class="nc" id="L63">                File file = new File(getApplicationContext().getCacheDir(), &quot;image_property_&quot; + 6 + &quot;.jpeg&quot;);</span>
+<span class="nc" id="L64">                bmp = BitmapFactory.decodeStream(inputStream);</span>
+<span class="nc" id="L65">                ByteArrayOutputStream output = new ByteArrayOutputStream();</span>
+<span class="nc" id="L66">                bmp.compress(Bitmap.CompressFormat.JPEG, 100, output);</span>
+<span class="nc" id="L67">                bytes = output.toByteArray();</span>
+<span class="nc" id="L68">                FileOutputStream fos = null;</span>
+                try {
+<span class="nc" id="L70">                    fos = new FileOutputStream(file);</span>
+<span class="nc" id="L71">                } catch (FileNotFoundException e) {</span>
+<span class="nc" id="L72">                    e.printStackTrace();</span>
+<span class="nc" id="L73">                }</span>
+                try {
+<span class="nc" id="L75">                    fos.write(bytes);</span>
+<span class="nc" id="L76">                    fos.flush();</span>
+<span class="nc" id="L77">                    fos.close();</span>
+<span class="nc" id="L78">                } catch (IOException e) {</span>
+<span class="nc" id="L79">                    e.printStackTrace();</span>
+<span class="nc" id="L80">                }</span>
+<span class="nc" id="L81">                RequestBody requestFile = RequestBody.create(MediaType.parse(&quot;image/*&quot;),file);</span>
+<span class="nc" id="L82">                MultipartBody.Part image_upload = MultipartBody.Part.createFormData(&quot;file&quot;, file.getName(), requestFile);</span>
+<span class="nc" id="L83">                RequestBody dummy = RequestBody.create(MediaType.parse(&quot;multipart/form-data&quot;), &quot;&quot;);</span>
+<span class="nc" id="L84">                RequestBody requestBody = RequestBody.create(MediaType.parse(&quot;multipart/form-data&quot;), &quot;6&quot;);</span>
+<span class="nc" id="L85">                Call&lt;Integer&gt; call = ApiClient.getImageApiService().uploadImageProperty(image_upload, requestBody);</span>
+<span class="nc" id="L86">                call.enqueue(new Callback&lt;Integer&gt;() {</span>
+                    @Override
+                    public void onResponse(Call&lt;Integer&gt; call, Response&lt;Integer&gt; response) {
+<span class="nc bnc" id="L89" title="All 2 branches missed.">                        if(response.isSuccessful()){</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">                            if(response.body() == 0){</span>
+<span class="nc" id="L91">                                Toast.makeText(getApplicationContext(), &quot;Image Uploaded&quot;, Toast.LENGTH_SHORT).show();</span>
+                            }
+                            else{
+<span class="nc" id="L94">                                Toast.makeText(getApplicationContext(), &quot;Image Not Uploaded&quot;, Toast.LENGTH_SHORT).show();</span>
+                            }
+                        }
+                        else{
+<span class="nc" id="L98">                            Toast.makeText(getApplicationContext(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                        }
+<span class="nc" id="L100">                    }</span>
+
+                    @Override
+                    public void onFailure(Call&lt;Integer&gt; call, Throwable t) {
+<span class="nc" id="L104">                        Toast.makeText(getApplicationContext(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L105">                    }</span>
+                });
+
+
+<span class="nc" id="L109">            } catch (FileNotFoundException e) {</span>
+<span class="nc" id="L110">                e.printStackTrace();</span>
+<span class="nc" id="L111">            }</span>
+
+        }
+
+
+<span class="nc" id="L116">    }</span>
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+<span class="fc" id="L119">        super.onCreate(savedInstanceState);</span>
+<span class="fc" id="L120">        setContentView(R.layout.activity_view_all_properties);</span>
+
+<span class="fc" id="L122">        searchView = findViewById(R.id.search_bar);</span>
+<span class="fc" id="L123">        searchView.setOnQueryTextListener(this);</span>
+<span class="fc" id="L124">        recyclerView = findViewById(R.id.recyclerView);</span>
+<span class="fc" id="L125">        recyclerView.setLayoutManager(new LinearLayoutManager(this));</span>
+<span class="fc" id="L126">        System.out.println(getIntent().getExtras().getLong(&quot;user_id&quot;));</span>
+        //pid = getIntent().getExtras().getLong(&quot;pid&quot;);
+
+<span class="fc" id="L129">        Call&lt;List&lt;Property&gt;&gt; call = ApiClient.getPropertyApiService().getPropertyByUserId(getIntent().getExtras().getLong(&quot;user_id&quot;));</span>
+<span class="fc" id="L130">        call.enqueue(new Callback&lt;List&lt;Property&gt;&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;List&lt;Property&gt;&gt; call, Response&lt;List&lt;Property&gt;&gt; response) {
+<span class="pc bpc" id="L133" title="1 of 2 branches missed.">                if(response.isSuccessful()){</span>
+<span class="fc" id="L134">                    propertyList = response.body();</span>
+<span class="fc" id="L135">                    propertyAdapter = new HostPropertyAdapter(ViewAllUserPropertyActivity.this, response.body());</span>
+<span class="fc" id="L136">                    recyclerView.setAdapter(propertyAdapter);</span>
+                    // recyclerView.setAdapter(new PropertyAdapter(ViewAllPropertiesActivity.this, response.body()));
+                }
+                else{
+<span class="nc" id="L140">                    Toast.makeText(getApplicationContext(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                }
+<span class="fc" id="L142">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;List&lt;Property&gt;&gt; call, Throwable t) {
+<span class="nc" id="L146">                Toast.makeText(getApplicationContext(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L147">                System.out.println(&quot;Error: &quot; + t.getMessage());</span>
+<span class="nc" id="L148">            }</span>
+        });
+
+
+<span class="fc" id="L152">    }</span>
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+
+<span class="nc" id="L157">        return false;</span>
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+<span class="nc" id="L162">        final List&lt;Property&gt; filterPropertiesList = filter(propertyList, s);</span>
+<span class="nc" id="L163">        propertyAdapter.setFilter(filterPropertiesList);</span>
+<span class="nc" id="L164">        return false;</span>
+    }
+
+    private List&lt;Property&gt; filter (List&lt;Property&gt; properties, String query){
+<span class="nc" id="L168">        query = query.toLowerCase();</span>
+
+<span class="nc" id="L170">        final List&lt;Property&gt; filterPropertiesList = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L171" title="All 2 branches missed.">        for(Property property : properties){</span>
+//            final String search_text = property.getTitle().toLowerCase();
+//            final String search_address = property.getAddress().toLowerCase();
+<span class="nc" id="L174">            final String search_zipCode = property.getZipcode().toLowerCase();</span>
+<span class="nc bnc" id="L175" title="All 2 branches missed.">            if(search_zipCode.contains(query)){</span>
+<span class="nc" id="L176">                filterPropertiesList.add(property);</span>
+            }
+<span class="nc" id="L178">        }</span>
+<span class="nc" id="L179">        return filterPropertiesList;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

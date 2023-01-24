@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ViewAllPropertiesActivity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Activity</a> &gt; <span class="el_source">ViewAllPropertiesActivity.java</span></div><h1>ViewAllPropertiesActivity.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Activity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.app.Dialog;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import androidx.appcompat.widget.SearchView;
+import android.widget.Toast;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Adapter.PropertyAdapter;
+import com.example.drivewayparking.Model.Property;
+import com.example.drivewayparking.Model.PropertyRequest;
+import com.example.drivewayparking.R;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+/**
+ * The type View all properties activity.
+ * @author: Varun Advani
+ */
+<span class="nc" id="L33">public class ViewAllPropertiesActivity extends AppCompatActivity implements SearchView.OnQueryTextListener{</span>
+
+    private SearchView searchView;
+    private RecyclerView recyclerView;
+    private List&lt;Property&gt; propertyList;
+    private PropertyAdapter propertyAdapter;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+<span class="nc" id="L41">        super.onCreate(savedInstanceState);</span>
+<span class="nc" id="L42">        setContentView(R.layout.activity_view_all_properties);</span>
+
+<span class="nc" id="L44">        searchView = findViewById(R.id.search_bar);</span>
+<span class="nc" id="L45">        searchView.setOnQueryTextListener(this);</span>
+<span class="nc" id="L46">        recyclerView = findViewById(R.id.recyclerView);</span>
+<span class="nc" id="L47">        recyclerView.setLayoutManager(new LinearLayoutManager(this));</span>
+
+<span class="nc" id="L49">        Call&lt;List&lt;Property&gt;&gt; call = ApiClient.getPropertyApiService().getAllProperties();</span>
+<span class="nc" id="L50">        call.enqueue(new Callback&lt;List&lt;Property&gt;&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;List&lt;Property&gt;&gt; call, Response&lt;List&lt;Property&gt;&gt; response) {
+<span class="nc bnc" id="L53" title="All 2 branches missed.">                if(response.isSuccessful()){</span>
+<span class="nc" id="L54">                    propertyList = response.body();</span>
+<span class="nc" id="L55">                    propertyAdapter = new PropertyAdapter(ViewAllPropertiesActivity.this, response.body());</span>
+<span class="nc" id="L56">                    recyclerView.setAdapter(propertyAdapter);</span>
+                  // recyclerView.setAdapter(new PropertyAdapter(ViewAllPropertiesActivity.this, response.body()));
+                }
+                else{
+<span class="nc" id="L60">                    Toast.makeText(getApplicationContext(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                }
+<span class="nc" id="L62">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;List&lt;Property&gt;&gt; call, Throwable t) {
+<span class="nc" id="L66">                Toast.makeText(getApplicationContext(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L67">            }</span>
+        });
+<span class="nc" id="L69">        searchView.setOnClickListener(new View.OnClickListener() {</span>
+            @Override
+            public void onClick(View view) {
+<span class="nc" id="L72">                Dialog dialog = new Dialog(ViewAllPropertiesActivity.this);</span>
+<span class="nc" id="L73">                dialog.setCancelable(true);</span>
+<span class="nc" id="L74">                dialog.setContentView(R.layout.filter_dialog);</span>
+<span class="nc" id="L75">                CheckBox sortByRatings = dialog.findViewById(R.id.sortByRatings);</span>
+<span class="nc" id="L76">                CheckBox sortByCheapest = dialog.findViewById(R.id.sortByCheapest);</span>
+<span class="nc" id="L77">                CheckBox sortByMostExpensive = dialog.findViewById(R.id.sortByMostExpensive);</span>
+<span class="nc" id="L78">                Button sortButton = dialog.findViewById(R.id.sortButton);</span>
+<span class="nc" id="L79">                sortButton.setOnClickListener(new View.OnClickListener() {</span>
+                    @Override
+                    public void onClick(View view) {
+<span class="nc bnc" id="L82" title="All 2 branches missed.">                        if(sortByRatings.isChecked()){</span>
+<span class="nc" id="L83">                            Call&lt;List&lt;Property&gt;&gt; call = ApiClient.getPropertyApiService().sortPropertiesByRating(propertyList);</span>
+<span class="nc" id="L84">                            call.enqueue(new Callback&lt;List&lt;Property&gt;&gt;() {</span>
+                                @Override
+                                public void onResponse(Call&lt;List&lt;Property&gt;&gt; call, Response&lt;List&lt;Property&gt;&gt; response) {
+<span class="nc bnc" id="L87" title="All 2 branches missed.">                                    if(response.isSuccessful()){</span>
+<span class="nc bnc" id="L88" title="All 2 branches missed.">                                        if(response.body().size() != 0){</span>
+<span class="nc" id="L89">                                            propertyList = response.body();</span>
+<span class="nc" id="L90">                                            propertyAdapter.notifyDataSetChanged();</span>
+//                                            propertyAdapter = new PropertyAdapter(ViewAllPropertiesByDateActivity.this, response.body(), start_date, end_date, user_id);
+//                                            recyclerView.setAdapter(propertyAdapter);
+                                        }
+                                        else{
+<span class="nc" id="L95">                                            Toast.makeText(getApplicationContext(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                                            //System.out.println(propertyRequest.toString());
+                                        }
+                                    }
+                                    else {
+<span class="nc" id="L100">                                        Toast.makeText(getApplicationContext(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                                        //System.out.println(propertyRequest.toString());
+                                    }
+<span class="nc" id="L103">                                }</span>
+
+                                @Override
+                                public void onFailure(Call&lt;List&lt;Property&gt;&gt; call, Throwable t) {
+<span class="nc" id="L107">                                    Toast.makeText(getApplicationContext(), &quot;Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L108">                                }</span>
+                            });
+
+                        }
+<span class="nc bnc" id="L112" title="All 2 branches missed.">                        if(sortByCheapest.isChecked()) {</span>
+<span class="nc" id="L113">                            Collections.sort(propertyList, Property.sortByCheapest);</span>
+<span class="nc" id="L114">                            propertyAdapter.notifyDataSetChanged();</span>
+                        }
+<span class="nc bnc" id="L116" title="All 2 branches missed.">                        if(sortByMostExpensive.isChecked()) {</span>
+<span class="nc" id="L117">                            Collections.sort(propertyList, Property.mostExpensive);</span>
+<span class="nc" id="L118">                            propertyAdapter.notifyDataSetChanged();</span>
+                        }
+<span class="nc" id="L120">                        dialog.dismiss();</span>
+<span class="nc" id="L121">                    }</span>
+                });
+<span class="nc" id="L123">                dialog.show();</span>
+<span class="nc" id="L124">            }</span>
+        });
+
+
+<span class="nc" id="L128">    }</span>
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+
+<span class="nc" id="L133">        return false;</span>
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+<span class="nc" id="L138">        final List&lt;Property&gt; filterPropertiesList = filter(propertyList, s);</span>
+<span class="nc" id="L139">        propertyAdapter.setFilter(filterPropertiesList);</span>
+<span class="nc" id="L140">        return false;</span>
+    }
+
+    private List&lt;Property&gt; filter (List&lt;Property&gt; properties, String query){
+<span class="nc" id="L144">        query = query.toLowerCase();</span>
+
+<span class="nc" id="L146">        final List&lt;Property&gt; filterPropertiesList = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L147" title="All 2 branches missed.">        for(Property property : properties){</span>
+//            final String search_text = property.getTitle().toLowerCase();
+//            final String search_address = property.getAddress().toLowerCase();
+<span class="nc" id="L150">            final String search_zipCode = property.getZipcode().toLowerCase();</span>
+<span class="nc bnc" id="L151" title="All 2 branches missed.">            if(search_zipCode.contains(query)){</span>
+<span class="nc" id="L152">                filterPropertiesList.add(property);</span>
+            }
+<span class="nc" id="L154">        }</span>
+<span class="nc" id="L155">        return filterPropertiesList;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

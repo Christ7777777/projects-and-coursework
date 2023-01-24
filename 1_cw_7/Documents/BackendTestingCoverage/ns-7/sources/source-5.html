@@ -1,0 +1,139 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > MessageService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">drivewayparking.app.service</a>
+</div>
+
+<h1>Coverage Summary for Class: MessageService (drivewayparking.app.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MessageService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    33.3%
+  </span>
+  <span class="absValue">
+    (1/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    12.5%
+  </span>
+  <span class="absValue">
+    (1/8)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package drivewayparking.app.service;
+&nbsp;
+&nbsp;import drivewayparking.app.entity.Message;
+&nbsp;import drivewayparking.app.enums.Status;
+&nbsp;import drivewayparking.app.repository.MessageRepository;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@Service
+<b class="fc">&nbsp;public class MessageService {</b>
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    MessageRepository repository;
+&nbsp;
+&nbsp;//    public List&lt;Message&gt; getMessagesBySenderReceiver(Long senderId, Long receiverId) {
+&nbsp;//        return repository.findBySenderReceiver(senderId, receiverId);
+&nbsp;//    }
+&nbsp;
+&nbsp;    public Integer saveMessage(Message message){
+&nbsp;
+<b class="nc">&nbsp;        repository.save(message);</b>
+<b class="nc">&nbsp;        return Status.OK.getValue();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Integer deleteMessage(Long id) {
+&nbsp;
+<b class="nc">&nbsp;        Message existingMessage = repository.findById(id).orElse(null);</b>
+<b class="nc">&nbsp;        if (existingMessage != null) {</b>
+<b class="nc">&nbsp;            repository.deleteById(id);</b>
+<b class="nc">&nbsp;            return Status.OK.getValue();</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return Status.Not_Found.getValue();</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-07 11:03</div>
+</div>
+</body>
+</html>

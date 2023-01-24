@@ -1,0 +1,124 @@
+# Compile of adder_4bit.v was successful.
+# Compile of adder_subtracter.v was successful.
+# Compile of FA.v was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.adder_subtracter
+# vsim -gui work.adder_subtracter 
+# Start time: 13:32:38 on Mar 22,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.adder_subtracter(fast)
+add wave -position insertpoint  \
+sim:/adder_subtracter/pin_name6 \
+sim:/adder_subtracter/X2 \
+sim:/adder_subtracter/X3 \
+sim:/adder_subtracter/Y3 \
+sim:/adder_subtracter/Y2 \
+sim:/adder_subtracter/X1 \
+sim:/adder_subtracter/Y1 \
+sim:/adder_subtracter/Y0 \
+sim:/adder_subtracter/X0 \
+sim:/adder_subtracter/overflow \
+sim:/adder_subtracter/s3 \
+sim:/adder_subtracter/Cout \
+sim:/adder_subtracter/s2 \
+sim:/adder_subtracter/s1 \
+sim:/adder_subtracter/s0
+add wave -position insertpoint  \
+sim:/adder_subtracter/pin_name6 \
+sim:/adder_subtracter/X2 \
+sim:/adder_subtracter/X3 \
+sim:/adder_subtracter/Y3 \
+sim:/adder_subtracter/Y2 \
+sim:/adder_subtracter/X1 \
+sim:/adder_subtracter/Y1 \
+sim:/adder_subtracter/Y0 \
+sim:/adder_subtracter/X0 \
+sim:/adder_subtracter/overflow \
+sim:/adder_subtracter/s3 \
+sim:/adder_subtracter/Cout \
+sim:/adder_subtracter/s2 \
+sim:/adder_subtracter/s1 \
+sim:/adder_subtracter/s0
+add wave -position insertpoint  \
+sim:/adder_subtracter/pin_name6 \
+sim:/adder_subtracter/X2 \
+sim:/adder_subtracter/X3 \
+sim:/adder_subtracter/Y3 \
+sim:/adder_subtracter/Y2 \
+sim:/adder_subtracter/X1 \
+sim:/adder_subtracter/Y1 \
+sim:/adder_subtracter/Y0 \
+sim:/adder_subtracter/X0 \
+sim:/adder_subtracter/overflow \
+sim:/adder_subtracter/s3 \
+sim:/adder_subtracter/Cout \
+sim:/adder_subtracter/s2 \
+sim:/adder_subtracter/s1 \
+sim:/adder_subtracter/s0
+vsim -gui work.adder_subtracter
+# End time: 13:45:58 on Mar 22,2022, Elapsed time: 0:13:20
+# Errors: 0, Warnings: 5
+# vsim -gui work.adder_subtracter 
+# Start time: 13:45:58 on Mar 22,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.adder_subtracter(fast)
+do AS.do
+add wave -position insertpoint  \
+sim:/adder_subtracter/pin_name6 \
+sim:/adder_subtracter/X2 \
+sim:/adder_subtracter/X3 \
+sim:/adder_subtracter/Y3 \
+sim:/adder_subtracter/Y2 \
+sim:/adder_subtracter/X1 \
+sim:/adder_subtracter/Y1 \
+sim:/adder_subtracter/Y0 \
+sim:/adder_subtracter/X0 \
+sim:/adder_subtracter/overflow \
+sim:/adder_subtracter/s3 \
+sim:/adder_subtracter/Cout \
+sim:/adder_subtracter/s2 \
+sim:/adder_subtracter/s1 \
+sim:/adder_subtracter/s0
+add wave -position insertpoint  \
+sim:/adder_subtracter/pin_name6 \
+sim:/adder_subtracter/X2 \
+sim:/adder_subtracter/X3 \
+sim:/adder_subtracter/Y3 \
+sim:/adder_subtracter/Y2 \
+sim:/adder_subtracter/X1 \
+sim:/adder_subtracter/Y1 \
+sim:/adder_subtracter/Y0 \
+sim:/adder_subtracter/X0 \
+sim:/adder_subtracter/overflow \
+sim:/adder_subtracter/s3 \
+sim:/adder_subtracter/Cout \
+sim:/adder_subtracter/s2 \
+sim:/adder_subtracter/s1 \
+sim:/adder_subtracter/s0
+do AS.do
+vsim -gui work.adder_subtracter
+# End time: 13:49:44 on Mar 22,2022, Elapsed time: 0:03:46
+# Errors: 0, Warnings: 1
+# vsim -gui work.adder_subtracter 
+# Start time: 13:49:44 on Mar 22,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.adder_subtracter(fast)
+add wave -position insertpoint  \
+sim:/adder_subtracter/pin_name6 \
+sim:/adder_subtracter/X2 \
+sim:/adder_subtracter/X3 \
+sim:/adder_subtracter/Y3 \
+sim:/adder_subtracter/Y2 \
+sim:/adder_subtracter/X1 \
+sim:/adder_subtracter/Y1 \
+sim:/adder_subtracter/Y0 \
+sim:/adder_subtracter/X0 \
+sim:/adder_subtracter/overflow \
+sim:/adder_subtracter/s3 \
+sim:/adder_subtracter/Cout \
+sim:/adder_subtracter/s2 \
+sim:/adder_subtracter/s1 \
+sim:/adder_subtracter/s0
+do AS.do
+# End time: 14:07:32 on Mar 22,2022, Elapsed time: 0:17:48
+# Errors: 0, Warnings: 1

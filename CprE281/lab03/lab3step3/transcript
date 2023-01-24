@@ -1,0 +1,17 @@
+# Compile of lab3step3.v was successful.
+vsim -gui work.lab3step3
+# vsim -gui work.lab3step3 
+# Start time: 14:06:29 on Feb 11,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.lab3step3(fast)
+add wave -position insertpoint  \
+sim:/lab3step3/farmer \
+sim:/lab3step3/cabbage \
+sim:/lab3step3/goat \
+sim:/lab3step3/wolf \
+sim:/lab3step3/alarm
+do allarm2_do
+# Cannot open macro file: allarm2_do
+do alarm2_do
+# End time: 14:14:41 on Feb 11,2022, Elapsed time: 0:08:12
+# Errors: 0, Warnings: 5

@@ -1,0 +1,25 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "alarm",
+					"strict" : false
+				},
+				{
+					"name" : "cabbage",
+					"strict" : false
+				},
+				{
+					"name" : "wolf",
+					"strict" : false
+				},
+				{
+					"name" : "goat",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

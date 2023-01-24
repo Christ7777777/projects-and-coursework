@@ -1,0 +1,47 @@
+# Compile of lab10step2b.v was successful.
+vsim -gui work.lab10step2b
+# vsim -gui work.lab10step2b 
+# Start time: 13:47:36 on Apr 12,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: U:/CPRE281/lab10/lab10step2b/lab10step2b.v(134): Register is illegal in left-hand side of continuous assignment
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=0.
+# Error loading design
+# End time: 13:47:42 on Apr 12,2022, Elapsed time: 0:00:06
+# Errors: 1, Warnings: 5
+# reading C:/questasim64_2021.2/win64/../modelsim.ini
+# Loading project lab10step2c
+# Compile of lab10step2c.v was successful.
+vsim -gui work.lab10step2c
+# vsim -gui work.lab10step2c 
+# Start time: 13:58:02 on Apr 12,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.lab10step2c(fast)
+add wave -position insertpoint  \
+sim:/lab10step2c/Enable \
+sim:/lab10step2c/Clock \
+sim:/lab10step2c/CLRN \
+sim:/lab10step2c/Q
+do lab10counter.do
+# Cannot open macro file: lab10counter.do
+do lab10counter.do
+quit -sim
+# End time: 14:03:48 on Apr 12,2022, Elapsed time: 0:05:46
+# Errors: 0, Warnings: 5
+# reading C:/questasim64_2021.2/win64/../modelsim.ini
+# Loading project lab10step2c
+# Compile of lab10step2c.v was successful.
+vsim -gui work.lab10step2c
+# vsim -gui work.lab10step2c 
+# Start time: 14:04:29 on Apr 12,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.lab10step2c(fast)
+add wave -position insertpoint  \
+sim:/lab10step2c/Enable \
+sim:/lab10step2c/Clock \
+sim:/lab10step2c/CLRN \
+sim:/lab10step2c/Q
+do lab10counter.do
+# Causality operation skipped due to absence of debug database file
+# End time: 14:06:44 on Apr 12,2022, Elapsed time: 0:02:15
+# Errors: 0, Warnings: 5

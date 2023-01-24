@@ -1,0 +1,243 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > DisputeService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">drivewayparking.app.service</a>
+</div>
+
+<h1>Coverage Summary for Class: DisputeService (drivewayparking.app.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">DisputeService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    72.7%
+  </span>
+  <span class="absValue">
+    (8/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    61.8%
+  </span>
+  <span class="absValue">
+    (34/55)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package drivewayparking.app.service;
+&nbsp;
+&nbsp;import drivewayparking.app.dto.DisputeRequest;
+&nbsp;import drivewayparking.app.dto.DisputeResponse;
+&nbsp;import drivewayparking.app.entity.Admin;
+&nbsp;import drivewayparking.app.entity.Booking;
+&nbsp;import drivewayparking.app.entity.Dispute;
+&nbsp;import drivewayparking.app.entity.Property;
+&nbsp;import drivewayparking.app.enums.Status;
+&nbsp;import drivewayparking.app.repository.DisputeRepository;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@Service
+<b class="fc">&nbsp;public class DisputeService {</b>
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private DisputeRepository repository;
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private UserService userService;
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private AdminService adminService;
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private BookingService bookingService;
+&nbsp;
+&nbsp;    public DisputeResponse getDisputeById(Long id) {
+<b class="nc">&nbsp;        Dispute existingDispute = repository.findById(id).orElse(null);</b>
+<b class="nc">&nbsp;        if (existingDispute != null) return disputeToResponse(existingDispute);</b>
+<b class="nc">&nbsp;        else return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public DisputeResponse getDisputeByBookingId(Long id) {
+<b class="fc">&nbsp;        Dispute existingDispute = repository.findByBooking(id);</b>
+<b class="fc">&nbsp;        if (existingDispute != null) return disputeToResponse(existingDispute);</b>
+<b class="nc">&nbsp;        else return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;DisputeResponse&gt; getDisputes() {
+<b class="fc">&nbsp;        List&lt;Dispute&gt; existingDisputes = repository.findAll();</b>
+<b class="fc">&nbsp;        List&lt;DisputeResponse&gt; disputeResponseList = new ArrayList&lt;&gt;();</b>
+&nbsp;
+<b class="fc">&nbsp;        for (Dispute dispute : existingDisputes) { disputeResponseList.add(disputeToResponse(dispute)); }</b>
+&nbsp;
+<b class="fc">&nbsp;        return disputeResponseList;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;DisputeResponse&gt; getDisputesByAdminId(Long id) {
+<b class="nc">&nbsp;        Admin existingAdmin = adminService.getAdminById(id);</b>
+<b class="nc">&nbsp;        if (existingAdmin != null) {</b>
+<b class="nc">&nbsp;            List&lt;Dispute&gt; existingDisputes = repository.findByAdmin(id);</b>
+<b class="nc">&nbsp;            List&lt;DisputeResponse&gt; disputeResponseList = new ArrayList&lt;&gt;();</b>
+&nbsp;
+<b class="nc">&nbsp;            for (Dispute dispute : existingDisputes) { disputeResponseList.add(disputeToResponse(dispute)); }</b>
+&nbsp;
+<b class="nc">&nbsp;            return disputeResponseList;</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        else return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    public List&lt;DisputeResponse&gt; getUnresolvedDisputesByAdminId(Long id) {
+<b class="nc">&nbsp;        Admin existingAdmin = adminService.getAdminById(id);</b>
+<b class="nc">&nbsp;        if (existingAdmin != null) {</b>
+<b class="nc">&nbsp;            List&lt;Dispute&gt; existingDisputes = repository.findUnresolvedByAdmin(id);</b>
+<b class="nc">&nbsp;            List&lt;DisputeResponse&gt; disputeResponseList = new ArrayList&lt;&gt;();</b>
+&nbsp;
+<b class="nc">&nbsp;            for (Dispute dispute : existingDisputes) { disputeResponseList.add(disputeToResponse(dispute)); }</b>
+&nbsp;
+<b class="nc">&nbsp;            return disputeResponseList;</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        else return null;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Integer saveDispute(DisputeRequest request) {
+&nbsp;
+<b class="fc">&nbsp;        Dispute existingDispute = repository.findByBooking(request.getBookingId());</b>
+<b class="fc">&nbsp;        Booking existingBooking = bookingService.getBookingById(request.getBookingId());</b>
+&nbsp;
+<b class="fc">&nbsp;        if (existingDispute == null &amp;&amp; existingBooking != null) {</b>
+&nbsp;
+<b class="fc">&nbsp;            Dispute dispute = new Dispute();</b>
+<b class="fc">&nbsp;            dispute.setBooking(existingBooking); // setting one-to-one relationship between dispute and booking</b>
+<b class="fc">&nbsp;            dispute.setMessage(request.getMessage());</b>
+<b class="fc">&nbsp;            dispute.setAdmin(assignAdmin()); // setting many-to-one relationship between dispute and admin</b>
+<b class="fc">&nbsp;            repository.save(dispute);</b>
+&nbsp;
+<b class="fc">&nbsp;            return Status.OK.getValue();</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        return Status.Error.getValue();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Integer resolveDispute(Long id) {
+&nbsp;
+<b class="fc">&nbsp;        Dispute existingDispute = repository.findById(id).orElse(null);</b>
+&nbsp;
+<b class="fc">&nbsp;        if (existingDispute != null) {</b>
+<b class="fc">&nbsp;            existingDispute.setResolved(true);</b>
+<b class="fc">&nbsp;            repository.save(existingDispute);</b>
+&nbsp;
+<b class="fc">&nbsp;            return Status.OK.getValue();</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        return Status.Not_Found.getValue();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Integer deleteDispute(Long id) {
+&nbsp;
+<b class="fc">&nbsp;        Dispute existingDispute = repository.findById(id).orElse(null);</b>
+<b class="fc">&nbsp;        if (existingDispute != null) {</b>
+<b class="fc">&nbsp;            repository.deleteById(id);</b>
+<b class="fc">&nbsp;            return Status.OK.getValue();</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return Status.Not_Found.getValue();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Helper method
+&nbsp;    private DisputeResponse disputeToResponse(Dispute dispute) {
+<b class="fc">&nbsp;        DisputeResponse disputeResponse = new DisputeResponse();</b>
+<b class="fc">&nbsp;        disputeResponse.setId(dispute.getId());</b>
+<b class="fc">&nbsp;        disputeResponse.setBookingId(dispute.getBooking().getId());</b>
+<b class="fc">&nbsp;        disputeResponse.setAdminId(dispute.getAdmin().getId());</b>
+<b class="fc">&nbsp;        disputeResponse.setMessage(dispute.getMessage());</b>
+<b class="fc">&nbsp;        disputeResponse.setResolved(dispute.getResolved());</b>
+<b class="fc">&nbsp;        disputeResponse.setCreated(dispute.getCreated());</b>
+&nbsp;
+<b class="fc">&nbsp;        return disputeResponse;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    // Helper method
+<b class="fc">&nbsp;    private Admin assignAdmin() { return adminService.getAdminByLowestNumberDisputesAssigned(); }</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-07 11:03</div>
+</div>
+</body>
+</html>

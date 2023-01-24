@@ -1,0 +1,55 @@
+|lab11step2
+S0 <= seven_seg_decoder:inst2.a
+C1 => inst.CLK
+C1 => inst1.CLK
+w => circuit_nsl:inst4.w
+S1 <= seven_seg_decoder:inst2.b
+S2 <= seven_seg_decoder:inst2.c
+S3 <= seven_seg_decoder:inst2.d
+S4 <= seven_seg_decoder:inst2.e
+S5 <= seven_seg_decoder:inst2.f
+S6 <= seven_seg_decoder:inst2.g
+
+
+|lab11step2|seven_seg_decoder:inst2
+x0 => Decoder0.IN0
+x1 => Decoder0.IN1
+x2 => Decoder0.IN2
+x3 => Decoder0.IN3
+a <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+b <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+c <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+d <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+e <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+f <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+g <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab11step2|circuit_ol:inst5
+Q1 => Z2.IN0
+Q1 => Z2.IN0
+Q1 => Z0.IN0
+Q1 => Z1.IN0
+Q0 => Z2.IN1
+Q0 => Z1.IN1
+Q0 => Z2.IN1
+Q0 => Z0.IN1
+Z2 <= Z2.DB_MAX_OUTPUT_PORT_TYPE
+Z1 <= Z1.DB_MAX_OUTPUT_PORT_TYPE
+Z0 <= Z0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab11step2|circuit_nsl:inst4
+w => Y1.IN1
+w => Y0.IN0
+w => Y1.IN0
+Q1 => Y1.IN1
+Q1 => Y1.IN0
+Q1 => Y1.IN0
+Q0 => Y1.IN1
+Q0 => Y0.IN1
+Q0 => Y1.IN1
+Y1 <= Y1.DB_MAX_OUTPUT_PORT_TYPE
+Y0 <= Y0.DB_MAX_OUTPUT_PORT_TYPE
+
+

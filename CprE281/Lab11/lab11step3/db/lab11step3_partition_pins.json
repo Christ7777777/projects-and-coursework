@@ -1,0 +1,61 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "A1",
+					"strict" : false
+				},
+				{
+					"name" : "B1",
+					"strict" : false
+				},
+				{
+					"name" : "C1",
+					"strict" : false
+				},
+				{
+					"name" : "D1",
+					"strict" : false
+				},
+				{
+					"name" : "E1",
+					"strict" : false
+				},
+				{
+					"name" : "A2",
+					"strict" : false
+				},
+				{
+					"name" : "B2",
+					"strict" : false
+				},
+				{
+					"name" : "C2",
+					"strict" : false
+				},
+				{
+					"name" : "D2",
+					"strict" : false
+				},
+				{
+					"name" : "E2",
+					"strict" : false
+				},
+				{
+					"name" : "Manual_Clock",
+					"strict" : false
+				},
+				{
+					"name" : "w",
+					"strict" : false
+				},
+				{
+					"name" : "SOMHz_Clock",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

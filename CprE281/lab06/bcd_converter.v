@@ -1,0 +1,14 @@
+module bcd_converter(c0, s3, s2, s1, s0, x1, x2, x3, x4, x5, x6, x7, x8);
+input c0, s3, s2, s1, s0;
+output x1, x2, x3, x4, x5, x6, x7, x8;
+
+assign x1 = 0;
+assign x2 = 0;
+assign x3 = (c0 & s2)|(c0 & s3);
+assign x4 = (~c0 & s3 & s1) | (~c0 & s3 & s2)| (s3 & s2 & s1)|(c0 & ~s3 & ~s2);
+assign x5 = (~c0 & s3 & ~s2 & ~s1)|(c0 & ~s3&~s2 & s1)|(c0&s3&s2&~s1);
+assign x6 = (~c0 & ~s3 & s2) | (~c0 & s2 & s1)| (c0 & ~s2 & ~s1)|(c0 & s3 & ~s2);
+assign x7 = (~c0 & ~s3 & s1) | (~c0 & s3 & s2 & ~s1)| (~s3 & s2 & s1)|(c0 & ~s3 & ~s2 & ~s1) | (c0 & s3 & ~s2 & s1);
+assign x8 = s0;
+
+endmodule

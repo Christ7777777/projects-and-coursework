@@ -1,0 +1,90 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > DisputeRepository</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">drivewayparking.app.repository</a>
+</div>
+
+<h1>Coverage Summary for Class: DisputeRepository (drivewayparking.app.repository)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">DisputeRepository</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package drivewayparking.app.repository;
+&nbsp;
+&nbsp;import drivewayparking.app.entity.Admin;
+&nbsp;import drivewayparking.app.entity.Dispute;
+&nbsp;import org.springframework.data.jpa.repository.JpaRepository;
+&nbsp;import org.springframework.data.jpa.repository.Query;
+&nbsp;import org.springframework.data.repository.query.Param;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;public interface DisputeRepository extends JpaRepository&lt;Dispute, Long&gt; {
+&nbsp;
+&nbsp;    @Query(value = &quot;SELECT * FROM disputes WHERE admin_id = :adminId ORDER BY created DESC&quot;, nativeQuery = true)
+&nbsp;    List&lt;Dispute&gt; findByAdmin(@Param(&quot;adminId&quot;) Long adminId);
+&nbsp;
+&nbsp;    @Query(value = &quot;SELECT * FROM disputes WHERE admin_id = :adminId AND resolved = FALSE ORDER BY created DESC&quot;, nativeQuery = true)
+&nbsp;    List&lt;Dispute&gt; findUnresolvedByAdmin(@Param(&quot;adminId&quot;) Long adminId);
+&nbsp;
+&nbsp;    @Query(&quot;SELECT d FROM Dispute d WHERE d.booking.id = :bookingId&quot;)
+&nbsp;    Dispute findByBooking(@Param(&quot;bookingId&quot;) Long bookingId);
+&nbsp;
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-07 11:03</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/find"
+        android:enabled="true"
+        android:title="Find"
+        android:icon="@drawable/ic_parking__gold___1_"/>
+    <item
+        android:id="@+id/reserved"
+        android:enabled="true"
+        android:title="Reserved"
+        android:icon="@drawable/ic_car_in_garage__gold_"/>
+    <item
+        android:id="@+id/inbox"
+        android:enabled="true"
+        android:title="Inbox"
+        android:icon="@drawable/ic_paper_plane__gold_"/>
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:title="Profile"
+        android:icon="@drawable/ic_id__gold_"/>
+</menu>

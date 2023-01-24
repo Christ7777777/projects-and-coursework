@@ -1,0 +1,22 @@
+# Compile of lab4step2.v was successful.
+# Compile of multiplexer.v was successful.
+# Compile of normal.v was successful.
+# Compile of powersaving.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.lab4step2 work.multiplexer work.normal work.powersaving
+# vsim -gui work.lab4step2 work.multiplexer work.normal work.powersaving 
+# Start time: 13:42:29 on Feb 15,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.lab4step2(fast)
+# Loading work.multiplexer(fast)
+# Loading work.normal(fast)
+# Loading work.powersaving(fast)
+add wave -position insertpoint  \
+sim:/lab4step2/P \
+sim:/lab4step2/T \
+sim:/lab4step2/H \
+sim:/lab4step2/M \
+sim:/lab4step2/AC
+do AC.do
+# End time: 13:45:09 on Feb 15,2022, Elapsed time: 0:02:40
+# Errors: 0, Warnings: 8

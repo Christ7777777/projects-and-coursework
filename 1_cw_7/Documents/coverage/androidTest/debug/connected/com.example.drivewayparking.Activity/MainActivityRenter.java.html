@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MainActivityRenter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Activity</a> &gt; <span class="el_source">MainActivityRenter.java</span></div><h1>MainActivityRenter.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Activity;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Model.User;
+import com.example.drivewayparking.R;
+import com.example.drivewayparking.Fragment.FindFragment;
+import com.example.drivewayparking.Fragment.InboxFragment;
+import com.example.drivewayparking.Fragment.ProfileFragment;
+import com.example.drivewayparking.Fragment.ReservedFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+
+/**
+ * The type Main activity renter.
+ * @author: Varun Advani
+ */
+<span class="fc" id="L29">public class MainActivityRenter extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {</span>
+
+    /**
+     * The Bottom navigation view.
+     */
+    BottomNavigationView bottomNavigationView;
+    private String email;
+    private Long user_id;
+    private Bundle bundle;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+<span class="fc" id="L42">        super.onCreate(savedInstanceState);</span>
+<span class="fc" id="L43">        setContentView(R.layout.activity_main_host);</span>
+
+<span class="fc" id="L45">        bottomNavigationView = findViewById(R.id.bottom_navigation);</span>
+
+<span class="fc" id="L47">        bottomNavigationView.setOnNavigationItemSelectedListener(this);</span>
+       // bottomNavigationView.setSelectedItemId(R.id.reserved);
+<span class="fc" id="L49">        bundle = new Bundle();</span>
+<span class="fc" id="L50">        email = getIntent().getStringExtra(&quot;f_email&quot;);</span>
+<span class="fc" id="L51">        Call&lt;User&gt; call = ApiClient.getUserApiService().getUserByEmail(email);</span>
+<span class="fc" id="L52">        call.enqueue(new Callback&lt;User&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;User&gt; call, Response&lt;User&gt; response) {
+<span class="pc bpc" id="L55" title="1 of 2 branches missed.">                if(response.isSuccessful()){</span>
+<span class="fc" id="L56">                    user_id = response.body().getId();</span>
+                }
+<span class="fc" id="L58">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;User&gt; call, Throwable t) {
+
+<span class="nc" id="L63">            }</span>
+        });
+<span class="fc" id="L65">        bottomNavigationView.setSelectedItemId(R.id.find);</span>
+<span class="fc" id="L66">    }</span>
+
+    /**
+     * The Reserve fragment.
+     */
+//    FindFragment parkFragment = new FindFragment();
+<span class="fc" id="L72">    ReservedFragment reserveFragment = new ReservedFragment();</span>
+    /**
+     * The Inbox fragment.
+     */
+<span class="fc" id="L76">    InboxFragment inboxFragment = new InboxFragment();</span>
+    /**
+     * The Profile fragment.
+     */
+<span class="fc" id="L80">    ProfileFragment profileFragment = new ProfileFragment();</span>
+
+    @Override
+    public void overridePendingTransition(int enterAnim, int exitAnim) {
+<span class="nc" id="L84">        super.overridePendingTransition(enterAnim, exitAnim);</span>
+<span class="nc" id="L85">    }</span>
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+<span class="pc bpc" id="L89" title="1 of 5 branches missed.">        switch (item.getItemId()) {</span>
+            case R.id.find:
+<span class="fc" id="L91">                bundle.putString(&quot;f_email&quot;,email);</span>
+<span class="fc" id="L92">                System.out.println(email);</span>
+<span class="fc" id="L93">                FindFragment parkFragment = FindFragment.newInst(bundle);</span>
+
+<span class="fc" id="L95">                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, parkFragment).commit();</span>
+                //startActivity(new Intent(getApplicationContext(), CreateBookingActivity.class));
+<span class="fc" id="L97">                return true;</span>
+
+            case R.id.reserved:
+                //startActivity(new Intent(getApplicationContext(), CreatePropertyActivity.class));
+<span class="fc" id="L101">                 bundle.putString(&quot;f_email&quot;, email);</span>
+<span class="fc" id="L102">                 reserveFragment.setArguments(bundle);</span>
+<span class="fc" id="L103">                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, reserveFragment).commit();</span>
+
+<span class="fc" id="L105">                return true;</span>
+
+            case R.id.inbox:
+<span class="fc" id="L108">                Intent intent_chat = new Intent(MainActivityRenter.this, MessageRoomActivity.class);</span>
+<span class="fc" id="L109">                bundle.putString(&quot;f_email&quot;, email);</span>
+<span class="fc" id="L110">                intent_chat.putExtras(bundle);</span>
+<span class="fc" id="L111">                startActivity(intent_chat);</span>
+<span class="fc" id="L112">                return true;</span>
+
+            case R.id.profile:
+
+
+<span class="fc" id="L117">                bundle.putString(&quot;f_email&quot;, email);</span>
+<span class="fc" id="L118">                bundle.putLong(&quot;f_user_id&quot;, user_id);</span>
+<span class="fc" id="L119">                System.out.println(getIntent().getStringExtra(&quot;f_email&quot;));</span>
+<span class="fc" id="L120">                ProfileFragment profileFragment = new ProfileFragment();</span>
+                //ProfileFragment.newInstance(&quot;f_email&quot;, getIntent().getStringExtra(&quot;f_email&quot;));
+<span class="fc" id="L122">                profileFragment.setArguments(bundle);</span>
+<span class="fc" id="L123">                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, profileFragment).commit();</span>
+                //startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+//                Intent intent = new Intent(MainActivityHost.this, ProfileActivity.class);
+//                //intent.putExtra(&quot;f_name&quot;, getIntent().getStringExtra(&quot;f_name&quot;));
+//                intent.putExtra(&quot;f_email&quot;, getIntent().getStringExtra(&quot;f_email&quot;));
+//               // intent.putExtra(&quot;f_phone&quot;, getIntent().getStringExtra(&quot;f_phone&quot;));
+//               // intent.putExtra(&quot;f_password&quot;, getIntent().getStringExtra(&quot;f_password&quot;));
+//                startActivity(intent);
+//                overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+<span class="fc" id="L132">                return true;</span>
+        }
+<span class="nc" id="L134">        return false;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

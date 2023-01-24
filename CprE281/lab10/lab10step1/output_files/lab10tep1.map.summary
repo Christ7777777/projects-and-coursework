@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Apr 12 12:36:56 2022
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Standard Edition
+Revision Name : lab10tep1
+Top-level Entity Name : lab10tep1
+Family : Cyclone IV E
+Total logic elements : 4
+    Total combinational functions : 0
+    Dedicated logic registers : 4
+Total registers : 4
+Total pins : 6
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

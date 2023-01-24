@@ -1,0 +1,19 @@
+# Compile of lab9step2.v was successful.
+# Compile of lab9step3b.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.lab9step3b
+# vsim -gui work.lab9step3b 
+# Start time: 13:12:30 on Apr 05,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: U:/CPRE281/lab09/lab9step3b/lab9step3b.v(40): (vopt-2685) [TFMPC] - Too few port connections for 'b2v_inst'.  Expected 4, found 3.
+# ** Warning: U:/CPRE281/lab09/lab9step3b/lab9step3b.v(40): (vopt-2718) [TFMPC] - Missing connection for port 'QN'.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# Loading work.lab9step3b(fast)
+add wave -position insertpoint  \
+sim:/lab9step3b/CLK \
+sim:/lab9step3b/D \
+sim:/lab9step3b/Q \
+sim:/lab9step3b/QN
+do run2.do
+# End time: 13:13:12 on Apr 05,2022, Elapsed time: 0:00:42
+# Errors: 0, Warnings: 7

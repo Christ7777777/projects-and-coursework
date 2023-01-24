@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".Activity.UserRatingActivity">
+
+    <ScrollView
+        android:layout_width="394dp"
+        android:layout_height="698dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:layout_marginTop="200dp"
+            android:orientation="vertical">
+
+<!--            <ImageView-->
+<!--                android:id="@+id/buttonBackToListing"-->
+<!--                android:layout_width="24dp"-->
+<!--                android:layout_height="26dp"-->
+<!--                android:layout_margin="1dp"-->
+<!--                android:src="@drawable/arrowsvg" />-->
+
+            <TextView
+                android:id="@+id/description1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Accommodation"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progressBackgroundTint="@color/white" />
+
+            <TextView
+                android:id="@+id/description_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Safety"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progressBackgroundTint="@color/white" />
+
+            <TextView
+                android:id="@+id/description3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Responsiveness"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progressBackgroundTint="@color/white" />
+
+
+            <TextView
+                android:id="@+id/description2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/share_your_experience"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/editTextComment"
+                android:layout_width="295dp"
+                android:layout_height="46dp"
+                android:background="@drawable/rounded_edit_text"
+                android:ems="10"
+                android:hint="@string/talk_about_your_experience_on_renting_this_space_any_suggestions_for_improvement"
+                android:inputType="textMultiLine"
+                android:textColorHint="#808080"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/buttonSubmitRating"
+                android:layout_width="280dp"
+                android:layout_height="33dp"
+                android:layout_margin="20dp"
+                android:backgroundTint="@android:color/transparent"
+                android:text="Submit"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/buttonViewAllRatings"
+                android:layout_width="280dp"
+                android:layout_height="33dp"
+                android:layout_margin="20dp"
+                android:background="@android:color/transparent"
+                android:text="View All Ratings"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp" />
+            <ProgressBar
+                android:id="@+id/progress_bar_rating"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="28dp"
+                android:layout_height="24dp"
+                android:layout_margin="150dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonSubmitRating"
+                app:layout_constraintVertical_bias="0" />
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

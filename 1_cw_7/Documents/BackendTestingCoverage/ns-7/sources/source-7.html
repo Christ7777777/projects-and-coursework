@@ -1,0 +1,238 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > RatingService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">drivewayparking.app.service</a>
+</div>
+
+<h1>Coverage Summary for Class: RatingService (drivewayparking.app.service)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">RatingService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    90%
+  </span>
+  <span class="absValue">
+    (9/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    76.7%
+  </span>
+  <span class="absValue">
+    (33/43)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package drivewayparking.app.service;
+&nbsp;
+&nbsp;import drivewayparking.app.dto.RatingRequest;
+&nbsp;import drivewayparking.app.dto.RatingResponse;
+&nbsp;import drivewayparking.app.entity.Booking;
+&nbsp;import drivewayparking.app.entity.Rating;
+&nbsp;import drivewayparking.app.enums.Status;
+&nbsp;import drivewayparking.app.repository.RatingRepository;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.util.ArrayList;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@Service
+<b class="fc">&nbsp;public class RatingService {</b>
+&nbsp;    @Autowired
+&nbsp;    private RatingRepository repository;
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    private BookingService service;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * save a rating to the repository
+&nbsp;     * @param rating
+&nbsp;     *          a request object that will be converted to a rating
+&nbsp;     * @return 1: error, if rating already exists
+&nbsp;     *         0: okay, if rating is saved
+&nbsp;     */
+&nbsp;    public Integer saveRating(RatingRequest rating) {
+&nbsp;        // check if rating exists
+<b class="fc">&nbsp;        if (repository.existsById(rating.getId())) {</b>
+<b class="nc">&nbsp;            return Status.Error.getValue();</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        Rating r = requestToRating(rating, service.getBookingById(rating.getId()));</b>
+<b class="fc">&nbsp;        repository.save(r);</b>
+<b class="fc">&nbsp;        return Status.OK.getValue();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * return all ratings in the repository
+&nbsp;     * @return  a list of rating objects
+&nbsp;     */
+&nbsp;    public List&lt;Rating&gt; getAllRatings() {
+<b class="fc">&nbsp;        return repository.findAll();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * delete a rating from rating repository
+&nbsp;     * @param id
+&nbsp;     *          id of the rating to be deleted
+&nbsp;     * @return 0: successful deletion of rating
+&nbsp;     *         1: error, unable to delete rating
+&nbsp;     */
+&nbsp;    public Integer deleteRating(Long id) {
+<b class="fc">&nbsp;        if (repository.existsById(id)) {</b>
+<b class="fc">&nbsp;            repository.deleteById(id);</b>
+<b class="fc">&nbsp;            return Status.OK.getValue();</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        return Status.Not_Found.getValue();</b>
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * find a specific rating based on id number
+&nbsp;     * @param id
+&nbsp;     *          id of the rating to be found
+&nbsp;     * @return a rating object
+&nbsp;     */
+&nbsp;    public Rating getRatingById(Long id) {
+<b class="fc">&nbsp;        return repository.findById(id).orElse(null);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * update a rating already in the repository
+&nbsp;     * @param rating
+&nbsp;     *          rating with updated information
+&nbsp;     * @return 0: successful update
+&nbsp;     *         1: rating to update not found
+&nbsp;     */
+&nbsp;    public Integer updateRating(Rating rating) {
+<b class="nc">&nbsp;        Rating existingRating = repository.findById(rating.getId()).orElse(null);</b>
+&nbsp;
+<b class="nc">&nbsp;        if (existingRating != null) {</b>
+<b class="nc">&nbsp;            existingRating.setAccommodation(rating.getAccommodation());</b>
+<b class="nc">&nbsp;            existingRating.setSafety(rating.getSafety());</b>
+<b class="nc">&nbsp;            existingRating.setResponsiveness(rating.getResponsiveness());</b>
+<b class="nc">&nbsp;            existingRating.setComments(rating.getComments());</b>
+<b class="nc">&nbsp;            return Status.OK.getValue();</b>
+&nbsp;        }
+&nbsp;
+<b class="nc">&nbsp;        return Status.Not_Found.getValue();</b>
+&nbsp;
+&nbsp;    }
+&nbsp;
+&nbsp;    public Rating requestToRating(RatingRequest request, Booking b) {
+<b class="fc">&nbsp;        Rating r = new Rating();</b>
+<b class="fc">&nbsp;        r.setBooking(b);</b>
+<b class="fc">&nbsp;        r.setComments(request.getComments());</b>
+<b class="fc">&nbsp;        r.setSafety(request.getSafety());</b>
+<b class="fc">&nbsp;        r.setResponsiveness(request.getResponsiveness());</b>
+<b class="fc">&nbsp;        r.setAccommodation(request.getAccommodation());</b>
+&nbsp;
+<b class="fc">&nbsp;        return r;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public RatingResponse ratingToResponse(Rating rating) {
+<b class="fc">&nbsp;        RatingResponse r = new RatingResponse();</b>
+<b class="fc">&nbsp;        r.setRid(rating.getId());</b>
+<b class="fc">&nbsp;        r.setUid(rating.getBooking().getUser().getId());</b>
+<b class="fc">&nbsp;        r.setPid(rating.getBooking().getProperty().getId());</b>
+<b class="fc">&nbsp;        r.setAccommodation(rating.getAccommodation());</b>
+<b class="fc">&nbsp;        r.setResponsiveness(rating.getResponsiveness());</b>
+<b class="fc">&nbsp;        r.setSafety(rating.getSafety());</b>
+<b class="fc">&nbsp;        r.setComments(rating.getComments());</b>
+&nbsp;
+<b class="fc">&nbsp;        return r;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;RatingResponse&gt; RatingsToResponse(List&lt;Rating&gt; ratings) {
+<b class="fc">&nbsp;        List&lt;RatingResponse&gt; result = new ArrayList&lt;&gt;();</b>
+<b class="fc">&nbsp;        for (Rating r : ratings) {</b>
+<b class="fc">&nbsp;            RatingResponse temp = ratingToResponse(r);</b>
+<b class="fc">&nbsp;            result.add(temp);</b>
+<b class="fc">&nbsp;        }</b>
+&nbsp;
+<b class="fc">&nbsp;        return result;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Rating&gt; getRatingsByProperty(Long id) {
+<b class="fc">&nbsp;        return repository.findByProperty(id);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2022-12-07 11:03</div>
+</div>
+</body>
+</html>

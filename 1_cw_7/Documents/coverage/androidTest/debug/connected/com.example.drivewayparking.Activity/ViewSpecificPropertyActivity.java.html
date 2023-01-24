@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ViewSpecificPropertyActivity.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=0;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">debug</a> &gt; <a href="index.source.html" class="el_package">com.example.drivewayparking.Activity</a> &gt; <span class="el_source">ViewSpecificPropertyActivity.java</span></div><h1>ViewSpecificPropertyActivity.java</h1><pre class="source lang-java linenums">package com.example.drivewayparking.Activity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Bundle;
+import android.widget.HorizontalScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.drivewayparking.API.ApiClient;
+import com.example.drivewayparking.Adapter.PropertyImageAdapter;
+import com.example.drivewayparking.Adapter.UserRatingAdapter;
+import com.example.drivewayparking.Model.ImageRequest;
+import com.example.drivewayparking.Model.ImageResponse;
+import com.example.drivewayparking.Model.Property;
+import com.example.drivewayparking.Model.RatingResponse;
+import com.example.drivewayparking.Model.UserRating;
+import com.example.drivewayparking.R;
+
+import org.w3c.dom.Text;
+
+import java.text.DecimalFormat;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+/**
+ * The type View specific property activity.
+ * @author: Varun Advani
+ */
+<span class="nc" id="L35">public class ViewSpecificPropertyActivity extends AppCompatActivity {</span>
+
+    private Long pid;
+    private TextView propertyName;
+    private TextView propertyLocation;
+    private TextView propertyHost;
+    private TextView propertyStar;
+    private Property property;
+    private RecyclerView propertyRatings;
+    private RecyclerView propertyImages;
+<span class="nc" id="L45">    private Double average = 0.0;</span>
+<span class="nc" id="L46">    private Double sum = 0.0;</span>
+<span class="nc" id="L47">    private static final DecimalFormat decimalFormat    = new DecimalFormat(&quot;0.00&quot;);</span>
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+<span class="nc" id="L51">        super.onCreate(savedInstanceState);</span>
+<span class="nc" id="L52">        setContentView(R.layout.activity_view_specific_property);</span>
+
+<span class="nc" id="L54">        propertyName = (TextView) findViewById(R.id.propertyName);</span>
+<span class="nc" id="L55">        propertyLocation = (TextView) findViewById(R.id.propertyLocation);</span>
+<span class="nc" id="L56">        propertyHost = (TextView) findViewById(R.id.propertyHost);</span>
+<span class="nc" id="L57">        propertyStar = (TextView) findViewById(R.id.propertyStars);</span>
+<span class="nc" id="L58">        propertyRatings = (RecyclerView) findViewById(R.id.propertyRatings);</span>
+<span class="nc" id="L59">        propertyImages = (RecyclerView) findViewById(R.id.propertyImages);</span>
+<span class="nc" id="L60">        propertyRatings.setLayoutManager(new LinearLayoutManager(ViewSpecificPropertyActivity.this, LinearLayoutManager.HORIZONTAL, false));</span>
+<span class="nc" id="L61">        propertyImages.setLayoutManager(new LinearLayoutManager(ViewSpecificPropertyActivity.this, LinearLayoutManager.HORIZONTAL, false));</span>
+
+<span class="nc" id="L63">        pid = getIntent().getExtras().getLong(&quot;pid&quot;);</span>
+<span class="nc" id="L64">        System.out.println(pid + &quot; pid&quot;);</span>
+<span class="nc" id="L65">        Call&lt;Property&gt; propertyCall = ApiClient.getPropertyApiService().getPropertyById(pid);</span>
+<span class="nc" id="L66">        Call&lt;List&lt;RatingResponse&gt;&gt; ratingCall = ApiClient.getUserRatingApiService().getAllPropertyRatings(pid);</span>
+<span class="nc" id="L67">        ImageRequest imageRequest = new ImageRequest();</span>
+<span class="nc" id="L68">        imageRequest.setPropertyId(pid);</span>
+<span class="nc" id="L69">        Call&lt;List&lt;ImageResponse&gt;&gt; imageCall = ApiClient.getImageApiService().downloadImage(imageRequest);</span>
+
+<span class="nc" id="L71">        propertyCall.enqueue(new Callback&lt;Property&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;Property&gt; call, Response&lt;Property&gt; response) {
+<span class="nc" id="L74">                property = response.body();</span>
+<span class="nc" id="L75">                propertyName.setText(property.getTitle());</span>
+<span class="nc" id="L76">                propertyLocation.setText(property.getCity() + &quot;, &quot; + property.getState());</span>
+<span class="nc" id="L77">                propertyHost.setText(property.getProperty_type());</span>
+                //propertyHost.setText(property.getProperty_type() + &quot;, hosted by: &quot; + property.getHost());
+<span class="nc" id="L79">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;Property&gt; call, Throwable t) {
+<span class="nc" id="L83">                Toast.makeText(getApplicationContext(), &quot;Property Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L84">            }</span>
+        });
+
+<span class="nc" id="L87">        ratingCall.enqueue(new Callback&lt;List&lt;RatingResponse&gt;&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;List&lt;RatingResponse&gt;&gt; call, Response&lt;List&lt;RatingResponse&gt;&gt; response) {
+<span class="nc" id="L90">                UserRatingAdapter userRatingAdapter = new UserRatingAdapter(ViewSpecificPropertyActivity.this, response.body());</span>
+<span class="nc" id="L91">                System.out.println(userRatingAdapter.getItemCount());</span>
+<span class="nc bnc" id="L92" title="All 2 branches missed.">                if(response.body().size() &gt; 0) {</span>
+<span class="nc" id="L93">                    propertyRatings.setAdapter(userRatingAdapter);</span>
+<span class="nc bnc" id="L94" title="All 2 branches missed.">                    for(RatingResponse rating : response.body()) {</span>
+<span class="nc" id="L95">                        average += (rating.getSafety() + rating.getAccommodation() + rating.getResponsiveness())/3.0;</span>
+<span class="nc" id="L96">                        sum += average;</span>
+<span class="nc" id="L97">                        average = 0.0;</span>
+<span class="nc" id="L98">                    }</span>
+<span class="nc" id="L99">                    sum /= userRatingAdapter.getItemCount();</span>
+
+<span class="nc" id="L101">                    propertyStar.setText(decimalFormat.format(sum) + &quot;/5.0 (&quot; + userRatingAdapter.getItemCount() + &quot;)&quot;);</span>
+                }
+<span class="nc" id="L103">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;List&lt;RatingResponse&gt;&gt; call, Throwable t) {
+<span class="nc" id="L107">                Toast.makeText(getApplicationContext(), &quot;Rating Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L108">                System.out.println(&quot;Rating Error: &quot; + t.getMessage());</span>
+<span class="nc" id="L109">            }</span>
+        });
+
+<span class="nc" id="L112">        imageCall.enqueue(new Callback&lt;List&lt;ImageResponse&gt;&gt;() {</span>
+            @Override
+            public void onResponse(Call&lt;List&lt;ImageResponse&gt;&gt; call, Response&lt;List&lt;ImageResponse&gt;&gt; response) {
+<span class="nc bnc" id="L115" title="All 2 branches missed.">                if(response.isSuccessful()){</span>
+<span class="nc" id="L116">                    PropertyImageAdapter propertyImageAdapter = new PropertyImageAdapter(ViewSpecificPropertyActivity.this, response.body());</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">                    if(response.body().size() &gt; 0){</span>
+<span class="nc" id="L118">                        propertyImages.setAdapter(propertyImageAdapter);</span>
+                    }
+<span class="nc" id="L120">                }</span>
+                else{
+<span class="nc" id="L122">                    Toast.makeText(getApplicationContext(), &quot;Code: &quot; + response.code(), Toast.LENGTH_SHORT).show();</span>
+                }
+<span class="nc" id="L124">            }</span>
+
+            @Override
+            public void onFailure(Call&lt;List&lt;ImageResponse&gt;&gt; call, Throwable t) {
+<span class="nc" id="L128">                 Toast.makeText(getApplicationContext(), &quot;Image Error: &quot; + t.getMessage(), Toast.LENGTH_SHORT).show();</span>
+<span class="nc" id="L129">            }</span>
+        });
+
+
+<span class="nc" id="L133">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span>Generated by the Android Gradle plugin 7.3.1</div></body></html>

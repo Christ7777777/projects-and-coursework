@@ -1,0 +1,18 @@
+# Compile of bobs_circuit.v was successful.
+# Compile of m1step1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.m1step1
+# vsim -gui work.m1step1 
+# Start time: 14:10:25 on Mar 01,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.m1step1(fast)
+do m1step1.do
+add wave -position insertpoint  \
+sim:/m1step1/w1 \
+sim:/m1step1/x1 \
+sim:/m1step1/y1 \
+sim:/m1step1/z1 \
+sim:/m1step1/p
+do m1step1.do
+# End time: 14:24:04 on Mar 01,2022, Elapsed time: 0:13:39
+# Errors: 0, Warnings: 5

@@ -1,0 +1,113 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dU:/CPRE281/lab04/lab4step1
+T_opt
+!s110 1644954154
+V>lY==m]CK6>X5g4jSFR1N0
+04 9 4 work lab4step2 fast 0
+04 11 4 work multiplexer fast 0
+04 6 4 work normal fast 0
+04 11 4 work powersaving fast 0
+=1-b07b2527b71a-620c0229-1f5-3598
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z0 tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+vlab4step2
+!s110 1644954009
+!i10b 1
+!s100 RFLOGg7abRWGoYh6FkDBL3
+I1QoY_Hb>3SB>hT5PloBU52
+Z1 dU:/CPRE281/lab04/lab4step2
+w1644953703
+8U:/CPRE281/lab04/lab4step2/lab4step2.v
+FU:/CPRE281/lab04/lab4step2/lab4step2.v
+!i122 0
+L0 20 44
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z4 !s108 1644954009.000000
+!s107 U:/CPRE281/lab04/lab4step2/lab4step2.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|U:/CPRE281/lab04/lab4step2/lab4step2.v|
+!i113 0
+Z5 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R0
+vmultiplexer
+Z6 !s110 1644954010
+!i10b 1
+!s100 [a:cA0OR5Wimo>HGYTSHS1
+I2NKUfG0G_^9?JJWXR`Ie^2
+R1
+w1644953268
+8U:/CPRE281/lab04/lab4step2/multiplexer.v
+FU:/CPRE281/lab04/lab4step2/multiplexer.v
+!i122 1
+Z7 L0 25 18
+R2
+R3
+r1
+!s85 0
+31
+R4
+!s107 U:/CPRE281/lab04/lab4step2/multiplexer.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|U:/CPRE281/lab04/lab4step2/multiplexer.v|
+!i113 0
+R5
+R0
+vnormal
+R6
+!i10b 1
+!s100 A2XfWY`7;9hfQ4V9abPF53
+I^zEGACLUL;X?GF`gYinI83
+R1
+w1644953511
+8U:/CPRE281/lab04/lab4step2/normal.v
+FU:/CPRE281/lab04/lab4step2/normal.v
+!i122 2
+R7
+R2
+R3
+r1
+!s85 0
+31
+Z8 !s108 1644954010.000000
+!s107 U:/CPRE281/lab04/lab4step2/normal.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|U:/CPRE281/lab04/lab4step2/normal.v|
+!i113 0
+R5
+R0
+vpowersaving
+!s110 1644954011
+!i10b 1
+!s100 RjhfH2`^E`aPjiS9z2;NO1
+IY0liaU0`zEXHAChKIA=Xc2
+R1
+w1644953562
+8U:/CPRE281/lab04/lab4step2/powersaving.v
+FU:/CPRE281/lab04/lab4step2/powersaving.v
+!i122 3
+R7
+R2
+R3
+r1
+!s85 0
+31
+R8
+!s107 U:/CPRE281/lab04/lab4step2/powersaving.v|
+!s90 -reportprogress|300|-work|work|-vopt|-stats=none|U:/CPRE281/lab04/lab4step2/powersaving.v|
+!i113 0
+R5
+R0

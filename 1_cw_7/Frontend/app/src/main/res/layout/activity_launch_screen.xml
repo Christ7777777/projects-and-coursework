@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".Activity.LaunchScreen">
+
+    <ImageView
+        android:id="@+id/launch_logo"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+
+
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/appName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/launch_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/warpdrive"
+        android:text="@string/driveway_parking"
+        android:textColor="#DB9200"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+
+</RelativeLayout>
