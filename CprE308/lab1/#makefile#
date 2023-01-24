@@ -1,0 +1,16 @@
+DEPS = message.h
+CC = gcc
+
+all:	lab1 message.o lab1.o
+
+lab1: 
+	$(CC) lab1.o message.o -o lab1
+
+messsage.o: message.c $(DEPS)
+	$(CC) -c message.c
+
+lab1.o: lab1.c $(DEPS)
+	$(CC) -c lab1.c
+
+clean:
+	rm -f message.o lab1.o         
